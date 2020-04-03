@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["dom"],
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}

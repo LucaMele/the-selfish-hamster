@@ -5,11 +5,17 @@
 ## Build Setup
 
 ``` bash
+# starts the server for production (includes the frontend build)
+npm start
+
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve only frontend with hot reload at localhost:8080
 npm run dev
+
+# serve frontend with hot reload at localhost:8080 and backend at localhost:3000
+npm run start-dev
 
 # build for production with minification
 npm run build
