@@ -1,20 +1,20 @@
 <template>
   <div>
     <h1>{{$t("pages.home.title")}}</h1>
-    <toilet-slider></toilet-slider>
+    <toilet-household-container></toilet-household-container>
     <toilet-next></toilet-next>
   </div>
 </template>
 
 <script>
 import ToiletNext from './../../components/toilet-form/next';
-import ToiletSlider from './../../components/toilet-form/slider';
+import ToiletHouseholdContainer from './../../components/toilet-form/householdContainer';
 
 export default {
   name: 'toilet-papers',
   components: {
     ToiletNext,
-    ToiletSlider,
+    ToiletHouseholdContainer,
   },
   // data() {
   //   return {
