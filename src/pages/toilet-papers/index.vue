@@ -1,10 +1,18 @@
 <template>
-  <h1>TODO Toilet Papers</h1>
+  <div>
+    <h1>[Measure your toiletpaper supplies]</h1>
+    <toilet-slider></toilet-slider>
+  </div>
 </template>
 
 <script>
+import Slider from '../../components/toilet-form';
+
 export default {
-  name: 'ToiletPapers',
+  name: 'toilet-papers',
+  components: {
+    Slider,
+  },
   // data() {
   //   return {
   //     msg: 'Welcome to Your Vue.js App',
@@ -13,20 +21,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
+  @import "./index.scss";
 </style>
