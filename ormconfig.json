@@ -1,10 +1,7 @@
 {
   "type": "mongodb",
-  "host": "localhost",
-  "port": 27017,
-  "username": "",
-  "password": "",
-  "database": "test",
+  "url": "mongodb+srv://hamster:selfishhamster@cluster0-qfptx.mongodb.net/test?retryWrites=true&w=majority",
+  "useNewUrlParser": true,
   "entities": ["server/entity/*.js"],
   "logging": true,
   "synchronize": true
