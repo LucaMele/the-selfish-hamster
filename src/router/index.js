@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ToiletPapers from '@/pages/ToiletPapers';
-import StockPile from '@/pages/StockPile';
+import ToiletPapers from '@/pages/toilet-papers';
+import StockPile from '@/pages/stock-pile';
 
 Vue.use(Router);
 
