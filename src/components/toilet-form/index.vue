@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>[How many persons live in your household]</h1>
     <vue-slider v-model="value"></vue-slider>
     <p>{{ value }}</p>
   </div>
@@ -11,7 +10,7 @@ import VueSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/default.css';
 
 export default {
-  name: 'household',
+  name: 'toilet-slider',
   components: {
     VueSlider,
   },
@@ -24,14 +23,5 @@ export default {
       },
     };
   },
-  // data() {
-  //   return {
-  //     msg: 'Welcome to Your Vue.js App',
-  //   };
-  // },
 };
 </script>
-
-<style lang="scss">
-  @import "./index.scss";
-</style>
