@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <vue-slider v-model="value"></vue-slider>
-    <p>{{ value }}</p>
+  <div class="hamster__toilet-slider">
+    <div class="toilet-slider__slider">
+      <vue-slider
+        v-model="value"
+        v-bind="options">
+      </vue-slider>
+      <p>{{ value }}</p>
+    </div>
   </div>
 </template>
 
@@ -16,7 +21,7 @@ export default {
   },
   data() {
     return {
-      value: 5,
+      value: 4,
       options: {
         min: 1,
         max: 10,
@@ -25,3 +30,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  @import "./index.scss";
+</style>
