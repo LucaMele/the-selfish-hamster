@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'StockPile',
+  name: 'stock-pile',
   // data() {
   //   return {
   //     msg: 'Welcome to Your Vue.js App',
