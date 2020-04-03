@@ -24,6 +24,7 @@
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.24",
     "vue": "^2.5.2",
+    "vue-i18n": "^8.16.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
