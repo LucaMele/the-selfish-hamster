@@ -1,10 +1,13 @@
 <template>
-  <h1>TODO Stock pile</h1>
+  <article>
+    <h1>TODO Stock pile</h1>
+    <h3>{{$t("pages.stockPile.example")}}</h3>
+  </article>
 </template>
 
 <script>
 export default {
-  name: 'StockPile',
+  name: 'stock-pile',
   // data() {
   //   return {
   //     msg: 'Welcome to Your Vue.js App',

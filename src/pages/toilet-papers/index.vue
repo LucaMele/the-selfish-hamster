@@ -1,10 +1,21 @@
 <template>
-  <h1>TODO Toilet Papers</h1>
+  <div>
+    <h1>{{$t("pages.home.title")}}</h1>
+    <toilet-slider></toilet-slider>
+    <toilet-next></toilet-next>
+  </div>
 </template>
 
 <script>
+import ToiletNext from './../../components/toilet-form/next';
+import ToiletSlider from './../../components/toilet-form/slider';
+
 export default {
-  name: 'ToiletPapers',
+  name: 'toilet-papers',
+  components: {
+    ToiletNext,
+    ToiletSlider,
+  },
   // data() {
   //   return {
   //     msg: 'Welcome to Your Vue.js App',
@@ -13,20 +24,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
+  @import "./index.scss";
 </style>
