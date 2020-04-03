@@ -9,12 +9,12 @@ export default new Router({
   routes: [
     {
       path: '/toilet-papers',
-      name: 'ToiletPapers',
+      name: 'toilet-papers',
       component: ToiletPapers,
     },
     {
       path: '/stock-pile',
-      name: 'StockPile',
+      name: 'stock-pile',
       component: StockPile,
     },
   ],
