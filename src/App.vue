@@ -18,7 +18,7 @@ import LocaleChanger from './components/locale';
 
 export default {
   components: {
-   LocaleChanger,
+    LocaleChanger,
   },
   name: 'App',
 };

@@ -8,7 +8,6 @@ import translations from './translations';
 
 Vue.config.productionTip = false;
 
-// here
 Vue.use(VueI18n);
 
 // Create VueI18n instance with options
@@ -16,8 +15,6 @@ const i18n = new VueI18n({
   locale: 'en',
   messages: translations,
 });
-
-i18n.locale = 'en';
 
 /* eslint-disable no-new */
 new Vue({
