@@ -17,7 +17,7 @@ export default {
   name: 'App',
 };
 </script>
-
+<!--
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -34,4 +34,8 @@ list-style: none;
 padding: 0;
 margin: 0;
 }
+</style> -->
+
+<style lang="scss">
+  @import "./app.scss";
 </style>
