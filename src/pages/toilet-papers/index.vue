@@ -1,17 +1,20 @@
 <template>
   <div>
-    <h1>[Measure your toiletpaper supplies]</h1>
+    <h1>{{$t("pages.home.title")}}</h1>
     <toilet-slider></toilet-slider>
+    <toilet-next></toilet-next>
   </div>
 </template>
 
 <script>
-import Slider from '../../components/toilet-form';
+import ToiletNext from './../../components/toilet-form/next';
+import ToiletSlider from './../../components/toilet-form/slider';
 
 export default {
   name: 'toilet-papers',
   components: {
-    Slider,
+    ToiletNext,
+    ToiletSlider,
   },
   // data() {
   //   return {
