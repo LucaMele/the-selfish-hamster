@@ -1,9 +1,9 @@
 {
   "type": "mongodb",
-  "host": "localhost",
+  "host": "cluster0-qfptx.mongodb.net/test?retryWrites=true&w=majority",
   "port": 27017,
-  "username": "",
-  "password": "",
+  "username": "hamster",
+  "password": "selfishhamster",
   "database": "test",
   "entities": ["server/entity/*.js"],
   "logging": true,
