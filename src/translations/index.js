@@ -7,6 +7,13 @@ export default {
         stockpileButton: 'Emergency Stock 🍫',
         toiletButton: 'Toilet Paper 🚽',
       },
+      navigation: {
+        home: 'Home',
+        toiletPaper: 'Toilet Paper',
+        emergencyStock: 'Emergency Stock',
+        history: 'History',
+        about: 'About',
+      },
       general: {
         button: {
           next: 'Next',
@@ -28,6 +35,13 @@ export default {
         test: 'Mutig genug den Test zu wagen?',
         stockpileButton: 'Notvorrat 🍫',
         toiletButton: 'Toilettenpapier 🚽',
+      },
+      navigation: {
+        home: 'Home',
+        toiletPaper: 'WC-Papier',
+        emergencyStock: 'Notvorrat',
+        history: 'Verlauf',
+        about: 'About',
       },
       general: {
         button: {
