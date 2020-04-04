@@ -35,6 +35,7 @@ createConnection().then((connection) => {
   if (env === 'dev') {
     // const _cors = cors()
     // app.use(cors);
+
   }
 
   if (env !== 'dev') {
@@ -50,5 +51,4 @@ createConnection().then((connection) => {
 
   // start express server
   app.listen(3000);
-
 }).catch(error => console.log('Error: ', error));
