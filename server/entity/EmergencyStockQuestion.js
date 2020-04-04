@@ -20,10 +20,10 @@ export class EmergencyStockQuestion {
   @Column('object')
   categories = [
     {
-      sort: 1,
-      name: 'Category.FruitAndVegetables',
+      index: 0,
+      tag: 'Category.FruitAndVegetables',
       value: 1,
-      included: true,
+      included: true
     },
   ];
 
