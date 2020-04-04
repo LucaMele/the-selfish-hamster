@@ -1,5 +1,8 @@
 <template>
   <article>
+    <div>
+      <p class="household-question">{{$t("pages.home.household.question")}}</p>
+    </div>
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>

@@ -13,6 +13,9 @@ export default {
           back: 'Back',
         },
       },
+      household: {
+        question: 'How many people are in your household?',
+      },
       stockPile: {
         example: 'An example',
       },
