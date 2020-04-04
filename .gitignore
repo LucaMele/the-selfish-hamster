@@ -16,6 +16,4 @@ selenium-debug.log
 *.njsproj
 *.sln
 
-server/**/*.js
-
 !.idea
