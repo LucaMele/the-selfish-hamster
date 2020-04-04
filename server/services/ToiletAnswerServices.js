@@ -1,12 +1,14 @@
-import {ToiletQuestion} from '../entity/ToiletQuestion';
-import {CRUDServices} from '../services/CRUDServices';
-import {ToiletAnswer} from '../entity/ToiletAnswer';
-import {Profile} from '../entity/Profile';
+import { ObjectID } from 'mongodb';
+import { ToiletQuestion } from '../entity/ToiletQuestion';
+import { CRUDServices } from '../services/CRUDServices';
+import { ToiletAnswer } from '../entity/ToiletAnswer';
+import { Profile } from '../entity/Profile';
 
-import {Content} from '../services/AnswerContent';
+import { Content } from '../services/AnswerContent';
+import { Column } from 'typeorm';
 
 // eslint-disable-next-line import/prefer-default-export
-export class TotalAnswerServices {
+export class ToiletAnswerServices {
   // eslint-disable-next-line class-methods-use-this
   Register(app, connection) {
     const profileRepository = connection.getRepository(Profile);
@@ -17,10 +19,10 @@ export class TotalAnswerServices {
     new CRUDServices().Register(app, connection, modelName, ToiletAnswer);
 
     app.post('/toilet/questions/:id/answer', async (req, res) => {
-      const question = await toiletQuestionRepository.findOne(req.params.id);
-      const profile = await profileRepository.findOne(question.profileId);
+      const question = await toiletQuestionRepository.findOne(new ObjectID(req.params.id));
+      const profile = await profileRepository.findOne(new ObjectID(question.profileId));
       // eslint-disable-next-line max-len
-      let answer = await toiletAnswerRepository.findOne({where: {questionId: question.id}});
+      let answer = await toiletAnswerRepository.findOne({ where: { questionId: question.id } });
       answer = this.CalculateToiletUsage(profile, question, answer);
       const resultAnswer = await toiletAnswerRepository.save(answer);
       return res.status(201)
@@ -29,11 +31,10 @@ export class TotalAnswerServices {
 
     app.get('/toilet/questions/:id/answer', async (req, res) => {
       // eslint-disable-next-line max-len
-      let answer = await toiletAnswerRepository.findOne({where: {questionId: req.params.id}});
+      const answer = await toiletAnswerRepository.findOne({ where: { questionId: new ObjectID(req.params.id) } });
       return res.status(201)
         .send(new Content().Create(answer, 1, 'Toilet_demo_tag_1', 'Image_Tag_1', 'Content_Tag_1', 'Action_Tag_1'));
     });
-
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -41,8 +42,9 @@ export class TotalAnswerServices {
     let currentAnswer = answer;
     if (!answer) {
       currentAnswer = new ToiletAnswer();
-      currentAnswer.questionId = question._id;
     }
+    currentAnswer.questionId = question.id.toString();
+    currentAnswer.profileId = profile.id.toString();
     currentAnswer.durationQuarantineInDays = question.durationQuarantineInDays;
 
     // 1 package = 12 roll
@@ -52,31 +54,31 @@ export class TotalAnswerServices {
 
     let numberOfROlls = question.durationQuarantineInDays / ONE_ROLL_IN_DAYS;
     if (question.nofSheetsPerUse === 'none') {
-      numberOfROlls = numberOfROlls * 0.5;
+      numberOfROlls *= 0.5;
     } else if (question.nofSheetsPerUse === 'not-much') {
-      numberOfROlls = numberOfROlls * 1;
-    } else if (question.nofSheetsPerUse === "average") {
-      numberOfROlls = numberOfROlls * 1.5;
+      numberOfROlls *= 1;
+    } else if (question.nofSheetsPerUse === 'average') {
+      numberOfROlls *= 1.5;
     } else if (question.nofSheetsPerUse === 'a-lot') {
-      numberOfROlls = numberOfROlls * 2;
+      numberOfROlls *= 2;
     }
 
     currentAnswer.nofUsagesPerPerson = Math.ceil(numberOfROlls);
 
     // from https://www.omnicalculator.com/everyday-life/toilet-paper#how-much-toilet-paper-do-i-need
     currentAnswer.waterConsumption = 140 * numberOfROlls;
-    currentAnswer.woodConsumption = 0.7 * numberOfROlls;
+    currentAnswer.woodConsumption = Math.ceil(0.7 * numberOfROlls);
 
 
     currentAnswer.usagePerQuarantine = Math.ceil(currentAnswer.nofUsagesPerPerson * profile.nofPersons);
     currentAnswer.usagePerDay = Math.ceil(currentAnswer.usagePerQuarantine / question.durationQuarantineInDays);
 
     if (question.nofToiletRolls > currentAnswer.usagePerQuarantine) {
-      currentAnswer.hamsterType = "above-average";
+      currentAnswer.hamsterType = 'above-average';
     } else if (question.nofToiletRolls < currentAnswer.usagePerQuarantine) {
-      currentAnswer.hamsterType = "below-average";
+      currentAnswer.hamsterType = 'below-average';
     } else {
-      currentAnswer.hamsterType = "average";
+      currentAnswer.hamsterType = 'average';
     }
 
     return currentAnswer;

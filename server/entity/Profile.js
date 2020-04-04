@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ObjectIdColumn } from 'typeorm'
 export class Profile {
   @PrimaryGeneratedColumn()
   @ObjectIdColumn()
-  _id = undefined;
+  id = undefined;
 
   @Column('int')
   nofPersons = 0;
