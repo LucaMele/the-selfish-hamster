@@ -1,18 +1,24 @@
 <template>
   <div class="stock-wrapper">
     <div v-if="this.currentStep === 0">
-      <stock-household-container
+      <stock-household-adults-container
         @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
-      </stock-household-container>
+      </stock-household-adults-container>
     </div>
     <div v-if="this.currentStep === 1">
+      <stock-household-kids-container
+        @callbackNext="inputDataCallback"
+        @callbackBack="navigateBack">
+      </stock-household-kids-container>
+    </div>
+    <div v-if="this.currentStep === 2">
       <stock-quarantine-container
         @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
       </stock-quarantine-container>
     </div>
-    <div v-if="this.currentStep === 2">
+    <div v-if="this.currentStep === 3">
       <stock-list-container
         @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
@@ -22,14 +28,16 @@
 </template>
 
 <script>
-import StockHouseholdContainer from './../../components/stock-form/household-container';
+import StockHouseholdAdultsContainer from './../../components/stock-form/household-adults-container';
+import StockHouseholdKidsContainer from './../../components/stock-form/household-kids-container';
 import StockQuarantineContainer from './../../components/stock-form/quarantine-container';
 import StockListContainer from './../../components/stock-form/list-container';
 
 export default {
   name: 'stock-pile',
   components: {
-    StockHouseholdContainer,
+    StockHouseholdAdultsContainer,
+    StockHouseholdKidsContainer,
     StockQuarantineContainer,
     StockListContainer,
   },
@@ -38,9 +46,12 @@ export default {
       currentStep: 0,
       inputData: [
         {
-          stepName: 'household',
-          valueKid: undefined,
-          valueAdult: undefined,
+          stepName: 'household-adult',
+          value: undefined,
+        },
+        {
+          stepName: 'household-kids',
+          value: undefined,
         },
         {
           stepName: 'quarantine-length',
@@ -64,8 +75,6 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss">
   @import "./index.scss";
