@@ -3,6 +3,9 @@
   "url": "mongodb+srv://hamster:selfishhamster@cluster0-qfptx.mongodb.net/test?retryWrites=true&w=majority",
   "useNewUrlParser": true,
   "entities": ["server/entity/*.js"],
-  "logging": true,
-  "synchronize": true
+  "logging": false,
+  "synchronize": true,
+  "entities": [
+    "server/entity/*.js"
+  ]
 }

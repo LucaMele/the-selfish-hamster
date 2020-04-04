@@ -21,7 +21,7 @@ brew services start mongodb-community
 
 ## Build Setup
 
-### Production 
+### Production
 
 ``` bash
 # starts the server for production (includes the frontend build)
@@ -64,6 +64,20 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+### API docu
+
+deployed on postman documenter
+https://documenter.getpostman.com/view/747654/SzYbxwbF?version=latest
+
+### App design
+
+edit on figma
+https://www.figma.com/file/X26tYhLriAn2aNOK837Py5/The-Selfish-Hamster?node-id=0%3A1$
+
+preview 1.use base figma
+https://www.figma.com/proto/X26tYhLriAn2aNOK837Py5/The-Selfish-Hamster?node-id=7%3A63&viewport=537%2C486%2C0.5493106245994568&scaling=scale-down
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
