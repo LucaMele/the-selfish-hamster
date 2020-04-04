@@ -6,6 +6,7 @@ import { User } from './entity/User';
 import { UserServices } from './services/UserServices';
 import { ProfileServices } from './services/ProfileServices';
 import { ToiletQuestionServices } from './services/ToiletQuestionServices';
+import { HamsterServices } from './services/HamsterServices';
 
 const express = require('express');
 
@@ -43,15 +44,9 @@ createConnection().then((connection) => {
   new ProfileServices().Register(app, connection);
   new ToiletQuestionServices().Register(app, connection);
 
+  new HamsterServices().Register(app, connection);
+
   // start express server
   app.listen(3000);
 
-  /*
-  return connection
-    .getRepository(User)
-    .save(user)
-    .then(user => {
-      console.log("user has been saved: ", user);
-    });
-  */
 }).catch(error => console.log('Error: ', error));

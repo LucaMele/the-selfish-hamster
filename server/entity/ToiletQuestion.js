@@ -18,4 +18,7 @@ export class ToiletQuestion {
 
   @Column('int')
   nofSheetsPerUseLarge = 5;
+
+  @Column('varchar')
+  profileId = undefined;
 }
