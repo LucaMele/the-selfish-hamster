@@ -1,19 +1,24 @@
-.hamster__toilet-slider {
+.hamster__roll-slider {
   margin-top: 5%;
 }
 
-.toilet-slider__slider {
+.roll-slider__slider {
   padding-left: 12%;
   padding-right: 12%;
 }
 
-.toilet-slider__slider p {
+#roll-value {
   position: relative;
   margin: 0 auto;
   font-weight: bold;
   font-size: 100px;
   line-height: 120px;
   color: #695CFF;
+}
+
+#roll-value-scaled {
+  color: #000;
+  margin: -10% 0 5% 0;
 }
 
 .vue-slider-process {

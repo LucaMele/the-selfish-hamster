@@ -1,9 +1,14 @@
 <template>
-  <div class="hamster__toilet-next">
+  <article class="hamster__toilet-next">
     <div class="toilet-next__container">
-      <div class="arrow-right" @click="onClick"></div>
+      <button @click="onClick">
+        <p class="toilet-next">{{$t("pages.general.button.next")}}</p>
+        <div class="arrow-right">
+          <img src="./../../../assets/next-arrow.svg"/>
+        </div>
+      </button>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

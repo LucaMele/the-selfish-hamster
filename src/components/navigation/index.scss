@@ -1,0 +1,51 @@
+.menu-icon {
+   position: absolute;
+   right: 0px;
+   top: 0px;
+   padding: 10px;
+   cursor: pointer;
+}
+
+.overlay {
+   position: absolute;
+   z-index: 1000;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #14D2B8;
+}
+
+.menulist {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   top: 0;
+}
+
+ul, li {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+li {
+   display: block;
+   padding: 20px 30px;
+}
+
+a {
+   color: #FFF;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #695CFF;
+}
+
+.language-switcher {
+   align-self: flex-end;
+   margin-bottom: 30px;
+}

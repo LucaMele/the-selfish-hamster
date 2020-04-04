@@ -1,35 +1,44 @@
 <template>
       <!-- <h1>{{$t("pages.home.title")}}</h1> -->
       <div class="toilet-wrapper">
-        <div v-if="this.currentStep === 'household'">
+        <div v-if="this.currentStep === 0">
           <toilet-household-container
             @callbackNext="inputDataCallback"
             @callbackBack="navigateBack">
           </toilet-household-container>
         </div>
-        <div v-if="this.currentStep === 'quarantine-length'">
+        <div v-if="this.currentStep === 1">
           <toilet-quarantine-container
             @callbackNext="inputDataCallback"
             @callbackBack="navigateBack">
           </toilet-quarantine-container>
+        </div>
+        <div v-if="this.currentStep === 2">
+          <roll-quantity-container
+            @callbackNext="inputDataCallback"
+            @callbackBack="navigateBack">
+          </roll-quantity-container>
         </div>
       </div>
 </template>
 
 <script>
 import ToiletHouseholdContainer from './../../components/toilet-form/household-container';
-import ToiletQuarantineContainer from './../../services/toilet-form/quarantine-container';
-import HamsterService from '@/services/HamsterService.js';
+import RollQuantityContainer from './../../components/toilet-form/roll-quantity-container';
+import ToiletQuarantineContainer from './../../components/toilet-form/quarantine-container';
+// eslint-disable-next-line import/extensions
+import HamsterService from './../../services/HamsterService.js';
 
 export default {
   name: 'toilet-papers',
   components: {
     ToiletHouseholdContainer,
     ToiletQuarantineContainer,
+    RollQuantityContainer,
   },
   data() {
     return ({
-      currentStep: 'household',
+      currentStep: 0,
       inputData: [
         {
           stepName: 'household',
@@ -52,12 +61,12 @@ export default {
           value: undefined,
         },
       ],
-      profileId: "",
-      questionId : "",
-      nofUsagesPerPerson : "",
-      usagePerDay : "",
-      usagePerQuarantine : "",
-      waterConsumption : ""
+      profileId: '',
+      questionId: '',
+      nofUsagesPerPerson: '',
+      usagePerDay: '',
+      usagePerQuarantine: '',
+      waterConsumption: '',
     });
   },
   created() {
@@ -67,61 +76,60 @@ export default {
     async postData() {
       HamsterService.postData(this.currentStep, this.inputData, this.profileId, this.questionId)
         .then(
-          (data => {
-            if (this.currentStep === "household") {
-              this.$set(this, "profileId", data._id);
+          ((data) => {
+            if (this.currentStep === 'household') {
+              // eslint-disable-next-line no-underscore-dangle
+              this.$set(this, 'profileId', data._id);
             }
-            if (this.currentStep === "poop-style") {
-              this.$set(this, "questionId", data.questionId);
+            if (this.currentStep === 'poop-style') {
+              this.$set(this, 'questionId', data.questionId);
             }
-            if (this.currentStep === "results") {
-              this.$set(this, "nofUsagesPerPerson", data.nofUsagesPerPerson);
-              this.$set(this,   "usagePerDay", data.usagePerDay);
-              this.$set(this,  "usagePerQuarantine", data.usagePerQuarantine);
+            if (this.currentStep === 'results') {
+              this.$set(this, 'nofUsagesPerPerson', data.nofUsagesPerPerson);
+              this.$set(this, 'usagePerDay', data.usagePerDay);
+              this.$set(this, 'usagePerQuarantine', data.usagePerQuarantine);
 
-              this.$set(this,   "waterConsumption", data.waterConsumption);
-              this.$set(this,  "woodConsumption", data.woodConsumption);
-              this.$set(this,  "hamsterType", data.hamsterType);
+              this.$set(this, 'waterConsumption', data.waterConsumption);
+              this.$set(this, 'woodConsumption', data.woodConsumption);
+              this.$set(this, 'hamsterType', data.hamsterType);
             }
-
-          }).bind(this)
+          }),
         );
     },
     inputDataCallback(value) {
-      let i = 0;
-      while (i < this.inputData.length) {
-        if (this.inputData[i].stepName === this.currentStep) {
-          this.inputData[i].value = value;
-        }
-        // eslint-disable-next-line no-plusplus
-        i++;
-      }
-      this.currentStep = this.inputData[1].stepName;
+      this.inputData[this.currentStep].value = value;
+      // eslint-disable-next-line no-plusplus
+      this.currentStep++;
+
+      // if (this.currentStep === this.inputData.length) {
+      //   this.calculateOutput();
+      // }
     },
     navigateBack() {
-      this.currentStep = this.inputData[0].stepName;
+      if (this.currentStep === 0) {
+        this.$router.push('/');
+      }
+
+      // eslint-disable-next-line no-plusplus
+      this.currentStep--;
     },
     calculateOutput() {
       // TODO: implement calculation API call
 
-      let mockData = {
+      // eslint-disable-next-line no-unused-vars
+      const mockData = {
         currentStep: 'household',
-          inputData: [
-        {
-          stepName: 'household',
-          value: undefined,
-        },
-        {
-          stepName: 'quarantine-length',
-          value: undefined,
-        },
-      ],
+        inputData: [
+          {
+            stepName: 'household',
+            value: undefined,
+          },
+          {
+            stepName: 'quarantine-length',
+            value: undefined,
+          },
+        ],
       };
-
-
-
-
-
     },
   },
 };

@@ -1,7 +1,23 @@
 <template>
   <article class="hamster__navigation">
-    <p>huhu</p>
-    <local-changer></local-changer>
+     <div class="menu-icon" @click='toggle = !toggle'>
+        <img src="./../../assets/menu.svg" />
+     </div>
+     <div class="overlay" v-show='toggle'>
+         <div class="menu-icon" @click='toggle = !toggle'>
+            <img src="./../../assets/close.svg" />
+         </div>
+         <div class="menulist">
+            <ul>
+               <li><a href="#">{{$t("pages.navigation.home")}}</a></li>
+               <li><a href="#">{{$t("pages.navigation.toiletPaper")}}</a></li>
+               <li><a href="#">{{$t("pages.navigation.emergencyStock")}}</a></li>
+               <li><a href="#">{{$t("pages.navigation.history")}}</a></li>
+               <li><a href="#">{{$t("pages.navigation.about")}}</a></li>
+               <li><local-changer class="language-switcher"></local-changer></li>
+            </ul>
+        </div>
+     </div>
   </article>
 </template>
 
@@ -12,6 +28,11 @@ export default {
   name: 'navigation',
   components: {
     LocalChanger,
+  },
+  data() {
+    return {
+      toggle: false,
+    };
   },
 };
 </script>

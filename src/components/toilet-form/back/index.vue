@@ -1,10 +1,10 @@
 <template>
   <div class="hamster__toilet-back">
-    <div class="toilet-back__container">
+    <div class="toilet-back__container" @click="onClick">
       <div class="arrow-left">
         <img src="./../../../assets/back-arrow.svg"/>
       </div>
-      <p class="toilet-back" @click="onClick">Back</p>
+      <p class="toilet-back">Back</p>
       <!-- <router-link to="/" class="toilet-back">Back</router-link> -->
     </div>
   </div>
