@@ -3,12 +3,45 @@
 Our app is deployed at
 http://the-selfish-hamster.herokuapp.com/
 
+## Prereq
+
+- install npm
+- install mongodb [mac](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition)
+
+### install mongodb
+```bash
+brew tap mongodb/brew
+brew install mongodb-community
+```
+
+install as a service
+```bash
+brew services start mongodb-community
+```
+
 ## Build Setup
+
+### Production 
 
 ``` bash
 # starts the server for production (includes the frontend build)
 npm start
 
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+issues with python?
+check out the link https://apple.stackexchange.com/questions/160171/install-and-import-site-packages-for-python-2-and-3-on-mac
+
+
+
+### Development stage
+
+``` bash
 # install dependencies
 npm install
 
@@ -17,13 +50,11 @@ npm run dev
 
 # serve frontend with hot reload at localhost:8080 and backend at localhost:3000
 npm run start-dev
+```
 
-# build for production with minification
-npm run build
+### Test
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
+``` bash
 # run unit tests
 npm run unit
 
