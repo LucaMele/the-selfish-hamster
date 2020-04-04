@@ -1,25 +1,25 @@
 <template>
-      <!-- <h1>{{$t("pages.home.title")}}</h1> -->
-      <div class="toilet-wrapper">
-        <div v-if="this.currentStep === 0">
-          <toilet-household-container
-            @callbackNext="inputDataCallback"
-            @callbackBack="navigateBack">
-          </toilet-household-container>
-        </div>
-        <div v-if="this.currentStep === 1">
-          <toilet-quarantine-container
-            @callbackNext="inputDataCallback"
-            @callbackBack="navigateBack">
-          </toilet-quarantine-container>
-        </div>
-        <div v-if="this.currentStep === 2">
-          <roll-quantity-container
-            @callbackNext="inputDataCallback"
-            @callbackBack="navigateBack">
-          </roll-quantity-container>
-        </div>
-      </div>
+  <!-- <h1>{{$t("pages.home.title")}}</h1> -->
+  <div class="toilet-wrapper">
+    <div v-if="this.currentStep === 0">
+      <toilet-household-container
+        @callbackNext="inputDataCallback"
+        @callbackBack="navigateBack">
+      </toilet-household-container>
+    </div>
+    <div v-if="this.currentStep === 1">
+      <toilet-quarantine-container
+        @callbackNext="inputDataCallback"
+        @callbackBack="navigateBack">
+      </toilet-quarantine-container>
+    </div>
+    <div v-if="this.currentStep === 2">
+      <roll-quantity-container
+        @callbackNext="inputDataCallback"
+        @callbackBack="navigateBack">
+      </roll-quantity-container>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -60,6 +60,14 @@ export default {
           value: undefined,
         },
       ],
+
+
+      // entered by user
+      durationQuarantineInDays: '',
+      nofSheetsPerUse: '',
+      nofToiletRolls: '',
+
+      // returned by backend
       profileId: '',
       questionId: '',
       nofUsagesPerPerson: '',
@@ -68,22 +76,46 @@ export default {
       waterConsumption: '',
     });
   },
-  created() {
-    this.postData();
-  },
   methods: {
-    async postData() {
-      HamsterService.postData(this.currentStep, this.inputData, this.profileId, this.questionId)
-        .then(
-          ((data) => {
-            if (this.currentStep === 'household') {
-              // eslint-disable-next-line no-underscore-dangle
+    inputDataCallback(value) {
+      this.inputData[this.currentStep].value = value;
+      // eslint-disable-next-line no-plusplus
+      this.currentStep++;
+
+      // we have number of household, we dont need more to create profile
+      if (this.currentStep === 1) {
+        HamsterService.createProfile(value)
+          .then(
+            ((data) => {
+              // update in data
               this.$set(this, 'profileId', data.id);
-            }
-            if (this.currentStep === 'poop-style') {
-              this.$set(this, 'questionId', data.questionId);
-            }
-            if (this.currentStep === 'results') {
+            }),
+          );
+      }
+
+      if (this.currentStep === 2) {
+        this.$set(this, 'durationQuarantineInDays', value);
+      }
+      if (this.currentStep === 3) {
+        this.$set(this, 'nofToiletRolls', value);
+      }
+      if (this.currentStep === 4) {
+        this.$set(this, 'nofSheetsPerUse', value);
+        HamsterService.createQuestions(this.profileId,
+          this.durationQuarantineInDays,
+          this.nofToiletRolls,
+          this.nofSheetsPerUse)
+          .then(
+            ((data) => {
+              this.$set(this, 'questionId', data.id);
+            }),
+          );
+      }
+
+      if (this.currentStep === this.inputData.length) {
+        HamsterService.getAnswer(this.questionId)
+          .then(
+            ((data) => {
               this.$set(this, 'nofUsagesPerPerson', data.nofUsagesPerPerson);
               this.$set(this, 'usagePerDay', data.usagePerDay);
               this.$set(this, 'usagePerQuarantine', data.usagePerQuarantine);
@@ -91,18 +123,9 @@ export default {
               this.$set(this, 'waterConsumption', data.waterConsumption);
               this.$set(this, 'woodConsumption', data.woodConsumption);
               this.$set(this, 'hamsterType', data.hamsterType);
-            }
-          }),
-        );
-    },
-    inputDataCallback(value) {
-      this.inputData[this.currentStep].value = value;
-      // eslint-disable-next-line no-plusplus
-      this.currentStep++;
-
-      // if (this.currentStep === this.inputData.length) {
-      //   this.calculateOutput();
-      // }
+            }),
+          );
+      }
     },
     navigateBack() {
       if (this.currentStep === 0) {
@@ -111,9 +134,6 @@ export default {
 
       // eslint-disable-next-line no-plusplus
       this.currentStep--;
-    },
-    calculateOutput() {
-      // TODO: implement calculation API call
     },
   },
 };
