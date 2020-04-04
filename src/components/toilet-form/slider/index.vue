@@ -1,7 +1,7 @@
 <template>
   <article class="hamster__toilet-slider">
     <div class="toilet-slider__slider">
-      <p>{{ value }}</p>
+      <p class="slider-value">{{ value }}</p>
       <vue-slider
         v-model="value"
         v-bind="options"

@@ -6,7 +6,7 @@
     </div>
     <div class="household-wrapper">
       <img src="./../../../assets/household.svg">
-      <p class="household-question">{{$t("pages.household.adultsQuestion")}}</p>
+      <p class="household-question">{{$t("pages.household.kidsQuestion")}}</p>
       <div class="hamster__container">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
       </div>
@@ -24,7 +24,7 @@ import ToiletSlider from './../../toilet-form/slider';
 import Navigation from './../../navigation';
 
 export default {
-  name: 'stock-household-adults-container',
+  name: 'stock-household-kids-container',
   components: {
     ToiletBack,
     ToiletNext,
