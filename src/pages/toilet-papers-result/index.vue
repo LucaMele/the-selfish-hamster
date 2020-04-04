@@ -8,8 +8,10 @@
           </div>
         </div>
         <div class="lower-container">
-          <div class="greetings-box">
-            <p id="greeting-text">{{ this.usagePerDay }}...</p>
+          <div class="result-box">
+            <p class="result-usage-per-day">
+              {{ this.usagePerDay }}...
+            </p>
           </div>
           <div class="lower-bg">
             <p>{{ this.hamsterType }}</p>
