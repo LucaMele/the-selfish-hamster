@@ -1,12 +1,12 @@
 <template>
   <article class="hamster__toilet-slider">
     <div class="toilet-slider__slider">
+      <p>{{ value }}</p>
       <vue-slider
         v-model="value"
         v-bind="options"
         v-on:change="onChangeSliderValue">
       </vue-slider>
-      <p>{{ value }}</p>
     </div>
   </article>
 </template>
