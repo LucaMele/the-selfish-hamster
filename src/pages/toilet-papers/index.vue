@@ -95,19 +95,26 @@ export default {
         HamsterService.createProfile(value)
           .then(
             ((data) => {
-              // update in data
+              // eslint-disable-next-line no-console
+              console.log('# set profileId', data.id);
               this.$set(this, 'profileId', data.id);
             }),
           );
       }
 
       if (this.currentStep === 2) {
+        // eslint-disable-next-line no-console
+        console.log('# set durationQuarantineInDays', value);
         this.$set(this, 'durationQuarantineInDays', value);
       }
       if (this.currentStep === 3) {
+        // eslint-disable-next-line no-console
+        console.log('# set nofToiletRolls', value);
         this.$set(this, 'nofToiletRolls', value);
       }
       if (this.currentStep === 4) {
+        // eslint-disable-next-line no-console
+        console.log('# set nofSheetsPerUse', value);
         this.$set(this, 'nofSheetsPerUse', value);
         HamsterService.createQuestions(this.profileId,
           this.durationQuarantineInDays,
@@ -115,6 +122,8 @@ export default {
           this.nofSheetsPerUse)
           .then(
             ((data) => {
+              // eslint-disable-next-line no-console
+              console.log('# set questionId', data.id);
               this.$set(this, 'questionId', data.id);
             }),
           );
