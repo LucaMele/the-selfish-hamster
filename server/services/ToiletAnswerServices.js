@@ -3,6 +3,8 @@ import { CRUDServices } from '../services/CRUDServices';
 import { ToiletAnswer } from '../entity/ToiletAnswer';
 import { Profile } from '../entity/Profile';
 
+import { Content } from '../services/AnswerContent';
+
 // eslint-disable-next-line import/prefer-default-export
 export class TotalAnswerServices {
   // eslint-disable-next-line class-methods-use-this
@@ -20,9 +22,9 @@ export class TotalAnswerServices {
       // eslint-disable-next-line max-len
       let answer = await toiletAnswerRepository.findOne({ where: { questionId: question.id } });
       answer = this.CalculateToiletUsage(profile, question, answer);
-      const results = await toiletAnswerRepository.save(answer);
+      const resultAnswer = await toiletAnswerRepository.save(answer);
       return res.status(201)
-        .send(results);
+        .send(new Content().Create(resultAnswer, 1, 'Toilet_demo_tag_1', 'Image_Tag_1', 'Content_Tag_1', 'Action_Tag_1'));
     });
   }
 
