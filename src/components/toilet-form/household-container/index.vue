@@ -1,15 +1,21 @@
 <template>
   <div class="hamster__toilet-household-container">
+    <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+    <toilet-next @onClickCallback="onNextCallback"></toilet-next>
   </div>
 </template>
 
 <script>
+import ToiletBack from './../back';
+import ToiletNext from './../next';
 import ToiletSlider from './../slider';
 
 export default {
   name: 'toilet-household-container',
   components: {
+    ToiletBack,
+    ToiletNext,
     ToiletSlider,
   },
   data() {
@@ -20,6 +26,12 @@ export default {
   methods: {
     sliderValueCallback(value) {
       this.sliderValue = value;
+    },
+    onNextCallback() {
+      this.$emit('callbackNext', this.sliderValue);
+    },
+    onBackCallback() {
+      this.$emit('callbackBack');
     },
   },
 };

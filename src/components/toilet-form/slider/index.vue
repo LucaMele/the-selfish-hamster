@@ -1,5 +1,5 @@
 <template>
-  <div class="hamster__toilet-slider">
+  <article class="hamster__toilet-slider">
     <div class="toilet-slider__slider">
       <vue-slider
         v-model="value"
@@ -8,7 +8,7 @@
       </vue-slider>
       <p>{{ value }}</p>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -33,6 +33,9 @@ export default {
         max: 10,
       },
     };
+  },
+  mounted() {
+    this.$emit('callback', this.value);
   },
 };
 </script>
