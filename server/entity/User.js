@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, ObjectIdColumn, Column } from 'typeorm'
 export class User {
   @PrimaryGeneratedColumn()
   @ObjectIdColumn()
-  _id = undefined;
+  id = undefined;
 
   @Column('varchar')
   firstName = '';

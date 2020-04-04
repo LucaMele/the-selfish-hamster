@@ -5,8 +5,9 @@ import { User } from './entity/User';
 import { UserServices } from './services/UserServices';
 import { ProfileServices } from './services/ProfileServices';
 import { ToiletQuestionServices } from './services/ToiletQuestionServices';
-import { TotalAnswerServices } from './services/ToiletAnswerServices';
+import { ToiletAnswerServices } from './services/ToiletAnswerServices';
 import { HamsterServices } from './services/HamsterServices';
+import { EmergencyStockQuestionServices } from './services/EmergencyStockQuestionServices';
 
 const express = require('express');
 const cors = require('cors');
@@ -43,9 +44,9 @@ createConnection().then((connection) => {
   new UserServices().Register(app, connection);
   new ProfileServices().Register(app, connection);
   new ToiletQuestionServices().Register(app, connection);
-  new TotalAnswerServices().Register(app, connection);
-
+  new ToiletAnswerServices().Register(app, connection);
   new HamsterServices().Register(app, connection);
+  new EmergencyStockQuestionServices().Register(app, connection);
 
   // start express server
   app.listen(3000);
