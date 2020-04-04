@@ -3,7 +3,8 @@
     <div class="toilet-slider__slider">
       <vue-slider
         v-model="value"
-        v-bind="options">
+        v-bind="options"
+        v-on:change="onChangeSliderValue">
       </vue-slider>
       <p>{{ value }}</p>
     </div>
@@ -19,9 +20,14 @@ export default {
   components: {
     VueSlider,
   },
+  methods: {
+    onChangeSliderValue() {
+      this.$emit('callback', this.value);
+    },
+  },
   data() {
     return {
-      value: 4,
+      value: 5,
       options: {
         min: 1,
         max: 10,

@@ -22,11 +22,35 @@ export default {
     ToiletHouseholdContainer,
     ToiletQuarantineContainer,
   },
-  // data() {
-  //   return {
-  //     msg: 'Welcome to Your Vue.js App',
-  //   };
-  // },
+  data() {
+    return ({
+      inputData: [
+        {
+          stepName: 'household',
+          value: undefined,
+        },
+        {
+          stepName: 'quarantine-length',
+          value: undefined,
+        },
+      ],
+    });
+  },
+  methods: {
+    inputDataCallback(step, value) {
+      let i = 0;
+      while (i < this.inputData.length) {
+        if (this.inputData[i].stepName === step) {
+          this.inputData[i].value = value;
+        }
+        // eslint-disable-next-line no-plusplus
+        i++;
+      }
+    },
+    calculateOutput() {
+      // TODO: implement calculation API call
+    },
+  },
 };
 </script>
 
