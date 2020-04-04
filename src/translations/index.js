@@ -3,6 +3,7 @@ export default {
     pages: {
       home: {
         hello: 'hello world',
+        greeting: 'Hola! Are you one of those sneaky hamster buyers?',
         title: 'Calculate your stockpile',
         household: {
           question: 'How many persons live in your household?',
