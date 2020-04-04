@@ -22,6 +22,8 @@ export default {
       },
       household: {
         question: 'How many people are in your household?',
+        adultsQuestion: 'How many persons, older than 10, live in your household?',
+        kidsQuestion: 'How many kids, 10 or younger, live in your household?',
       },
       quarantine: {
         question: 'How long does the quarantine last?',
@@ -40,7 +42,7 @@ export default {
             subtitle: 'I shower after pooping',
           },
           option2: {
-            title: '20 papers',
+            title: '3 paper',
             subtitle: 'I care for the environment',
           },
           option3: {
@@ -86,6 +88,8 @@ export default {
       },
       household: {
         question: 'Wieviele Personen leben im Haushalt?',
+        adultsQuestion: 'Wieviele Personen, die älter als 10 Jahre sind, leben im Haushalt?',
+        kidsQuestion: 'Wieviele Kinder, die 10 Jahre alt oder jünger sind, leben im Haushalt?',
       },
       quarantine: {
         question: 'Wie lange dauert die Quarantäne?',
@@ -104,12 +108,12 @@ export default {
             subtitle: 'Ich dusche danach',
           },
           option2: {
-            title: '20 Papiere',
+            title: '3 Papiere',
             subtitle: 'Die Umwelt ist mir wichtig',
           },
           option3: {
             title: '1/2 Rolle',
-            subtitle: 'Was kann ich sagen?',
+            subtitle: 'Was soll ich sagen?',
           },
           option4: {
             title: '1+ Rolle',

@@ -68,6 +68,14 @@ export default {
           value: undefined,
         },
       ],
+
+
+      // entered by user
+      durationQuarantineInDays: '',
+      nofSheetsPerUse: '',
+      nofToiletRolls: '',
+
+      // returned by backend
       profileId: '',
       questionId: '',
       nofUsagesPerPerson: '',
@@ -76,41 +84,63 @@ export default {
       waterConsumption: '',
     });
   },
-  created() {
-    this.postData();
-  },
   methods: {
-    async postData() {
-      HamsterService.postData(this.currentStep, this.inputData, this.profileId, this.questionId)
-        .then(
-          ((data) => {
-            if (this.currentStep === 'household') {
-              // eslint-disable-next-line no-underscore-dangle
-              this.$set(this, 'profileId', data.id);
-            }
-            if (this.currentStep === 'poop-style') {
-              this.$set(this, 'questionId', data.questionId);
-            }
-            if (this.currentStep === 'results') {
-              this.$set(this, 'nofUsagesPerPerson', data.nofUsagesPerPerson);
-              this.$set(this, 'usagePerDay', data.usagePerDay);
-              this.$set(this, 'usagePerQuarantine', data.usagePerQuarantine);
-
-              this.$set(this, 'waterConsumption', data.waterConsumption);
-              this.$set(this, 'woodConsumption', data.woodConsumption);
-              this.$set(this, 'hamsterType', data.hamsterType);
-            }
-          }),
-        );
-    },
     inputDataCallback(value) {
       this.inputData[this.currentStep].value = value;
       // eslint-disable-next-line no-plusplus
       this.currentStep++;
 
-      // if (this.currentStep === this.inputData.length) {
-      //   this.calculateOutput();
-      // }
+      // we have number of household, we dont need more to create profile
+      if (this.currentStep === 1) {
+        HamsterService.createProfile(value)
+          .then(
+            ((data) => {
+              // eslint-disable-next-line no-console
+              console.log('# set profileId', data.id);
+              this.$set(this, 'profileId', data.id);
+            }),
+          );
+      }
+
+      if (this.currentStep === 2) {
+        // eslint-disable-next-line no-console
+        console.log('# set durationQuarantineInDays', value);
+        this.$set(this, 'durationQuarantineInDays', value);
+      }
+      if (this.currentStep === 3) {
+        // eslint-disable-next-line no-console
+        console.log('# set nofToiletRolls', value);
+        this.$set(this, 'nofToiletRolls', value);
+      }
+      if (this.currentStep === 4) {
+        // eslint-disable-next-line no-console
+        console.log('# set nofSheetsPerUse', value);
+        this.$set(this, 'nofSheetsPerUse', value);
+        HamsterService.createQuestions(this.profileId,
+          this.durationQuarantineInDays,
+          this.nofToiletRolls,
+          this.nofSheetsPerUse)
+          .then(
+            ((data) => {
+              // eslint-disable-next-line no-console
+              console.log('# set questionId', data.id);
+              this.$set(this, 'questionId', data.id);
+              this.$router.push({ name: 'toilet-papers-result', params: { questionId: this.questionId } });
+              HamsterService.getAnswer(this.questionId)
+                .then(
+                  ((answers) => {
+                    this.$set(this, 'nofUsagesPerPerson', answers.nofUsagesPerPerson);
+                    this.$set(this, 'usagePerDay', answers.usagePerDay);
+                    this.$set(this, 'usagePerQuarantine', answers.usagePerQuarantine);
+
+                    this.$set(this, 'waterConsumption', answers.waterConsumption);
+                    this.$set(this, 'woodConsumption', answers.woodConsumption);
+                    this.$set(this, 'hamsterType', answers.hamsterType);
+                  }),
+                );
+            }),
+          );
+      }
     },
     navigateBack() {
       if (this.currentStep === 0) {
@@ -119,9 +149,6 @@ export default {
 
       // eslint-disable-next-line no-plusplus
       this.currentStep--;
-    },
-    calculateOutput() {
-      // TODO: implement calculation API call
     },
   },
 };

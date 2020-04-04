@@ -15,6 +15,9 @@
   margin: 0 10px;
 }
 
+.paper-question {
+  color: #fff;
+}
 
 .btn-group-upper {
   position: absolute;
@@ -37,6 +40,19 @@
   background-color: #fff;
   border-radius: 15px;
 }
+.option1selected {
+  height: 85%;
+  width: 47.5%;
+  float: left;
+  background-color: #FF3A79;
+  border-radius: 15px;
+}
+.option1selected .option-title {
+    color: #fff;
+}
+.option1selected .option-subtitle {
+    color: #fff;
+}
 
 .option2 {
   height: 85%;
@@ -44,6 +60,19 @@
   float: right;
   background-color: #fff;
   border-radius: 15px;
+}
+.option2selected {
+  height: 85%;
+  width: 47.5%;
+  float: right;
+  background-color: #FF3A79;
+  border-radius: 15px;
+}
+.option2selected .option-title {
+    color: #fff;
+}
+.option2selected .option-subtitle {
+    color: #fff;
 }
 
 .option3 {
@@ -53,6 +82,19 @@
   background-color: #fff;
   border-radius: 15px;
 }
+.option3selected {
+  height: 85%;
+  width: 47.5%;
+  float: left;
+  background-color: #FF3A79;
+  border-radius: 15px;
+}
+.option3selected .option-title {
+    color: #fff;
+}
+.option3selected .option-subtitle {
+    color: #fff;
+}
 
 .option4 {
   height: 85%;
@@ -60,6 +102,19 @@
   float: right;
   background-color: #fff;
   border-radius: 15px;
+}
+.option4selected {
+  height: 85%;
+  width: 47.5%;
+  float: right;
+  background-color: #FF3A79;
+  border-radius: 15px;
+}
+.option4selected .option-title {
+    color: #fff;
+}
+.option4selected .option-subtitle {
+    color: #fff;
 }
 
 .option-title {
@@ -72,6 +127,7 @@
 }
 
 .option-subtitle {
+  top:-10px;
   position: relative;
   font-size: 12px;
   line-height: 14px;
