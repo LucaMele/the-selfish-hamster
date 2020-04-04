@@ -7,7 +7,7 @@
       </div>
       <div class="paper-wrapper">
         <img src="./../../../assets/paper.svg">
-        <p class="roll-question">{{$t("pages.roll.question")}}</p>
+        <p class="paper-question">{{$t("pages.paper.question")}}</p>
         <div class="hamster__container-no-background">
           <div class="btn-group-upper">
             <div class="option1">
