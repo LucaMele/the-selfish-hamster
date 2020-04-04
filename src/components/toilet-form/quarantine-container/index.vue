@@ -5,7 +5,7 @@
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="quarantine-wrapper">
-      <img src="./../../../assets/👫.png">
+      <img src="./../../../assets/quarantine.svg">
       <p class="household-question">{{$t("pages.quarantine.question")}}</p>
       <div class="hamster__container">
       </div>
