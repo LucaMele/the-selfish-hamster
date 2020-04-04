@@ -1,10 +1,11 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, ObjectIdColumn, Column} from "typeorm";
 
 @Entity()
 export class User {
 
   @PrimaryGeneratedColumn()
-  id = undefined;
+  @ObjectIdColumn()
+  _id = undefined;
 
   @Column("varchar")
   firstName = "";

@@ -1,10 +1,12 @@
 import {createConnection} from "typeorm";
-import {User} from "./entity/User";
 const express = require('express')
 import * as bodyParser from "body-parser";
 import * as cors from  "cors";
-import {Request, Response} from "express";
 const env = process.argv.filter(arg => ~arg.indexOf('ENV')).map(arg => arg.split('=')[1])[0]
+
+import {User} from "./entity/User";
+import {UserServices} from "./services/UserServices";
+import {ProfileServices} from "./services/ProfileServices";
 
 
 // connection settings are in the "ormconfig.json" file
@@ -16,50 +18,27 @@ createConnection().then(connection => {
 
   // create and setup express app
 
-  const app = express()
-  const port = 3000
+  const app = express();
+  const port = 3000;
 
+  app.use(
+    bodyParser.urlencoded({
+      extended: true
+    })
+  );
+  app.use(bodyParser.json());
 
   if (env === 'dev') {
     //const _cors = cors()
     //app.use(cors);
   }
 
-  app.use(bodyParser.json());
-
-  const userRepository = connection.getRepository(User);
-
-  app.get("/users", async function(req, res) {
-    const users = await userRepository.find();
-    res.json(users);
-  });
-
-  app.get("/users/:id", async function(req, res) {
-    const results = await userRepository.findOne(req.params.id);
-    return res.send(results);
-  });
-
-  app.post("/users", async function(req, res) {
-    const user = await userRepository.create(req.body);
-    const results = await userRepository.save(user);
-    return res.send(results);
-  });
-
-  app.put("/users/:id", async function(req, res) {
-    const user = await userRepository.findOne(req.params.id);
-    userRepository.merge(user, req.body);
-    const results = await userRepository.save(user);
-    return res.send(results);
-  });
-
-  app.delete("/users/:id", async function(req, res) {
-    const results = await userRepository.delete(req.params.id);
-    return res.send(results);
-  });
-
   if (env !== 'dev') {
     app.use(express.static('dist'));
   }
+
+  new UserServices().Register(app, connection);
+  new ProfileServices().Register(app, connection);
 
   // start express server
   app.listen(3000);

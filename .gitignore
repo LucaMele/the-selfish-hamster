@@ -17,3 +17,7 @@ selenium-debug.log
 *.sln
 
 !.idea
+.idea/*.xml
+.idea/*.iml
+.idea/codeStyles/*
+.idea/dataSources/*
