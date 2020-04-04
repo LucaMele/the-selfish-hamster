@@ -21,11 +21,14 @@ export class EmergencyStockQuestion {
   categories = [
     {
       index: 0,
-      tag: 'Category.FruitAndVegetables',
+      tag: 'Fruit_And_vegetables',
       value: 1,
-      included: true
+      included: true,
     },
   ];
+
+  @Column('timestamp')
+  timestamp = undefined;
 
   @Column('varchar')
   profileId = undefined;
