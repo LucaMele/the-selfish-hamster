@@ -7,7 +7,7 @@
     <div class="household-wrapper">
       <img src="./../../../assets/👫.png">
       <p class="household-question">{{$t("pages.household.question")}}</p>
-      <div class="hamster__toilet-household-container">
+      <div class="hamster__container">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
       </div>
     </div>

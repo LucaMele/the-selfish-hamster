@@ -1,13 +1,14 @@
 <template>
   <article>
+    <navigation></navigation>
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="household-wrapper">
       <img src="./../../../assets/🚽.png">
-      <p class="household-question">{{$t("pages.household.question")}}</p>
-      <div class="hamster__toilet-household-container">
-        <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+      <p class="roll-question">{{$t("pages.roll.question")}}</p>
+      <div class="hamster__roll-container">
+        <roll-slider @callback="sliderValueCallback"></roll-slider>
       </div>
     </div>
     <div class="next-wrapper">
@@ -19,14 +20,16 @@
 <script>
 import ToiletBack from './../back';
 import ToiletNext from './../next';
-import ToiletSlider from './../slider';
+import RollSlider from './../roll-slider';
+import Navigation from './../../navigation';
 
 export default {
   name: 'roll-quantity-container',
   components: {
     ToiletBack,
     ToiletNext,
-    ToiletSlider,
+    RollSlider,
+    Navigation,
   },
   data() {
     return ({

@@ -23,6 +23,11 @@ export default {
       household: {
         question: 'How many people are in your household?',
       },
+      roll: {
+        question: 'How many packs of toilet paper do you have stored?',
+        packs: 'packs /',
+        rolls: 'rolls',
+      },
       stockPile: {
         example: 'An example',
       },
@@ -48,6 +53,14 @@ export default {
           next: 'Next',
           back: 'Back',
         },
+      },
+      household: {
+        question: 'Wieviele Personen leben im Haushalt?',
+      },
+      roll: {
+        question: 'Wieviele Rollen Toilettenpapier hast du auf Lager?',
+        packs: 'Pakete /',
+        rolls: 'Rollen',
       },
       stockPile: {
         example: 'Ein Beispiel',

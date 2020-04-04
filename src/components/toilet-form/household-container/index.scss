@@ -1,6 +1,6 @@
 @import './../../../material/buttonpositioning.scss';
 
-.hamster__toilet-household-container {
+.hamster__container {
     position: absolute;
     left: 3%;
     width: 94%;
@@ -16,6 +16,7 @@
 .household-wrapper {
     position: absolute;
     top: 20%;
+    margin: 0 10px;
 }
 
 .household-wrapper p {
