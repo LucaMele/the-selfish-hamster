@@ -125,21 +125,19 @@ export default {
               // eslint-disable-next-line no-console
               console.log('# set questionId', data.id);
               this.$set(this, 'questionId', data.id);
-            }),
-          );
-      }
+              this.$router.push({ name: 'toilet-papers-result', params: { questionId: this.questionId } });
+              HamsterService.getAnswer(this.questionId)
+                .then(
+                  ((answers) => {
+                    this.$set(this, 'nofUsagesPerPerson', answers.nofUsagesPerPerson);
+                    this.$set(this, 'usagePerDay', answers.usagePerDay);
+                    this.$set(this, 'usagePerQuarantine', answers.usagePerQuarantine);
 
-      if (this.currentStep === this.inputData.length) {
-        HamsterService.getAnswer(this.questionId)
-          .then(
-            ((data) => {
-              this.$set(this, 'nofUsagesPerPerson', data.nofUsagesPerPerson);
-              this.$set(this, 'usagePerDay', data.usagePerDay);
-              this.$set(this, 'usagePerQuarantine', data.usagePerQuarantine);
-
-              this.$set(this, 'waterConsumption', data.waterConsumption);
-              this.$set(this, 'woodConsumption', data.woodConsumption);
-              this.$set(this, 'hamsterType', data.hamsterType);
+                    this.$set(this, 'waterConsumption', answers.waterConsumption);
+                    this.$set(this, 'woodConsumption', answers.woodConsumption);
+                    this.$set(this, 'hamsterType', answers.hamsterType);
+                  }),
+                );
             }),
           );
       }

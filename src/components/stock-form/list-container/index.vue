@@ -20,7 +20,7 @@
 <script>
 import ToiletBack from './../back';
 import ToiletNext from './../next';
-import ToiletSlider from './../slider';
+import ToiletSlider from './../../toilet-form/slider';
 import Navigation from './../../navigation';
 
 export default {
