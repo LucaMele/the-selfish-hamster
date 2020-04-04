@@ -5,6 +5,12 @@
   height: 60px;
   background: #14D2B8;
   border-radius: 50px;
+  border: 0px;
+}
+
+.toilet-next__container button:hover {
+  background: #695CFF;
+  cursor: pointer;
 }
 
 .toilet-next__container .toilet-next {
