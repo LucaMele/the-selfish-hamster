@@ -21,7 +21,7 @@ brew services start mongodb-community
 
 ## Build Setup
 
-### Production 
+### Production
 
 ``` bash
 # starts the server for production (includes the frontend build)
@@ -64,6 +64,12 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+### API docu
+
+deployed on postman documenter
+https://documenter.getpostman.com/view/747654/SzYbxwbF?version=latest
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
