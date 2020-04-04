@@ -6,9 +6,9 @@
         <toilet-back @onClickCallback="onBackCallback"></toilet-back>
       </div>
       <div class="paper-wrapper">
-        <img src="./../../../assets/🚽.png">
+        <img src="./../../../assets/paper.svg">
         <p class="roll-question">{{$t("pages.roll.question")}}</p>
-        <div class="hamster__container">
+        <div class="hamster__container-no-background">
           <div class="btn-group-upper">
             <div class="option1">
               <p class="option-title">{{$t("pages.paper.options.option1.title")}}</p>
