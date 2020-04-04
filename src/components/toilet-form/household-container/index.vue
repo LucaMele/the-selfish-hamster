@@ -1,13 +1,14 @@
 <template>
   <article>
-    <div>
-      <p class="household-question">{{$t("pages.home.household.question")}}</p>
-    </div>
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
-    <div class="hamster__toilet-household-container">
-      <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+    <div class="household-wrapper">
+      <img src="./../../../assets/👫.png">
+      <p class="household-question">{{$t("pages.household.question")}}</p>
+      <div class="hamster__toilet-household-container">
+        <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+      </div>
     </div>
     <div class="next-wrapper">
       <toilet-next @onClickCallback="onNextCallback"></toilet-next>
