@@ -67,8 +67,17 @@ export class TotalAnswerServices {
     currentAnswer.waterConsumption = 140 * numberOfROlls;
     currentAnswer.woodConsumption = 0.7 * numberOfROlls;
 
+
     currentAnswer.usagePerQuarantine = Math.ceil(currentAnswer.nofUsagesPerPerson * profile.nofPersons);
-    currentAnswer.usagePerDay = Math.ceil(currentAnswer.usagePerQuarantine / question.durationQuarantineInDays) ;
+    currentAnswer.usagePerDay = Math.ceil(currentAnswer.usagePerQuarantine / question.durationQuarantineInDays);
+
+    if (question.nofToiletRolls > currentAnswer.usagePerQuarantine) {
+      currentAnswer.hamsterType = "above-average";
+    } else if (question.nofToiletRolls < currentAnswer.usagePerQuarantine) {
+      currentAnswer.hamsterType = "below-average";
+    } else {
+      currentAnswer.hamsterType = "average";
+    }
 
     return currentAnswer;
   }
