@@ -370,7 +370,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUseSmall\" : 3,\n    \"nofSheetsPerUseLarge\" : 5\n}",
+					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"average\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -406,7 +406,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 54,\n    \"nofSheetsPerUseSmall\": 3,\n    \"nofSheetsPerUseLarge\": 5\n}",
+					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 54,\n    \"nofSheetsPerUse\": \"none\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -472,8 +472,7 @@
 					"script": {
 						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
 						"exec": [
-							"var jsonData = pm.response.json();",
-							"pm.environment.set(\"toilet-question-id\", jsonData._id);"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -491,7 +490,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUseSmall\" : 3,\n    \"nofSheetsPerUseLarge\" : 5\n}",
+					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"not-much\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -604,6 +603,27 @@
 					"path": [
 						"hamster",
 						"{{profileid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/toilet/answer/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/toilet/answer/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toilet",
+						"answer",
+						""
 					]
 				}
 			},
