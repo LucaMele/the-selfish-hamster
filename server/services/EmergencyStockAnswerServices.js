@@ -69,6 +69,6 @@ export class EmergencyStockAnswerServices {
         return { value: cat.value, included: cat.included };
       }
     }
-    return { index: 2, included: true };
+    return { value: 2, included: true };
   }
 }
