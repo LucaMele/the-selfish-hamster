@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="backend" type="NodeJSConfigurationType" application-parameters="ENV=dev" node-parameters="$USER_HOME$/.npm-packages/bin//nodemon --exec babel-node" path-to-js-file="server/index.js" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

@@ -17,3 +17,5 @@ selenium-debug.log
 *.sln
 
 server/**/*.js
+
+!.idea
