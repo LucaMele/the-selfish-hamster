@@ -1,11 +1,23 @@
 
-// eslint-disable-next-line import/prefer-default-export
+
+class InjectDefaultAction {
+
+  constructor(app, connection) {
+    this.app = app;
+    this.connection = connection;
+  }
+  UpdateBeforePost(object) {
+    return object;
+  }
+}
+
 
 // eslint-disable-next-line import/prefer-default-export
 export class CRUDServices {
   // eslint-disable-next-line class-methods-use-this
-  Register(app, connection, modelName, type) {
+  Register(app, connection, modelName, type, injector) {
     const repo = connection.getRepository(type);
+    const inject = injector != null ? injector : new InjectDefaultAction(app, connection);
 
     app.get(modelName, async (req, res) => {
       const objects = await repo.find();
@@ -27,7 +39,7 @@ export class CRUDServices {
 
     app.post(modelName, async (req, res) => {
       try {
-        const obj = repo.create(req.body);
+        const obj = inject.UpdateBeforePost(repo.create(req.body));
         return repo.save(obj)
           .then(results =>
             (results != null ?
@@ -39,7 +51,7 @@ export class CRUDServices {
     });
 
     app.put(`${modelName}/:id`, async (req, res) => {
-      const obj = await repo.findOne(req.params.id);
+      const obj = inject.UpdateBeforePost(await repo.findOne(req.params.id));
       repo.merge(obj, req.body);
       const results = await repo.save(obj);
       return res.send(results);
@@ -55,3 +67,4 @@ export class CRUDServices {
     });
   }
 }
+
