@@ -19,8 +19,9 @@ export class ToiletAnswer {
   @Column('int')
   durationQuarantineInDays = 0;
 
+  // below-average, average, above-average
   @Column('varchar')
-  hamsterType = '';
+  hamsterType = 'average';
 
   @Column('int')
   waterConsumption = 0;
