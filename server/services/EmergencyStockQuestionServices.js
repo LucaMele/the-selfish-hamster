@@ -10,7 +10,6 @@ export class EmergencyStockQuestionServices {
   Register(app, connection) {
     const profileRepository = connection.getRepository(Profile);
     const emergencyStockQuestionRepository = connection.getRepository(EmergencyStockQuestion);
-
     const modelName = '/emergency-stock/questions';
     new CRUDServices().Register(app, connection, modelName, EmergencyStockQuestion);
   }
