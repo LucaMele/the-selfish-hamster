@@ -1,15 +1,15 @@
 <template>
-  <div class="hamster__navigation">
-     <p>huhu</p>
-      <locale-changer></locale-changer>
-  </div>
+  <article class="hamster__navigation">
+    <p>huhu</p>
+    <local-changer></local-changer>
+  </article>
 </template>
 
 <script>
 import LocalChanger from './../locale';
 
 export default {
-  name: 'Navigation',
+  name: 'navigation',
   components: {
     LocalChanger,
   },

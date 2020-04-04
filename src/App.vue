@@ -3,7 +3,6 @@
     <navigation></navigation>
     <router-view/>
     <div class="home-wrapper" v-if="this.$route.path === '/'">
-      <locale-changer></locale-changer>
       <div>
         <div class="hamster">
           <div class="hamster-title">
