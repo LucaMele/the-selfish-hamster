@@ -1,13 +1,14 @@
 <template>
-  <div class="hamster__toilet-slider">
+  <article class="hamster__toilet-slider">
     <div class="toilet-slider__slider">
+      <p>{{ value }}</p>
       <vue-slider
         v-model="value"
-        v-bind="options">
+        v-bind="options"
+        v-on:change="onChangeSliderValue">
       </vue-slider>
-      <p>{{ value }}</p>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -19,14 +20,22 @@ export default {
   components: {
     VueSlider,
   },
+  methods: {
+    onChangeSliderValue() {
+      this.$emit('callback', this.value);
+    },
+  },
   data() {
     return {
-      value: 4,
+      value: 5,
       options: {
         min: 1,
         max: 10,
       },
     };
+  },
+  mounted() {
+    this.$emit('callback', this.value);
   },
 };
 </script>

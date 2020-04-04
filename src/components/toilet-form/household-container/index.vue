@@ -1,11 +1,48 @@
 <template>
-  <div class="hamster__toilet-household-container">
-  </div>
+  <article>
+    <div>
+      <p class="household-question">{{$t("pages.home.household.question")}}</p>
+    </div>
+    <div class="back-wrapper">
+      <toilet-back @onClickCallback="onBackCallback"></toilet-back>
+    </div>
+    <div class="hamster__toilet-household-container">
+      <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+    </div>
+    <div class="next-wrapper">
+      <toilet-next @onClickCallback="onNextCallback"></toilet-next>
+    </div>
+  </article>
 </template>
 
 <script>
+import ToiletBack from './../back';
+import ToiletNext from './../next';
+import ToiletSlider from './../slider';
+
 export default {
   name: 'toilet-household-container',
+  components: {
+    ToiletBack,
+    ToiletNext,
+    ToiletSlider,
+  },
+  data() {
+    return ({
+      sliderValue: undefined,
+    });
+  },
+  methods: {
+    sliderValueCallback(value) {
+      this.sliderValue = value;
+    },
+    onNextCallback() {
+      this.$emit('callbackNext', this.sliderValue);
+    },
+    onBackCallback() {
+      this.$emit('callbackBack');
+    },
+  },
 };
 </script>
 

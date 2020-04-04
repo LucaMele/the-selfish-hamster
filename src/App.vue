@@ -1,24 +1,42 @@
 <template>
-  <article class="hamster">
-    <locale-changer></locale-changer>
-    <nav>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/stock-pile">Go to Stock Pile</router-link></li>
-        <li><router-link to="/toilet-papers">Go to Toilet Papers</router-link></li>
-      </ul>
-    </nav>
-    <h1>{{$t("pages.home.hello")}}</h1>
+  <article>
+    <navigation></navigation>
     <router-view/>
+    <div class="home-wrapper" v-if="this.$route.path === '/'">
+      <div>
+        <div class="hamster">
+          <div class="hamster-title">
+            <img src="./assets/hamster-title-screen.svg"/>
+          </div>
+        </div>
+        <!-- TODO: Components -->
+        <div class="lower-container">
+          <div class="greetings-box">
+            <p id="greeting-text">{{$t("pages.home.greeting")}}</p>
+          </div>
+          <div class="lower-bg">
+            <p>{{$t("pages.home.test")}}</p>
+            <button class="toilet-button">
+              <router-link to="/toilet-papers">{{$t("pages.home.toiletButton")}}
+              </router-link>
+            </button>
+            <button class="stockpile-button">
+              <router-link to="/stock-pile">{{$t("pages.home.stockpileButton")}}
+              </router-link>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </article>
 </template>
 
 <script>
-import LocaleChanger from './components/locale';
+import Navigation from './components/navigation';
 
 export default {
   components: {
-    LocaleChanger,
+    Navigation,
   },
   name: 'App',
 };
