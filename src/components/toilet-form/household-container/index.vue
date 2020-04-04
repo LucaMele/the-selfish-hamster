@@ -1,9 +1,15 @@
 <template>
-  <div class="hamster__toilet-household-container">
-    <toilet-back @onClickCallback="onBackCallback"></toilet-back>
-    <toilet-slider @callback="sliderValueCallback"></toilet-slider>
-    <toilet-next @onClickCallback="onNextCallback"></toilet-next>
-  </div>
+  <article>
+    <div class="back-wrapper">
+      <toilet-back @onClickCallback="onBackCallback"></toilet-back>
+    </div>
+    <div class="hamster__toilet-household-container">
+      <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+    </div>
+    <div class="next-wrapper">
+      <toilet-next @onClickCallback="onNextCallback"></toilet-next>
+    </div>
+  </article>
 </template>
 
 <script>
