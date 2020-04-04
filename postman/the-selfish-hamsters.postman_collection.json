@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "31b5d9a5-f6cc-430a-aba2-b527499e33e6",
+		"_postman_id": "37240fe2-ca6e-4aa9-8307-e1ae84d9529b",
 		"name": "the-selfish-hamsters",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -451,7 +451,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/{{{\n    \"_id\": \"5e8859bcdebf3c256d4d7834\",\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUseSmall\": 3,\n    \"nofSheetsPerUseLarge\": 5\n}}}",
+					"raw": "http://localhost:3000/}}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -492,6 +492,60 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUseSmall\" : 3,\n    \"nofSheetsPerUseLarge\" : 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toilet",
+						"questions",
+						"{{toilet-question-id}}",
+						"answer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get answer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"toilet-question-id\", jsonData._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"none\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
