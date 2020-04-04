@@ -9,6 +9,7 @@
     "prod": "webpack --config build/webpack.prod.conf.js",
     "start": "npm run build && npm run prod & babel-node server/index.js ENV=dev",
     "start-dev": "npm run build && npm run dev & nodemon -exec babel-node server/index.js ENV=dev",
+    "start-backend": "babel-node server/index.js ENV=dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
