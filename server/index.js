@@ -38,7 +38,7 @@ createConnection().then((connection) => {
   }
 
   if (env !== 'dev') {
-    app.use(express.static('dist'));
+    app.use(express.static(__dirname + 'dist'));
   }
 
   new UserServices().Register(app, connection);
