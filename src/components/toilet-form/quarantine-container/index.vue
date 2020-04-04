@@ -1,7 +1,13 @@
 <template>
   <div class="hamster__toilet-quarantine-container">
-    <toilet-back @onClickCallback="onBackCallback"></toilet-back>
-    <toilet-next @onClickCallback="onNextCallback"></toilet-next>
+    <div class="back-wrapper">
+      <toilet-back @onClickCallback="onBackCallback"></toilet-back>
+    </div>
+    <div class="quarantine-wrapper">
+    </div>
+    <div class="next-wrapper">
+      <toilet-next @onClickCallback="onNextCallback"></toilet-next>
+    </div>
   </div>
 </template>
 

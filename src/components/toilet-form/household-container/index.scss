@@ -1,3 +1,5 @@
+@import './../../../material/buttonpositioning.scss';
+
 .hamster__toilet-household-container {
     position: absolute;
     left: 3%;
@@ -18,20 +20,4 @@
 
 .household-wrapper p {
     color: #fff;
-}
-
-.next-wrapper {
-    position: absolute;
-    top: 75%;
-    left: 120px;
-}
-
-.back-wrapper {
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-
-    position: absolute;
-    left: 20px;
-    top: 20px;
 }

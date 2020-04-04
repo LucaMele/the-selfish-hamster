@@ -1,5 +1,23 @@
+@import './../../../material/buttonpositioning.scss';
+
 .hamster__toilet-quarantine-container {
-    width: 200px;
+    position: absolute;
+    left: 3%;
+    width: 94%;
     height: 200px;
-    background-color: green;
+    background-color: white;
+    background: #FFFFFF;
+    background: #FFFFFF;
+    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.quarantine-wrapper {
+    position: absolute;
+    top: 20%;
+}
+
+.quarantine-wrapper p {
+    color: #fff;
 }

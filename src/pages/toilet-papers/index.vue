@@ -1,13 +1,13 @@
 <template>
       <!-- <h1>{{$t("pages.home.title")}}</h1> -->
       <div class="toilet-wrapper">
-        <div v-if="this.currentStep === 'household'">
+        <div v-if="this.currentStep === 0">
           <toilet-household-container
             @callbackNext="inputDataCallback"
             @callbackBack="navigateBack">
           </toilet-household-container>
         </div>
-        <div v-if="this.currentStep === 'quarantine-length'">
+        <div v-if="this.currentStep === 1">
           <toilet-quarantine-container
             @callbackNext="inputDataCallback"
             @callbackBack="navigateBack">
@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return ({
-      currentStep: 'household',
+      currentStep: 0,
       inputData: [
         {
           stepName: 'household',
@@ -43,18 +43,21 @@ export default {
   },
   methods: {
     inputDataCallback(value) {
-      let i = 0;
-      while (i < this.inputData.length) {
-        if (this.inputData[i].stepName === this.currentStep) {
-          this.inputData[i].value = value;
-        }
-        // eslint-disable-next-line no-plusplus
-        i++;
-      }
-      this.currentStep = this.inputData[1].stepName;
+      this.inputData[this.currentStep].value = value;
+      // eslint-disable-next-line no-plusplus
+      this.currentStep++;
+
+      // if (this.currentStep === this.inputData.length) {
+      //   this.calculateOutput();
+      // }
     },
     navigateBack() {
-      this.currentStep = this.inputData[0].stepName;
+      if (this.currentStep === 0) {
+        this.$router.push('/');
+      }
+
+      // eslint-disable-next-line no-plusplus
+      this.currentStep--;
     },
     calculateOutput() {
       // TODO: implement calculation API call
