@@ -6,8 +6,11 @@ export default {
         test: 'Dare to take the test?',
         stockpileButton: 'Emergency Stock 🍫',
         toiletButton: 'Toilet Paper 🚽',
-        household: {
-          question: 'How many persons live in your household?',
+      },
+      general: {
+        button: {
+          next: 'Next',
+          back: 'Back',
         },
       },
       stockPile: {
@@ -22,6 +25,12 @@ export default {
         test: 'Mutig genug den Test zu wagen?',
         stockpileButton: 'Notvorrat 🍫',
         toiletButton: 'Toilettenpapier 🚽',
+      },
+      general: {
+        button: {
+          next: 'Next',
+          back: 'Back',
+        },
       },
       stockPile: {
         example: 'Ein Beispiel',

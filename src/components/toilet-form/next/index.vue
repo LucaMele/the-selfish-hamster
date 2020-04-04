@@ -1,9 +1,11 @@
 <template>
-  <div class="hamster__toilet-next">
-    <div class="toilet-next__container">
-      <div class="arrow-right" @click="onClick"></div>
+  <article class="hamster__toilet-next">
+    <div class="lower-bg">
+      <button class="toilet-next-button" @click="onClick">
+        <p>{{$t("pages.general.button.next")}}</p>
+      </button>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
