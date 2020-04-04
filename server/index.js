@@ -1,6 +1,5 @@
 import { createConnection } from 'typeorm';
 import * as bodyParser from 'body-parser';
-import * as cors from 'cors';
 
 import { User } from './entity/User';
 import { UserServices } from './services/UserServices';
@@ -10,6 +9,7 @@ import { TotalAnswerServices } from './services/ToiletAnswerServices';
 import { HamsterServices } from './services/HamsterServices';
 
 const express = require('express');
+const cors = require('cors');
 
 const env = process.argv.filter(arg => ~arg.indexOf('ENV')).map(arg => arg.split('=')[1])[0];
 
@@ -33,9 +33,7 @@ createConnection().then((connection) => {
   app.use(bodyParser.json());
 
   if (env === 'dev') {
-    // const _cors = cors()
-    // app.use(cors);
-
+    app.use(cors());
   }
 
   if (env !== 'dev') {
