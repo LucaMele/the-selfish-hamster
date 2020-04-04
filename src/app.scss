@@ -1,3 +1,12 @@
+body {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+
 .hamster {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,7 +18,7 @@
 
 .hamster-title {
   position: relative;
-  margin: 50px 0 0 0;
+  margin: 20% 0 0 0;
 }
 
 .lower-container {
@@ -27,38 +36,18 @@
   left: 3%;
   right: 3%;
   height: 30%;
-  // margin-top: -50px;
-  // height: 100px;
-
-//   left: 2.67%;
-// right: 2.67%;
-// top: 33.93%;
-// bottom: 49.38%;
-  
 
   background: #FFFFFF;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-
 #greeting-text {
   position: absolute;
   height: 100%;
   left: 6%;
   right: 6%;
-  // top: 39.66%;
-  // bottom: 53.2%;
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-
-  // /* Darkblue */
-  // color: #140F26;
+  color: #140F26;
 }
 
 .lower-bg {
@@ -67,3 +56,69 @@
   background: linear-gradient(308.18deg, #645AFF -3.69%, #A573FF 109.82%);
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.15);
 }
+
+.lower-bg p {
+  position: relative;
+  top: 20%;
+  margin: 0 auto;
+
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.lower-bg button {
+  display: flex;
+  flex-direction: row;
+  padding: 18px 40px;
+  height: 60px;
+}
+
+.lower-bg button a {
+  text-decoration: none;
+  margin: 0 auto;
+
+  // position: static;
+// left: 19.05%;
+// right: 19.05%;
+// top: 30%;
+// bottom: 30%;
+
+font-family: Lato;
+font-weight: 600;
+font-size: 18px;
+// /* identical to box height */
+
+text-align: center;
+
+/* White */
+
+color: #FFFFFF;
+
+// /* Inside Auto Layout */
+
+// flex: none;
+// order: 0;
+align-self: center;
+// margin: 10px 0px;
+}
+
+.toilet-button {
+  position: relative;
+  top: 25%;
+  margin: 0 auto;
+
+
+  background: #14D2B8;
+  border-radius: 50px;
+}
+
+.stockpile-button {
+  position: relative;
+  top: 28%;
+  margin: 0 auto;
+
+  background: #14D2B8;
+  border-radius: 50px;
+}
+
+

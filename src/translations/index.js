@@ -2,9 +2,10 @@ export default {
   en: {
     pages: {
       home: {
-        hello: 'hello world',
         greeting: 'Hola! Are you one of those sneaky hamster buyers?',
-        title: 'Calculate your stockpile',
+        test: 'Dare to take the test?',
+        stockpileButton: 'Emergency Stock 🍫',
+        toiletButton: 'Toilet Paper 🚽',
         household: {
           question: 'How many persons live in your household?',
         },
@@ -17,8 +18,10 @@ export default {
   de: {
     pages: {
       home: {
-        hello: 'Hallo welt',
-        title: 'Messen Sie ihren Vorrat',
+        greeting: 'Hola! Bist du einer dieser hinterhältigen Hamster-Käufer?',
+        test: 'Mutig genug den Test zu wagen?',
+        stockpileButton: 'Notvorrat 🍫',
+        toiletButton: 'Toilettenpapier 🚽',
       },
       stockPile: {
         example: 'Ein Beispiel',
