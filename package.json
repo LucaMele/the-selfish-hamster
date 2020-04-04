@@ -5,11 +5,16 @@
   "author": "TODO",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "prod": "webpack --config build/webpack.prod.conf.js",
-    "start": "npm run build && npm run prod & babel-node server/index.js ENV=dev",
-    "start-dev": "npm run build && npm run dev & nodemon -exec babel-node server/index.js ENV=dev",
+    "start": "concurrently \"npm run start-frontend-prod\" \"npm run start-backend-prod\"",
+    "webpack-prod": "webpack --config build/webpack.prod.conf.js",
+    "start-frontend-prod": "npm run build && npm run webpack-prod",
+    "start-backend-prod": "babel-node server/index.js",
+
+    "start-dev": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+    "webpack-dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start-frontend": "npm run build && npm run webpack-dev",
     "start-backend": "babel-node server/index.js ENV=dev",
+
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
