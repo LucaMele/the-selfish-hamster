@@ -6,8 +6,24 @@
     </div>
     <div class="quarantine-wrapper">
       <img src="./../../../assets/quarantine.svg">
-      <p class="household-question">{{$t("pages.quarantine.question")}}</p>
-      <div class="hamster__container">
+      <p class="quarantine-question">{{$t("pages.quarantine.question")}}</p>
+      <div class="hamster__container-no-background">
+        <div class="btn-group-upper">
+          <div class="option1" v-on:click="onOptionSelected(10)">
+            <p class="option-title-single">{{$t("pages.quarantine.options.option1")}}</p>
+          </div>
+          <div class="option2" v-on:click="onOptionSelected(25)">
+            <p class="option-title-single">{{$t("pages.quarantine.options.option2")}}</p>
+          </div>
+        </div>
+        <div class="btn-group-lower">
+          <div class="option3" v-on:click="onOptionSelected(35)">
+            <p class="option-title-single">{{$t("pages.quarantine.options.option3")}}</p>
+          </div>
+          <div class="option4" v-on:click="onOptionSelected(50)">
+            <p class="option-title-single">{{$t("pages.quarantine.options.option4")}}</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="next-wrapper">
