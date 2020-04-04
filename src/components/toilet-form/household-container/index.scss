@@ -19,3 +19,19 @@
 .household-wrapper p {
     color: #fff;
 }
+
+.next-wrapper {
+    position: absolute;
+    top: 75%;
+    left: 120px;
+}
+
+.back-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}

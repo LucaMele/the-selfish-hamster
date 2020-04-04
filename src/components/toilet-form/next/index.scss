@@ -1,4 +1,23 @@
-.hamster__toilet-next {
-  width: 30px;
-  float: right;
+.toilet-next__container button {
+  display: flex;
+  flex-direction: row;
+  padding: 18px 40px;
+  height: 60px;
+  background: #14D2B8;
+  border-radius: 50px;
+}
+
+.toilet-next__container .toilet-next {
+  position: relative;
+  top: 20%;
+  margin: 0 auto;
+
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.toilet-next__container .arrow-right {
+  padding-left: 10px;
+  
+  align-self: center;
 }
