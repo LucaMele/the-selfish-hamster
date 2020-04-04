@@ -4,9 +4,6 @@ import { CRUDServices } from '../services/CRUDServices';
 import { ToiletAnswer } from '../entity/ToiletAnswer';
 import { Profile } from '../entity/Profile';
 
-import { Content } from '../services/AnswerContent';
-import { Column } from 'typeorm';
-
 // eslint-disable-next-line import/prefer-default-export
 export class ToiletAnswerServices {
   // eslint-disable-next-line class-methods-use-this
@@ -26,14 +23,14 @@ export class ToiletAnswerServices {
       answer = this.CalculateToiletUsage(profile, question, answer);
       const resultAnswer = await toiletAnswerRepository.save(answer);
       return res.status(201)
-        .send(new Content().Create(resultAnswer, 1, 'Toilet_demo_tag_1', 'Image_Tag_1', 'Content_Tag_1', 'Action_Tag_1'));
+        .send(resultAnswer);
     });
 
     app.get('/toilet/questions/:id/answer', async (req, res) => {
       // eslint-disable-next-line max-len
-      const answer = await toiletAnswerRepository.findOne({ where: { questionId: new ObjectID(req.params.id) } });
+      const resultAnswer = await toiletAnswerRepository.findOne({ where: { questionId: new ObjectID(req.params.id) } });
       return res.status(201)
-        .send(new Content().Create(answer, 1, 'Toilet_demo_tag_1', 'Image_Tag_1', 'Content_Tag_1', 'Action_Tag_1'));
+        .send(resultAnswer);
     });
   }
 

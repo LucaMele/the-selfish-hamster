@@ -7,24 +7,24 @@
       </div>
       <div class="paper-wrapper">
         <img src="./../../../assets/paper.svg">
-        <p class="roll-question">{{$t("pages.roll.question")}}</p>
+        <p class="paper-question">{{$t("pages.paper.question")}}</p>
         <div class="hamster__container-no-background">
           <div class="btn-group-upper">
-            <div class="option1">
+            <div class="option1" v-on:click="onOptionSelected(0)">
               <p class="option-title">{{$t("pages.paper.options.option1.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option1.subtitle")}}</p>
             </div>
-            <div class="option2">
+            <div class="option2" v-on:click="onOptionSelected(20)">
               <p class="option-title">{{$t("pages.paper.options.option2.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option2.subtitle")}}</p>
             </div>
           </div>
           <div class="btn-group-lower">
-            <div class="option3">
+            <div class="option3" v-on:click="onOptionSelected(50)">
               <p class="option-title">{{$t("pages.paper.options.option3.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option3.subtitle")}}</p>
             </div>
-            <div class="option4">
+            <div class="option4" v-on:click="onOptionSelected(100)">
               <p class="option-title">{{$t("pages.paper.options.option4.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option4.subtitle")}}</p>
             </div>
@@ -50,9 +50,17 @@ export default {
     ToiletNext,
     Navigation,
   },
+  data() {
+    return ({
+      selectedOption: undefined,
+    });
+  },
   methods: {
+    onOptionSelected(option) {
+      this.selectedOption = option;
+    },
     onNextCallback() {
-      this.$emit('callbackNext', this.sliderValue);
+      this.$emit('callbackNext', this.selectedOption);
     },
     onBackCallback() {
       this.$emit('callbackBack');
