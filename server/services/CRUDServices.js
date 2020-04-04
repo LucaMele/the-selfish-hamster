@@ -12,15 +12,30 @@ export class CRUDServices {
       res.json(objects);
     });
 
+    // eslint-disable-next-line consistent-return
     app.get(`${modelName}/:id`, async (req, res) => {
-      const results = await repo.findOne(req.params.id);
-      return res.send(results);
+      try {
+        return repo.findOne(req.params.id)
+          .then(results =>
+            (results != null ?
+              res.status(200).send(results) : res.status(404).send(`type ${type.name.toString()} with id ${req.params.id} not found`)))
+          .catch(reason => res.status(404).send(`error: ${reason}`));
+      } catch (e) {
+        return res.status(400).send(e.toString());
+      }
     });
 
     app.post(modelName, async (req, res) => {
-      const obj = repo.create(req.body);
-      const results = await repo.save(obj);
-      return res.send(results);
+      try {
+        const obj = repo.create(req.body);
+        return repo.save(obj)
+          .then(results =>
+            (results != null ?
+              res.status(201).send(results) : res.status(404).send(`type ${type.name.toString()} with id ${req.params.id} not found`)))
+          .catch(reason => res.status(404).send(`error: ${reason}`));
+      } catch (e) {
+        return res.status(400).send(e.toString());
+      }
     });
 
     app.put(`${modelName}/:id`, async (req, res) => {
@@ -31,8 +46,12 @@ export class CRUDServices {
     });
 
     app.delete(`${modelName}/:id`, async (req, res) => {
-      const results = await repo.delete(req.params.id);
-      return res.send(results);
+      const obj = await repo.findOne(req.params.id);
+      if (obj != null) {
+        await repo.delete(req.params.id);
+        return res.status(200);
+      }
+      return res.status(404).send(`type ${type.name.toString()} with id ${req.params.id} not found`);
     });
   }
 }
