@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
+// eslint-disable-next-line import/prefer-default-export
 export class Profile {
   @PrimaryGeneratedColumn()
   @ObjectIdColumn()
