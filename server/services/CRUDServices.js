@@ -40,6 +40,7 @@ export class CRUDServices {
     app.post(modelName, async (req, res) => {
       try {
         const obj = inject.UpdateBeforePost(repo.create(req.body));
+        obj.timestamp = new Date();
         return repo.save(obj)
           .then(results =>
             (results != null ?
@@ -52,6 +53,7 @@ export class CRUDServices {
 
     app.put(`${modelName}/:id`, async (req, res) => {
       const obj = inject.UpdateBeforePost(await repo.findOne(req.params.id));
+      obj.timestamp = new Date();
       repo.merge(obj, req.body);
       const results = await repo.save(obj);
       return res.send(results);

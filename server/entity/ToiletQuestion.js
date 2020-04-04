@@ -13,6 +13,9 @@ export class ToiletQuestion {
   @Column('int')
   nofToiletRolls = 0;
 
+  @Column('timestamp')
+  timestamp = undefined;
+
   // none, not-much, average, a-lot
   @Column('varchar')
   nofSheetsPerUse = 'none';

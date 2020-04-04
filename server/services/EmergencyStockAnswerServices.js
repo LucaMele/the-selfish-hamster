@@ -43,6 +43,7 @@ export class EmergencyStockAnswerServices {
     if (!answer) {
       currentAnswer = new EmergencyStockAnswer();
     }
+    currentAnswer.timestamp = new Date();
     currentAnswer.questionId = question.id.toString();
     currentAnswer.profileId = profile.id.toString();
     currentAnswer.durationQuarantineInDays = question.durationQuarantineInDays;
@@ -50,11 +51,24 @@ export class EmergencyStockAnswerServices {
     const resultCategories = new FoodCategories().List();
     const questionCategories = question.categories;
 
-    for (const cat of questionCategories) {
-      resultCategories[cat.index].value = cat.value;
-      resultCategories[cat.index].included = cat.included;
+    const estimates = new FoodCategories().CategegoryEstimates(
+      profile.nofAdults, profile.nofKidsUnder12, question.durationQuarantineInDays);
+    for (const resultCategory of resultCategories) {
+      const foundCatValue = this.GetCategoryByIndex(questionCategories, resultCategory.index);
+      resultCategory.value = foundCatValue.value;
+      resultCategory.included = foundCatValue.included;
+      resultCategory.estimatesPerQuarantineInDays = estimates[resultCategory.index].estimatesPerQuarantineInDays;
     }
     currentAnswer.categories = resultCategories;
     return currentAnswer;
+  }
+
+  GetCategoryByIndex(categories, index) {
+    for (const cat of categories) {
+      if (cat.index === index) {
+        return { value: cat.value, included: cat.included };
+      }
+    }
+    return { index: 2, included: true };
   }
 }
