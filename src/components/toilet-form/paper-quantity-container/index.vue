@@ -60,7 +60,7 @@ export default {
       this.selectedOption = option;
     },
     onNextCallback() {
-      this.$emit('callbackNext', this.sliderValue);
+      this.$emit('callbackNext', this.selectedOption);
     },
     onBackCallback() {
       this.$emit('callbackBack');
