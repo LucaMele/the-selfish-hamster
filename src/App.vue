@@ -1,5 +1,6 @@
 <template>
   <article>
+    <navigation></navigation>
     <router-view/>
     <div class="home-wrapper" v-if="this.$route.path === '/'">
       <locale-changer></locale-changer>
@@ -32,11 +33,11 @@
 </template>
 
 <script>
-import LocaleChanger from './components/locale';
+import Navigation from './components/navigation';
 
 export default {
   components: {
-    LocaleChanger,
+    Navigation,
   },
   name: 'App',
 };
