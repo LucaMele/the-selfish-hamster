@@ -20,7 +20,7 @@
           </roll-quantity-container>
         </div>
         <div v-if="this.currentStep === 3">
-          <paper-quantity-container>
+          <paper-quantity-container
             @callbackNext="inputDataCallback"
             @callbackBack="navigateBack">
           </paper-quantity-container>

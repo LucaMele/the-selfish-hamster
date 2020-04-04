@@ -1,4 +1,6 @@
-.hamster__paper-quantity-container {
+@import './../../../material/buttonpositioning.scss';
+
+.hamster__container {
   position: absolute;
   left: 3%;
   width: 94%;
@@ -11,7 +13,70 @@
   border-radius: 4px;
 }
 
-.quarantine-wrapper {
+.paper-wrapper {
   position: absolute;
   top: 20%;
+  margin: 0 10px;
+}
+
+
+.btn-group-upper {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 0;
+}
+
+.btn-group-lower {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+}
+
+.option1 {
+  height: 85%;
+  width: 47.5%;
+  float: left;
+  background-color: red;
+}
+
+.option2 {
+  height: 85%;
+  width: 47.5%;
+  float: right;
+  background-color: blue;
+}
+
+.option3 {
+  height: 85%;
+  width: 47.5%;
+  float: left;
+  background-color: yellow;
+}
+
+.option4 {
+  height: 85%;
+  width: 47.5%;
+  float: right;
+  background-color: green;
+}
+
+.option-title {
+  position: absolute;
+  font-size: 20px;
+  line-height: 24px;
+
+  text-align: center;
+  color: #695CFF;
+}
+
+.option-subtitle {
+position: absolute;
+font-size: 12px;
+line-height: 14px;
+bottom: 20%;
+
+text-align: center;
+color: #140F26;
 }
