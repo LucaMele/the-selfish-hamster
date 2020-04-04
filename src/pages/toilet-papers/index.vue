@@ -19,6 +19,12 @@
             @callbackBack="navigateBack">
           </roll-quantity-container>
         </div>
+        <div v-if="this.currentStep === 3">
+          <paper-quantity-container
+            @callbackNext="inputDataCallback"
+            @callbackBack="navigateBack">
+          </paper-quantity-container>
+        </div>
       </div>
 </template>
 
@@ -26,6 +32,7 @@
 import ToiletHouseholdContainer from './../../components/toilet-form/household-container';
 import RollQuantityContainer from './../../components/toilet-form/roll-quantity-container';
 import ToiletQuarantineContainer from './../../components/toilet-form/quarantine-container';
+import PaperQuantityContainer from './../../components/toilet-form/paper-quantity-container';
 import HamsterService from './../../services/HamsterService';
 
 export default {
@@ -34,6 +41,7 @@ export default {
     ToiletHouseholdContainer,
     ToiletQuarantineContainer,
     RollQuantityContainer,
+    PaperQuantityContainer,
   },
   data() {
     return ({

@@ -23,6 +23,36 @@ export default {
       household: {
         question: 'How many people are in your household?',
       },
+      quarantine: {
+        question: 'How long does the quarantine last?',
+        options: {
+          option1: '1-2 Weeks',
+          option2: '2-4 Weeks',
+          option3: '4-6 Weeks',
+          option4: '6-8 Weeks',
+        },
+      },
+      paper: {
+        question: 'How much paper do you need per poop?',
+        options: {
+          option1: {
+            title: '0 paper',
+            subtitle: 'I shower after pooping',
+          },
+          option2: {
+            title: '20 papers',
+            subtitle: 'I care for the environment',
+          },
+          option3: {
+            title: '1/2 roll',
+            subtitle: 'What can I say?',
+          },
+          option4: {
+            title: '1+ roll',
+            subtitle: 'I like mexican food',
+          },
+        },
+      },
       roll: {
         question: 'How many packs of toilet paper do you have stored?',
         packs: 'packs /',
@@ -56,6 +86,36 @@ export default {
       },
       household: {
         question: 'Wieviele Personen leben im Haushalt?',
+      },
+      quarantine: {
+        question: 'Wie lange dauert die Quarantäne?',
+        options: {
+          option1: '1-2 Wochen',
+          option2: '2-4 Wochen',
+          option3: '4-6 Wochen',
+          option4: '6-8 Wochen',
+        },
+      },
+      paper: {
+        question: 'Wieviele Papiere benötigst du beim Geschäft?',
+        options: {
+          option1: {
+            title: '0 Papiere',
+            subtitle: 'Ich dusche danach',
+          },
+          option2: {
+            title: '20 Papiere',
+            subtitle: 'Die Umwelt ist mir wichtig',
+          },
+          option3: {
+            title: '1/2 Rolle',
+            subtitle: 'Was kann ich sagen?',
+          },
+          option4: {
+            title: '1+ Rolle',
+            subtitle: 'I mag Mexikanisch',
+          },
+        },
       },
       roll: {
         question: 'Wieviele Rollen Toilettenpapier hast du auf Lager?',
