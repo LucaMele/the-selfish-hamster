@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, ObjectIdColumn, Column } from 'typeorm'
 export class ToiletAnswer {
   @PrimaryGeneratedColumn()
   @ObjectIdColumn()
-  _id = undefined;
+  id = undefined;
 
   @Column('int')
   nofUsagesPerPerson = 0;
@@ -20,5 +20,17 @@ export class ToiletAnswer {
   durationQuarantineInDays = 0;
 
   @Column('varchar')
+  hamsterType = '';
+
+  @Column('int')
+  waterConsumption = 0;
+
+  @Column('int')
+  woodConsumption = 0;
+
+  @Column('varchar')
   questionId = null;
+
+  @Column('varchar')
+  profileId = null;
 }

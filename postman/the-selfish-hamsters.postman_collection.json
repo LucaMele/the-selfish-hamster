@@ -1,633 +1,780 @@
 {
 	"info": {
-		"_postman_id": "37240fe2-ca6e-4aa9-8307-e1ae84d9529b",
+		"_postman_id": "9d26897e-949e-4c47-a11c-e76bc0c169b2",
 		"name": "the-selfish-hamsters",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "get users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "post new user",
-			"event": [
+			"name": "user",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
-						"exec": [
-							"var jsonData = pm.response.json();",
-							"pm.environment.set(\"userid\", jsonData._id);"
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"userid\", jsonData._id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
 						],
-						"type": "text/javascript"
-					}
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Lolo\",\n    \"lastName\": \"Hänggi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get 1 user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/{{userid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"{{userid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Lolo2111\",\n    \"lastName\": \"Hänggi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/{{userid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"{{userid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": null,\n    \"firstName\": \"Lolo\",\n    \"lastName\": \"Hänggi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/{{userid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"{{userid}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Lolo\",\n    \"lastName\": \"Hänggi\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "get 1 user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users/{{userid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"{{userid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update user",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Lolo2111\",\n    \"lastName\": \"Hänggi\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/users/{{userid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"{{userid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete user",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"_id\": null,\n    \"firstName\": \"Lolo\",\n    \"lastName\": \"Hänggi\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/users/{{userid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"{{userid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "profiles",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/profiles",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"profiles"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "post profile",
-			"event": [
+			"name": "profile",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
-						"exec": [
-							"var jsonData = pm.response.json();",
-							"pm.environment.set(\"profileid\", jsonData._id);"
+					"name": "profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profiles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post profile / persons",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"profileid\", jsonData._id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
 						],
-						"type": "text/javascript"
-					}
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nofPersons\": 3,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profiles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post profile / adults + kids",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"profileid\", jsonData._id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profiles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get 1 profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles",
+								"{{profileid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nofPersons\": 3,\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles",
+								"{{profileid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nofPersons\": 3,\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles",
+								"{{profileid}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"nofPersons\": 3,\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/profiles",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"profiles"
-					]
-				}
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "get 1 profile",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/profiles/{{profileid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"profiles",
-						"{{profileid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update profile",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"nofPersons\": 3,\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/profiles/{{profileid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"profiles",
-						"{{profileid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete profile",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"nofPersons\": 3,\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/profiles/{{profileid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"profiles",
-						"{{profileid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get toilet questions",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/toilet/questions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"questions"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "post new toilet question",
-			"event": [
+			"name": "toilet",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
-						"exec": [
-							"var jsonData = pm.response.json();",
-							"pm.environment.set(\"toilet-question-id\", jsonData._id);"
-						],
-						"type": "text/javascript"
-					}
+					"name": "question",
+					"item": [
+						{
+							"name": "get toilet questions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/toilet/questions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post new toilet question",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"toilet-question-id\", jsonData._id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"average\",\n    \"profileId\": {{profileid}}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/toilet/questions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update toilet question",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 54,\n    \"nofSheetsPerUse\": \"none\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"questions",
+										"{{toilet-question-id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete toilet question",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"_id\": null,\n    \"firstName\": \"Lolo\",\n    \"lastName\": \"Hänggi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/}}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"}}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "answer",
+					"item": [
+						{
+							"name": "post answer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"a-lot\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"questions",
+										"{{toilet-question-id}}",
+										"answer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get answer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"toilet-question-id\", jsonData._id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"none\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"questions",
+										"{{toilet-question-id}}",
+										"answer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get toilet answers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/toilet/answers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"answers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "get hamster",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/hamster/{{profileid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hamster",
+								"{{profileid}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"average\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/toilet/questions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"questions"
-					]
-				}
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "update toilet question",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 54,\n    \"nofSheetsPerUse\": \"none\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"questions",
-						"{{toilet-question-id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete toilet question",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"_id\": null,\n    \"firstName\": \"Lolo\",\n    \"lastName\": \"Hänggi\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/}}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"}}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "post answer",
-			"event": [
+			"name": "emergency-stock",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
+					"name": "question",
+					"item": [
+						{
+							"name": "get emergency stock questions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/emergency-stock/question",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"emergency-stock",
+										"question"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post emergency stock question",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"emergency-stock-question-id\", jsonData._id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nutritionType\": \"none\",\n    \"dateOfPurchase\" : \"2020-02-01\",\n    \"categories\" : [\n\t\t{\n\t      \"sort\": 1,\n\t      \"name\": \"Category.FruitAndVegetables\",\n\t      \"value\": 1,\n\t      \"included\": true\n\t    }\n\t],\n    \"profileId\": \"{{profileid}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/emergency-stock/questions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"emergency-stock",
+										"questions"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "answer",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"not-much\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"questions",
-						"{{toilet-question-id}}",
-						"answer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get answer",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
-						"exec": [
-							"var jsonData = pm.response.json();",
-							"pm.environment.set(\"toilet-question-id\", jsonData._id);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"none\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"questions",
-						"{{toilet-question-id}}",
-						"answer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get toilet answers",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/toilet/answers",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"answers"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get hamster",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/hamster/{{profileid}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hamster",
-						"{{profileid}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:3000/toilet/answer/",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/toilet/answer/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"toilet",
-						"answer",
-						""
-					]
-				}
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
