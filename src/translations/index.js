@@ -7,7 +7,7 @@ export default {
         stockpileButton: 'Emergency Stock 🍫',
         toiletButton: 'Toilet Paper 🚽',
         household: {
-          question: 'How many persons live in your household?',
+          question: 'How many people are in your household?',
         },
       },
       stockPile: {
