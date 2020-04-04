@@ -13,18 +13,26 @@
             @callbackBack="navigateBack">
           </toilet-quarantine-container>
         </div>
+        <div v-if="this.currentStep === 2">
+          <roll-quantity-container
+            @callbackNext="inputDataCallback"
+            @callbackBack="navigateBack">
+          </roll-quantity-container>
+        </div>
       </div>
 </template>
 
 <script>
 import ToiletHouseholdContainer from './../../components/toilet-form/household-container';
 import ToiletQuarantineContainer from './../../components/toilet-form/quarantine-container';
+import RollQuantityContainer from './../../components/toilet-form/roll-quantity-container';
 
 export default {
   name: 'toilet-papers',
   components: {
     ToiletHouseholdContainer,
     ToiletQuarantineContainer,
+    RollQuantityContainer,
   },
   data() {
     return ({
@@ -36,6 +44,10 @@ export default {
         },
         {
           stepName: 'quarantine-length',
+          value: undefined,
+        },
+        {
+          stepName: 'roll-quantity',
           value: undefined,
         },
       ],
