@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{$t("pages.home.title")}}</h1>
+    <!-- <h1>{{$t("pages.home.title")}}</h1> -->
     <toilet-household-container></toilet-household-container>
     <toilet-quarantine-container></toilet-quarantine-container>
     <toilet-next></toilet-next>
