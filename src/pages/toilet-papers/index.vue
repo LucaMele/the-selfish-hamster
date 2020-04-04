@@ -1,21 +1,19 @@
 <template>
-  <div class="toilet-page-container">
-    <!-- <h1>{{$t("pages.home.title")}}</h1> -->
-    <div>
-      <div v-if="this.currentStep === 'household'">
-        <toilet-household-container
-          @callbackNext="inputDataCallback"
-          @callbackBack="navigateBack">
-        </toilet-household-container>
+      <!-- <h1>{{$t("pages.home.title")}}</h1> -->
+      <div class="toilet-wrapper">
+        <div v-if="this.currentStep === 'household'">
+          <toilet-household-container
+            @callbackNext="inputDataCallback"
+            @callbackBack="navigateBack">
+          </toilet-household-container>
+        </div>
+        <div v-if="this.currentStep === 'quarantine-length'">
+          <toilet-quarantine-container
+            @callbackNext="inputDataCallback"
+            @callbackBack="navigateBack">
+          </toilet-quarantine-container>
+        </div>
       </div>
-      <div v-if="this.currentStep === 'quarantine-length'">
-        <toilet-quarantine-container
-          @callbackNext="inputDataCallback"
-          @callbackBack="navigateBack">
-        </toilet-quarantine-container>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
