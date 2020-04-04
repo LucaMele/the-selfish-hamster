@@ -7,7 +7,7 @@
   "scripts": {
     "start": "concurrently \"npm run start-frontend-prod\" \"npm run start-backend-prod\"",
     "webpack-prod": "webpack --config build/webpack.prod.conf.js",
-    "start-frontend-prod": "npm run build && npm run webpack-prod",
+    "start-frontend-profd": "npm run build && npm run webpack-prod",
     "start-backend-prod": "babel-node server/index.js",
 
     "start-dev": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
