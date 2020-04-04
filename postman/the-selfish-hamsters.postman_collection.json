@@ -193,6 +193,26 @@
 					"response": []
 				},
 				{
+					"name": "get 1 profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles",
+								"{{profileid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "post profile / persons",
 					"event": [
 						{
@@ -201,7 +221,7 @@
 								"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"profileid\", jsonData._id);"
+									"pm.environment.set(\"profileid\", jsonData.id);"
 								],
 								"type": "text/javascript"
 							}
@@ -249,7 +269,7 @@
 								"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"profileid\", jsonData._id);"
+									"pm.environment.set(\"profileid\", jsonData.id);"
 								],
 								"type": "text/javascript"
 							}
@@ -283,26 +303,6 @@
 							"port": "3000",
 							"path": [
 								"profiles"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get 1 profile",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/profiles/{{profileid}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"profiles",
-								"{{profileid}}"
 							]
 						}
 					},
@@ -418,7 +418,7 @@
 										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
 										"exec": [
 											"var jsonData = pm.response.json();",
-											"pm.environment.set(\"toilet-question-id\", jsonData._id);"
+											"pm.environment.set(\"toilet-question-id\", jsonData.id);"
 										],
 										"type": "text/javascript"
 									}
@@ -436,7 +436,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"average\",\n    \"profileId\": {{profileid}}\n}",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"average\",\n    \"profileId\": \"{{profileid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -453,6 +453,27 @@
 									"path": [
 										"toilet",
 										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get 1 toilet question",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"toilet",
+										"questions",
+										"{{toilet-question-id}}"
 									]
 								}
 							},
@@ -563,7 +584,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nofToiletRolls\": 52,\n    \"nofSheetsPerUse\" : \"a-lot\"\n}",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -664,26 +685,6 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
-				},
-				{
-					"name": "get hamster",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/hamster/{{profileid}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"hamster",
-								"{{profileid}}"
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -700,7 +701,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/emergency-stock/question",
+									"raw": "http://localhost:3000/emergency-stock/questions",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -708,7 +709,7 @@
 									"port": "3000",
 									"path": [
 										"emergency-stock",
-										"question"
+										"questions"
 									]
 								}
 							},
@@ -723,7 +724,7 @@
 										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
 										"exec": [
 											"var jsonData = pm.response.json();",
-											"pm.environment.set(\"emergency-stock-question-id\", jsonData._id);"
+											"pm.environment.set(\"emergency-stock-question-id\", jsonData.id);"
 										],
 										"type": "text/javascript"
 									}
@@ -775,6 +776,26 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "get hamster",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/hamster/{{profileid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hamster",
+						"{{profileid}}"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
