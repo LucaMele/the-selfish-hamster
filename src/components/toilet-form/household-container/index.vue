@@ -5,7 +5,7 @@
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="household-wrapper">
-      <img src="./../../../assets/👫.png">
+      <img src="./../../../assets/household.svg">
       <p class="household-question">{{$t("pages.household.question")}}</p>
       <div class="hamster__container">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
