@@ -22,6 +22,8 @@ export default {
       },
       household: {
         question: 'How many people are in your household?',
+        adultsQuestion: 'How many persons, older than 10, live in your household?',
+        kidsQuestion: 'How many kids, 10 or younger, live in your household?',
       },
       quarantine: {
         question: 'How long does the quarantine last?',
@@ -86,6 +88,8 @@ export default {
       },
       household: {
         question: 'Wieviele Personen leben im Haushalt?',
+        adultsQuestion: 'Wieviele Personen, die älter als 10 Jahre sind, leben im Haushalt?',
+        kidsQuestion: 'Wieviele Kinder, die 10 Jahre alt oder jünger sind, leben im Haushalt?',
       },
       quarantine: {
         question: 'Wie lange dauert die Quarantäne?',

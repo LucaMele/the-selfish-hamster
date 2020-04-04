@@ -6,7 +6,7 @@
         @callbackBack="navigateBack">
       </stock-household-adults-container>
     </div>
-    <div v-if="this.currentStep === 1">
+    <!-- <div v-if="this.currentStep === 1">
       <stock-household-kids-container
         @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
@@ -23,23 +23,23 @@
         @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
       </stock-list-container>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import StockHouseholdAdultsContainer from './../../components/stock-form/household-adults-container';
-import StockHouseholdKidsContainer from './../../components/stock-form/household-kids-container';
-import StockQuarantineContainer from './../../components/stock-form/quarantine-container';
-import StockListContainer from './../../components/stock-form/list-container';
+// import StockHouseholdKidsContainer from './../../components/stock-form/household-kids-container';
+// import StockQuarantineContainer from './../../components/stock-form/quarantine-container';
+// import StockListContainer from './../../components/stock-form/list-container';
 
 export default {
   name: 'stock-pile',
   components: {
     StockHouseholdAdultsContainer,
-    StockHouseholdKidsContainer,
-    StockQuarantineContainer,
-    StockListContainer,
+    // StockHouseholdKidsContainer,
+    // StockQuarantineContainer,
+    // StockListContainer,
   },
   data() {
     return ({

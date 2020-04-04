@@ -6,7 +6,7 @@
     </div>
     <div class="household-wrapper">
       <img src="./../../../assets/household.svg">
-      <p class="household-question">{{$t("pages.household.question")}}</p>
+      <p class="household-question">{{$t("pages.household.adultsQuestion")}}</p>
       <div class="hamster__container">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
       </div>
@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import ToiletBack from './../back';
-import ToiletNext from './../next';
+import ToiletBack from './../../toilet-form/back';
+import ToiletNext from './../../toilet-form/next';
 import ToiletSlider from './../../toilet-form/slider';
 import Navigation from './../../navigation';
 
