@@ -2,7 +2,9 @@
   <article class="hamster__roll-slider">
     <div class="roll-slider__slider">
       <p id="roll-value">{{ value }}</p>
-      <p id="roll-value-scaled">{{ value }} {{$t("pages.roll.packs")}} {{ valueScaled }} {{$t("pages.roll.rolls")}}</p>
+      <p id="roll-value-scaled">
+        {{ value }} {{$t("pages.roll.packs")}} {{ valueScaled }} {{$t("pages.roll.rolls")}}
+      </p>
       <vue-slider
         v-model="value"
         v-bind="options"
