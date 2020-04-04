@@ -41,6 +41,8 @@ check out the link https://apple.stackexchange.com/questions/160171/install-and-
 
 ### Development stage
 
+To properly debug in your webbrowser install the extension `Vue.js devtools`. Then you can use it in the development tools of the browser while on a vue.js webpage.
+
 ``` bash
 # install dependencies
 npm install
