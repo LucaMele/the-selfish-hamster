@@ -11,10 +11,10 @@ export class ToiletAnswer {
   nofUsagesPerPerson = 0;
 
   @Column('int')
-  nofUsagesPerProfile = 0;
+  usagePerDay = 0;
 
   @Column('int')
-  nofUsagesPerQuarantine = 0;
+  usagePerQuarantine = 0;
 
   @Column('int')
   durationQuarantineInDays = 0;

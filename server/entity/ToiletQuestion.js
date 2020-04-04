@@ -13,12 +13,19 @@ export class ToiletQuestion {
   @Column('int')
   nofToiletRolls = 0;
 
-  @Column('int')
-  nofSheetsPerUseSmall = 2;
-
-  @Column('int')
-  nofSheetsPerUseLarge = 5;
+  // none, not-much, average, a-lot
+  @Column('varchar')
+  nofSheetsPerUse = "none";
 
   @Column('varchar')
   profileId = undefined;
+
+  @Column('int')
+  recommendation = 0;
+
+  @Column('int')
+  waterConsumption = 0;
+
+  @Column('int')
+  woodConsumption = 0;
 }

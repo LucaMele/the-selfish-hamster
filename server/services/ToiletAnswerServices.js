@@ -1,9 +1,9 @@
-import { ToiletQuestion } from '../entity/ToiletQuestion';
-import { CRUDServices } from '../services/CRUDServices';
-import { ToiletAnswer } from '../entity/ToiletAnswer';
-import { Profile } from '../entity/Profile';
+import {ToiletQuestion} from '../entity/ToiletQuestion';
+import {CRUDServices} from '../services/CRUDServices';
+import {ToiletAnswer} from '../entity/ToiletAnswer';
+import {Profile} from '../entity/Profile';
 
-import { Content } from '../services/AnswerContent';
+import {Content} from '../services/AnswerContent';
 
 // eslint-disable-next-line import/prefer-default-export
 export class TotalAnswerServices {
@@ -18,14 +18,22 @@ export class TotalAnswerServices {
 
     app.post('/toilet/questions/:id/answer', async (req, res) => {
       const question = await toiletQuestionRepository.findOne(req.params.id);
-      const profile = await profileRepository.findOne('5e8847a0d7d5421d81088cba');
+      const profile = await profileRepository.findOne(question.profileId);
       // eslint-disable-next-line max-len
-      let answer = await toiletAnswerRepository.findOne({ where: { questionId: question.id } });
+      let answer = await toiletAnswerRepository.findOne({where: {questionId: question.id}});
       answer = this.CalculateToiletUsage(profile, question, answer);
       const resultAnswer = await toiletAnswerRepository.save(answer);
       return res.status(201)
         .send(new Content().Create(resultAnswer, 1, 'Toilet_demo_tag_1', 'Image_Tag_1', 'Content_Tag_1', 'Action_Tag_1'));
     });
+
+    app.get('/toilet/questions/:id/answer', async (req, res) => {
+      // eslint-disable-next-line max-len
+      let answer = await toiletAnswerRepository.findOne({where: {questionId: req.params.id}});
+      return res.status(201)
+        .send(new Content().Create(answer, 1, 'Toilet_demo_tag_1', 'Image_Tag_1', 'Content_Tag_1', 'Action_Tag_1'));
+    });
+
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -33,12 +41,35 @@ export class TotalAnswerServices {
     let currentAnswer = answer;
     if (!answer) {
       currentAnswer = new ToiletAnswer();
+      currentAnswer.questionId = question._id;
     }
     currentAnswer.durationQuarantineInDays = question.durationQuarantineInDays;
-    currentAnswer.nofUsagesPerPerson = Math.floor(Math.random() * 100);
-    currentAnswer.nofUsagesPerProfile = currentAnswer.nofUsagesPerPerson * profile.nofPersons;
-    currentAnswer.nofUsagesPerQuarantine = currentAnswer.nofUsagesPerProfile * question.durationQuarantineInDays;
-    currentAnswer.questionId = question._id;
+
+    // 1 package = 12 roll
+    // 1 roll = 200 pieces
+    //
+    const ONE_ROLL_IN_DAYS = 3;
+
+    let numberOfROlls = question.durationQuarantineInDays / ONE_ROLL_IN_DAYS;
+    if (question.nofSheetsPerUse === 'none') {
+      numberOfROlls = numberOfROlls * 0.5;
+    } else if (question.nofSheetsPerUse === 'not-much') {
+      numberOfROlls = numberOfROlls * 1;
+    } else if (question.nofSheetsPerUse === "average") {
+      numberOfROlls = numberOfROlls * 1.5;
+    } else if (question.nofSheetsPerUse === 'a-lot') {
+      numberOfROlls = numberOfROlls * 2;
+    }
+
+    currentAnswer.nofUsagesPerPerson = Math.ceil(numberOfROlls);
+
+    // from https://www.omnicalculator.com/everyday-life/toilet-paper#how-much-toilet-paper-do-i-need
+    currentAnswer.waterConsumption = 140 * numberOfROlls;
+    currentAnswer.woodConsumption = 0.7 * numberOfROlls;
+
+    currentAnswer.usagePerQuarantine = Math.ceil(currentAnswer.nofUsagesPerPerson * profile.nofPersons);
+    currentAnswer.usagePerDay = Math.ceil(currentAnswer.usagePerQuarantine / question.durationQuarantineInDays) ;
+
     return currentAnswer;
   }
 }
