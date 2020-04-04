@@ -26,8 +26,7 @@
 import ToiletHouseholdContainer from './../../components/toilet-form/household-container';
 import RollQuantityContainer from './../../components/toilet-form/roll-quantity-container';
 import ToiletQuarantineContainer from './../../components/toilet-form/quarantine-container';
-// eslint-disable-next-line import/extensions
-import HamsterService from './../../services/HamsterService.js';
+import HamsterService from './../../services/HamsterService';
 
 export default {
   name: 'toilet-papers',
@@ -79,7 +78,7 @@ export default {
           ((data) => {
             if (this.currentStep === 'household') {
               // eslint-disable-next-line no-underscore-dangle
-              this.$set(this, 'profileId', data._id);
+              this.$set(this, 'profileId', data.id);
             }
             if (this.currentStep === 'poop-style') {
               this.$set(this, 'questionId', data.questionId);
@@ -115,21 +114,6 @@ export default {
     },
     calculateOutput() {
       // TODO: implement calculation API call
-
-      // eslint-disable-next-line no-unused-vars
-      const mockData = {
-        currentStep: 'household',
-        inputData: [
-          {
-            stepName: 'household',
-            value: undefined,
-          },
-          {
-            stepName: 'quarantine-length',
-            value: undefined,
-          },
-        ],
-      };
     },
   },
 };
