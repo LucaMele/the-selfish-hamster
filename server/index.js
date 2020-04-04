@@ -1,20 +1,21 @@
-import {createConnection} from "typeorm";
-const express = require('express')
-import * as bodyParser from "body-parser";
-import * as cors from  "cors";
-const env = process.argv.filter(arg => ~arg.indexOf('ENV')).map(arg => arg.split('=')[1])[0]
+import { createConnection } from 'typeorm';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 
-import {User} from "./entity/User";
-import {UserServices} from "./services/UserServices";
-import {ProfileServices} from "./services/ProfileServices";
+import { User } from './entity/User';
+import { UserServices } from './services/UserServices';
+import { ProfileServices } from './services/ProfileServices';
+
+const express = require('express');
+
+const env = process.argv.filter(arg => ~arg.indexOf('ENV')).map(arg => arg.split('=')[1])[0];
 
 
 // connection settings are in the "ormconfig.json" file
-createConnection().then(connection => {
-
+createConnection().then((connection) => {
   const user = new User();
-  user.firstName = "hamster";
-  user.lastName = "hamster";
+  user.firstName = 'hamster';
+  user.lastName = 'hamster';
 
   // create and setup express app
 
@@ -23,14 +24,14 @@ createConnection().then(connection => {
 
   app.use(
     bodyParser.urlencoded({
-      extended: true
-    })
+      extended: true,
+    }),
   );
   app.use(bodyParser.json());
 
   if (env === 'dev') {
-    //const _cors = cors()
-    //app.use(cors);
+    // const _cors = cors()
+    // app.use(cors);
   }
 
   if (env !== 'dev') {
@@ -51,5 +52,4 @@ createConnection().then(connection => {
       console.log("user has been saved: ", user);
     });
   */
-
-}).catch(error => console.log("Error: ", error));
+}).catch(error => console.log('Error: ', error));

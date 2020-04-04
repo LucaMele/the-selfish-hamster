@@ -1,25 +1,23 @@
-import {Entity, PrimaryGeneratedColumn, Column, ObjectIdColumn} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class Profile {
-
   @PrimaryGeneratedColumn()
   @ObjectIdColumn()
   _id = undefined;
 
-  @Column("int")
+  @Column('int')
   nofPersons = 0;
 
-  @Column("int")
+  @Column('int')
   nofAdults = 0;
 
-  @Column("int")
+  @Column('int')
   nofKidsUnder12 = 0;
 
-  @Column("varchar")
+  @Column('varchar')
   zip = 0;
 
-  @Column("varchar")
-  emailAddress = "";
-
+  @Column('varchar')
+  emailAddress = '';
 }
