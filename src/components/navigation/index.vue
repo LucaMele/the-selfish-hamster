@@ -9,11 +9,31 @@
          </div>
          <div class="menulist">
             <ul>
-               <li><a href="#">{{$t("pages.navigation.home")}}</a></li>
-               <li><a href="#">{{$t("pages.navigation.toiletPaper")}}</a></li>
-               <li><a href="#">{{$t("pages.navigation.emergencyStock")}}</a></li>
-               <li><a href="#">{{$t("pages.navigation.history")}}</a></li>
-               <li><a href="#">{{$t("pages.navigation.about")}}</a></li>
+               <li @click='toggle = !toggle'>
+                 <router-link to="/">
+                    {{$t("pages.navigation.home")}}
+                 </router-link>
+               </li>
+               <li @click='toggle = !toggle'>
+                 <router-link to="/toilet-papers">
+                    {{$t("pages.navigation.toiletPaper")}}
+                 </router-link>
+                </li>
+               <li @click='toggle = !toggle'>
+                 <router-link to="/stock-pile">
+                    {{$t("pages.navigation.emergencyStock")}}
+                 </router-link>
+                 </li>
+               <li @click='toggle = !toggle'>
+                 <router-link to="/">
+                    {{$t("pages.navigation.history")}}
+                 </router-link>
+               </li>
+               <li @click='toggle = !toggle'>
+                 <router-link to="/about">
+                    {{$t("pages.navigation.about")}}
+                 </router-link>
+               </li>
                <li><local-changer class="language-switcher"></local-changer></li>
             </ul>
         </div>
