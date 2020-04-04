@@ -1,4 +1,4 @@
-.toilet-next__container button {
+.stock-next__container button {
   display: flex;
   flex-direction: row;
   padding: 18px 40px;
@@ -8,12 +8,12 @@
   border: 0px;
 }
 
-.toilet-next__container button:hover {
+.stock-next__container button:hover {
   background: #695CFF;
   cursor: pointer;
 }
 
-.toilet-next__container .toilet-next {
+.stock-next__container .stock-next {
   position: relative;
   top: 20%;
   margin: 0 auto;
@@ -22,7 +22,7 @@
   color: #FFFFFF;
 }
 
-.toilet-next__container .arrow-right {
+.stock-next__container .arrow-right {
   padding-left: 10px;
   align-self: center;
 }
