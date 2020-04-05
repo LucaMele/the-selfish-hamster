@@ -75,6 +75,9 @@ export default {
       },
       stockPile: {
         example: 'An example',
+        list: {
+          info: 'These are the amounts of stocks we suggest based on your data during a quarantine of 14 days.',
+        },
       },
     },
   },
@@ -154,6 +157,9 @@ export default {
       },
       stockPile: {
         example: 'Ein Beispiel',
+        list: {
+          info: 'Dies sind die Mengen an Vorräten, die wir auf der Grundlage Ihrer Daten für eine Quarantäne von 14 Tagen vorschlagen ',
+        },
       },
     },
   },

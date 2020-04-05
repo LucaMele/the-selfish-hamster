@@ -1,0 +1,38 @@
+.category-table-row {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+.category-column .category {
+  position: absolute;
+  left: 4%;
+  margin-top: 0;
+  font-size: 15px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.category-column .sub-category {
+  position: absolute;
+  left: 4%;
+  margin-top: 19px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+}
+
+.stock-amount .amount {
+position: absolute;
+font-size: 12px;
+line-height: 14px;
+color: #140F26;
+}
+
+.stock-amount .unit {
+  position: absolute;
+  font-size: 12px;
+  line-height: 14px;
+  color: #140F26;
+  }

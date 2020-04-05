@@ -5,18 +5,18 @@
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="table-wrapper">
-      <p class="table-question">
-        TEXT
-      </p>
-      <div class="hamster__container">
-        <table>
-          <thead>
-            <th>Category</th>
-            <th>My Emergency Stock</th>
+      <p class="table-question">{{$t("pages.stockPile.list.info")}}</p>
+      <div class="hamster__container-no-bg">
+        <table class="table-container">
+          <thead class="table-head">
+            <th class="title-left">Category</th>
+            <th class="title-right">My Emergency Stock</th>
           </thead>
-          <tbody v-for="item in estimationValues" v-bind:key="item.index">
+          <tbody class="table-body" v-for="item in estimationValues" v-bind:key="item.index">
             <table-row
-              v-bind:category="item.text" v-bind:index="item.index">
+              v-bind:category="item.text" v-bind:subCategory="item.helptext"
+              v-bind:unit="item.unit" v-bind:amountOne="item.one" v-bind:amountTwo="item.two"
+              v-bind:amountThree="item.three" v-bind:index="item.index">
             </table-row>
           </tbody>
         </table>
@@ -35,8 +35,8 @@ import Navigation from './../../navigation';
 import TableRow from './../table-row';
 
 export default {
-  name: 'stock-household-kids-container',
-  props: ['estimationValues'],
+  name: 'stock-list-container',
+  // props: ['estimationValues'],
   components: {
     ToiletBack,
     ToiletNext,
@@ -45,6 +45,19 @@ export default {
   },
   data() {
     return ({
+      // MOCK
+      estimationValues: [
+        { index: 0, text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 1, text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 2, text: 'Non-Perishable Food', helptext: 'pasta, pasta, oat, rice', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 3, text: 'Cannes Food', helptext: 'corn, tuna, tomatoes, erbsen', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 4, text: 'Frozen Food', helptext: 'vegetable, spinat, frozen bread, frozen meat', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 5, text: 'Meat Fish', helptext: 'Minced meat, Dauerwürste, Trockenfleisch', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 6, text: 'Pet Food', helptext: 'trockenfutter, dog, cats', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 7, text: 'Drinks', helptext: 'Coffeee, cacao, Wasser, tee', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 8, text: 'Cooking Support', helptext: 'olive Oil, pepper, salt, spices', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+        { index: 9, text: 'Baby Food', helptext: 'baby milk, baby brei, soup', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
+      ],
       outputData: [
         {
           value: undefined,

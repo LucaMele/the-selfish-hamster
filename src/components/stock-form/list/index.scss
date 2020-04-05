@@ -1,0 +1,44 @@
+.hamster__container-no-bg {
+  position: absolute;
+  width: 100%;
+  margin-top: 55%;
+  background: transparent;
+  border: none;
+}
+
+.table-question {
+  position: absolute;
+  width: 344px;
+  height: 72px;
+  left: 14px;
+  top: 70px;
+
+  font-size: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.table-head .title-left {
+  position: relative;
+  float: left;
+  margin: 2% 3%;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.table-head .title-right {
+  position: relative;
+  float: right;
+  margin: 2% 3%;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.table-container {
+  position: absolute;
+    margin: 0 auto;
+    width: 100%;
+  background-color: red;
+}
