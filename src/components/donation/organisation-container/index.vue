@@ -7,11 +7,12 @@
     <div class="search-wrapper">
       <search-organisation></search-organisation>
     </div>
+    <!-- <v-modal name="dialog"></v-modal> -->
     <div class="table-wrapper">
       <div class="hamster__container-no-bg">
         <table class="table-container">
           <tbody class="table-body" v-for="item in organisations" v-bind:key="item.index">
-            <organisation-row
+            <organisation-row @onClickPhone="callPhoneModal"
               v-bind:index="item.index" v-bind:organisation="item.organisation"
               v-bind:adress="item.adress" v-bind:telefon="item.telefon">
             </organisation-row>
@@ -24,6 +25,7 @@
 
 <script>
 
+import VModal from './../../../../node_modules/vue-js-modal';
 import ToiletBack from './../../toilet-form/back';
 import Navigation from './../../navigation';
 import OrganisationRow from './../../donation/organisation-row';
@@ -33,6 +35,7 @@ import HamsterService from '../../../services/HamsterService';
 export default {
   name: 'organisation-list-container',
   components: {
+    VModal,
     ToiletBack,
     Navigation,
     OrganisationRow,
@@ -40,8 +43,7 @@ export default {
   },
   data() {
     return ({
-      organisations: [
-      ],
+      organisations: [ ],
     });
   },
   created() {
