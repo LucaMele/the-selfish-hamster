@@ -25,7 +25,7 @@ import StockPileSlider from './../../stock-form/slider';
 
 export default {
   name: 'stock-household-kids-container',
-  props: ['category', 'subCategory', 'index', 'unit', 'amountOne', 'amountTwo', 'amountThree'],
+  props: ['category', 'subCategory', 'unit', 'amountOne', 'amountTwo', 'amountThree', 'rowIndex'],
   components: {
     StockPileSlider,
   },
@@ -52,7 +52,7 @@ export default {
 
       this.sliderValue = value;
 
-      this.$emit('callback', { value, index: this.index });
+      this.$emit('callback', { value, index: this.rowIndex });
     },
   },
   created() {

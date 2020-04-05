@@ -10,8 +10,14 @@
         <div class="lower-container">
           <div class="result-box">
             <div v-bind:class="'result-stockpile result-stockpile--' + hamsterType">
-              <div class="stockpile-result-text">
-                {{$t("pages.result.stockpile.text")}}
+              <div v-if="hamsterType === 'above-average'">
+                {{$t("pages.result.stockpile.text.above_average")}}
+              </div>
+              <div v-if="hamsterType === 'average'">
+                {{$t("pages.result.stockpile.text.average")}}
+              </div>
+              <div v-if="hamsterType === 'below-average'">
+                {{$t("pages.result.stockpile.text.below_average")}}
               </div>
             </div>
           </div>

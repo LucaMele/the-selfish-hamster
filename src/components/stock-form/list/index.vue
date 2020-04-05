@@ -14,9 +14,10 @@
           </thead>
           <tbody class="table-body" v-for="item in estimationValues" v-bind:key="item.index">
             <table-row
+              @callback="tableRowValueCallback"
               v-bind:category="item.text" v-bind:subCategory="item.helptext"
               v-bind:unit="item.unit" v-bind:amountOne="item.one" v-bind:amountTwo="item.two"
-              v-bind:amountThree="item.three" v-bind:index="item.index">
+              v-bind:amountThree="item.three" v-bind:rowIndex="item.index">
             </table-row>
           </tbody>
         </table>
@@ -60,40 +61,40 @@ export default {
       ],
       outputData: [
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
         {
-          value: undefined,
+          value: '',
         },
       ],
     });
   },
   methods: {
-    sliderValueCallback(value, index) {
+    tableRowValueCallback({ value, index }) {
       this.outputData[index].value = value;
     },
     onNextCallback() {
