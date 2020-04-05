@@ -8,7 +8,7 @@
       <img src="./../../../assets/household.svg">
       <p class="household-question">{{$t("pages.household.kidsQuestion")}}</p>
       <div class="hamster__container">
-        <toilet-slider @callback="sliderValueCallback"></toilet-slider>
+        <kids-slider @callback="sliderValueCallback"></kids-slider>
       </div>
     </div>
     <div class="next-wrapper">
@@ -20,7 +20,7 @@
 <script>
 import ToiletBack from './../../toilet-form/back';
 import ToiletNext from './../../toilet-form/next';
-import ToiletSlider from './../../toilet-form/slider';
+import KidsSlider from './../../stock-form/kids-slider';
 import Navigation from './../../navigation';
 
 export default {
@@ -28,7 +28,7 @@ export default {
   components: {
     ToiletBack,
     ToiletNext,
-    ToiletSlider,
+    KidsSlider,
     Navigation,
   },
   data() {

@@ -81,6 +81,8 @@ export default {
         ((answers) => {
           const categories = answers.categories;
           // eslint-disable-next-line no-restricted-syntax
+          const estimationValues = [];
+          // eslint-disable-next-line no-restricted-syntax
           for (const category of categories) {
             const value = [];
             const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;
@@ -93,10 +95,11 @@ export default {
                 2: estimatesPerQuarantineInDays['2'],
                 3: estimatesPerQuarantineInDays['3'],
               });
-            this.estimationValues.push(value);
+            estimationValues.push(value);
           }
           // eslint-disable-next-line no-console
-          console.log('estimationValues ', JSON.stringify(this.estimationValues));
+          console.log('estimationValues ', JSON.stringify(estimationValues));
+          this.$set(this, 'estimationValues', estimationValues);
 
           // eslint-disable-next-line prefer-template
           this.$set(this, 'hamsterType', answers.hamsterType);

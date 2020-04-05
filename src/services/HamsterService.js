@@ -66,6 +66,16 @@ export default {
     console.log('success ', res.data);
     return res.data;
   },
+  async searchCharityPlaces() {
+    // eslint-disable-next-line no-console
+    console.log('call searchCharityPlaces');
+    const res = await axios.post(`${this.apiEndpoint()}/api/places/charity/search`,
+      {
+      });
+    // eslint-disable-next-line no-console
+    console.log('success ', res.data);
+    return res.data;
+  },
   async getEmergencyStockAnswer(questionId) {
     // eslint-disable-next-line no-console
     console.log('call getEmergencyStockAnswer with questionId', questionId);

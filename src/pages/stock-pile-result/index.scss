@@ -24,6 +24,19 @@
   border-radius: 4px;
 }
 
+.result-box:after {
+  content: '';
+  border: 20px solid transparent;
+  border-bottom-color: #FFFFFF;
+  border-top: 0;
+
+  /* [THESE WILL POSITION THE TRIANGLE] */
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  margin-left: -20px;
+}
+
 .result-stockpile {
   font-family: Lato;
   font-style: normal;

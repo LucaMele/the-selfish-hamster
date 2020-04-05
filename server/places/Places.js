@@ -16,6 +16,7 @@ export class GooglePlaces {
       .then(r => r.data.results.map((p) => {
         const place = new HamsterPlace();
         place.name = p.name;
+        place.phone = p.formatted_phone_number;
         place.formattedAddress = p.formatted_address;
         return place;
       }))

@@ -6,7 +6,7 @@
         <p class="adress">{{ adress }}</p>
       </td>
       <td class="organisiation-phone-icon">
-        <img src="./../../../assets/local_phone_24px.svg">
+        <a :href="this.getPhoneUrl(telefon)"><img src="./../../../assets/local_phone_24px.svg"></a>
       </td>
     </tr>
   </article>
@@ -17,6 +17,11 @@
 export default {
   name: 'organisation-row',
   props: ['index', 'organisation', 'adress', 'telefon'],
+  methods: {
+    getPhoneUrl(phone) {
+      return `tel:${phone}`;
+    },
+  },
 };
 </script>
 
