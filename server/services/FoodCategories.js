@@ -3,15 +3,15 @@ export class FoodCategories {
   // eslint-disable-next-line class-methods-use-this
   List() {
     return [
-      { index: 0, sort: 1, tag: 'Fruit_And_vegetables', text: 'Fruit and vegetables', unit: 'kg', helpText: 'apple, onions, carrots, potatoes' },
+      { index: 0, sort: 1, tag: 'Fruit_And_vegetables', text: 'Fruit and vegetables', unit: 'kg', helpText: 'apples, carrots, potatoes' },
       { index: 1, sort: 2, tag: 'Perishable_Foods', text: 'Perishable Foods', unit: 'kg', helpText: 'eggs, butter, cheese, milk' },
-      { index: 2, sort: 3, tag: 'Non_Perishable_Food', text: 'Non-Perishable Food', unit: 'kg', helpText: 'crisp bread, pasta, pasta, oat, rice, lentils, almonds' },
-      { index: 3, sort: 4, tag: 'Cannes_Food', text: 'Cannes Food', unit: '', helpText: 'corn, tuna, tomatoes, erbsen' },
-      { index: 4, sort: 5, tag: 'Frozen_Food', text: 'Frozen Food', unit: 'kg', helpText: 'vegetable, spinat, frozen bread, frozen meat' },
-      { index: 5, sort: 6, tag: 'Meat_And_Fish', text: 'Meat Fish', unit: 'kg', helpText: 'Minced meat, Dauerwürste, Trockenfleisch, , ' },
-      { index: 6, sort: 7, tag: 'Pet_Food', text: 'Pet Food', unit: '', helpText: 'trockefutter, dog, cats, ' },
-      { index: 7, sort: 8, tag: 'Drinks', text: 'Drinks', unit: 'L', helpText: 'Coffeee, cacao, Wasser, tee, fruchtsaft, milk UHT' },
-      { index: 8, sort: 9, tag: 'Cooking_Support', text: 'Cooking Support', unit: 'L', helpText: 'olive Oil, pepper, salt, spices' },
+      { index: 2, sort: 3, tag: 'Non_Perishable_Food', text: 'Non-Perishable Food', unit: 'kg', helpText: 'crisp bread, pasta, rice, almonds' },
+      { index: 3, sort: 4, tag: 'Cannes_Food', text: 'Cannes Food', unit: '', helpText: 'corn, tuna, tomatoes' },
+      { index: 4, sort: 5, tag: 'Frozen_Food', text: 'Frozen Food', unit: 'kg', helpText: 'vegetable, spinat, frozen meat' },
+      { index: 5, sort: 6, tag: 'Meat_And_Fish', text: 'Meat Fish', unit: 'kg', helpText: 'Minced meat, fish' },
+      { index: 6, sort: 7, tag: 'Pet_Food', text: 'Pet Food', unit: '', helpText: 'cat, dog food' },
+      { index: 7, sort: 8, tag: 'Drinks', text: 'Drinks', unit: 'L', helpText: 'milk UHT, coffeee, water' },
+      { index: 8, sort: 9, tag: 'Cooking_Support', text: 'Cooking Support', unit: 'L', helpText: 'olive oil, spices' },
     ];
   }
 
