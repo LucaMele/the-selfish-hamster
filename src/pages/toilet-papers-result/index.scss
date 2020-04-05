@@ -9,6 +9,13 @@
   bottom: 0%;
   left: 0%;
   right: 0%;
+
+  img {
+    position: absolute;
+    margin-top: -317px;
+    display: block;
+    margin-left: calc(50% - 141px - 3%);
+  }
 }
 
 .result-box {
@@ -43,9 +50,13 @@
   font-weight: bold;
   font-size: 100px;
   line-height: 120px;
-  
+
   text-align: center;
   color: #140F26;
+
+  margin: 0;
+
+  background-color: white;
 }
 
 .result-usage-per-day--above-average {
@@ -66,7 +77,7 @@
   position: absolute;
   width: 100%;
   top: 145px;
-  
+
   text-align: right;
 }
 

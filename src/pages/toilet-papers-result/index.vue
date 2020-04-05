@@ -2,16 +2,12 @@
   <article>
     <div class="home-wrapper">
       <div>
-        <div class="hamster">
-          <div class="hamster-title">
-            <img :src="getImgUrl(hamsterType)"/>
-          </div>
-        </div>
         <div class="lower-container">
+          <img :src="getImgUrl(hamsterType)"/>
           <div class="result-box">
-            <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
+            <p v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
               {{ this.usagePerDay }}...
-            </div>
+            </p>
           </div>
           <div class="lower-bg">
             <p class="result-text">{{$t("pages.result.toiletpaper.text")}}</p>
