@@ -9,7 +9,7 @@ export class EmergencyStockAnswer {
   @Column('int')
   durationQuarantineInDays = 0;
   @Column('varchar')
-  hamsterType = '';
+  hamsterType = '2';
 
   @Column('object')
   categories = [

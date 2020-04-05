@@ -69,6 +69,8 @@ export class EmergencyStockAnswerServices {
     }
     question.categories = newQuestionCategories;
     currentAnswer.categories = resultCategories;
+    currentAnswer.hamsterType = '2';
+
     return currentAnswer;
   }
 
