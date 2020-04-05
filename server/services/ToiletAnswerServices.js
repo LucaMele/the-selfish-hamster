@@ -80,6 +80,7 @@ export class ToiletAnswerServices {
 
     const ONE_DAY = 1;
     const rollPerDayPersonPerVisit = (ONE_DAY / ONE_ROLL_EVERY_DAYS) * ONE_PERSON_PER_DAY_TO_TOILET;
+    // eslint-disable-next-line max-len
     currentAnswer.usagePerDay = Math.ceil(numberOFRollPerDayToUseThemAll / rollPerDayPersonPerVisit);
 
     if (currentAnswer.usagePerDay > 5) {
