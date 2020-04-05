@@ -25,7 +25,6 @@
 
 <script>
 
-import VModal from './../../../../node_modules/vue-js-modal';
 import ToiletBack from './../../toilet-form/back';
 import Navigation from './../../navigation';
 import OrganisationRow from './../../donation/organisation-row';
@@ -35,7 +34,6 @@ import HamsterService from '../../../services/HamsterService';
 export default {
   name: 'organisation-list-container',
   components: {
-    VModal,
     ToiletBack,
     Navigation,
     OrganisationRow,
@@ -43,7 +41,7 @@ export default {
   },
   data() {
     return ({
-      organisations: [ ],
+      organisations: [],
     });
   },
   created() {
