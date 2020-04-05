@@ -20,11 +20,11 @@
             </div>
           </div>
           <div class="btn-group-lower">
-            <div v-bind:class="option3Class" v-on:click="onOptionSelected(50, 3)">
+            <div v-bind:class="option3Class" v-on:click="onOptionSelected(100, 3)">
               <p class="option-title">{{$t("pages.paper.options.option3.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option3.subtitle")}}</p>
             </div>
-            <div v-bind:class="option4Class" v-on:click="onOptionSelected(100, 4)">
+            <div v-bind:class="option4Class" v-on:click="onOptionSelected(200, 4)">
               <p class="option-title">{{$t("pages.paper.options.option4.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option4.subtitle")}}</p>
             </div>

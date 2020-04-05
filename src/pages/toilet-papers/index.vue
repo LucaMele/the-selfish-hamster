@@ -48,23 +48,18 @@ export default {
       currentStep: 0,
       inputData: [
         {
-          stepName: 'household',
           value: undefined,
         },
         {
-          stepName: 'quarantine-length',
           value: undefined,
         },
         {
-          stepName: 'paper-stock',
           value: undefined,
         },
         {
-          stepName: 'poop-style',
           value: undefined,
         },
         {
-          stepName: 'results',
           value: undefined,
         },
       ],

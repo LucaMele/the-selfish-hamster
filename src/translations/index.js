@@ -40,7 +40,7 @@ export default {
             subtitle: 'I shower after pooping',
           },
           option2: {
-            title: '3 paper',
+            title: '20 paper',
             subtitle: 'I care for the environment',
           },
           option3: {
@@ -57,6 +57,19 @@ export default {
         question: 'How many packs of toilet paper do you have stored?',
         packs: 'packs /',
         rolls: 'rolls',
+      },
+      result: {
+        button: {
+          stockpile: 'Emergency Stock 🍫',
+          home: 'Back Home',
+        },
+        toiletpaper: {
+          text: '... daily poops per person in your household until you run out of paper.',
+        },
+        usage: {
+          water: 'liters of water 💧',
+          wood: 'kg of wood 🌳',
+        },
       },
       stockPile: {
         example: 'An example',
@@ -104,7 +117,7 @@ export default {
             subtitle: 'Ich dusche danach',
           },
           option2: {
-            title: '3 Papiere',
+            title: '20 Papiere',
             subtitle: 'Die Umwelt ist mir wichtig',
           },
           option3: {
@@ -121,6 +134,19 @@ export default {
         question: 'Wieviele Rollen Toilettenpapier hast du auf Lager?',
         packs: 'Pakete /',
         rolls: 'Rollen',
+      },
+      result: {
+        button: {
+          stockpile: 'Notvorrat 🍫',
+          home: 'Startseite',
+        },
+        toiletpaper: {
+          text: '... tägliche Geschäfte bis du kein WC-Papier mehr hast.',
+        },
+        usage: {
+          water: 'Liter Wasser 💧',
+          wood: 'Kg Holz 🌳',
+        },
       },
       stockPile: {
         example: 'Ein Beispiel',
