@@ -34,7 +34,7 @@ import TableRow from './../table-row';
 
 export default {
   name: 'stock-list-container',
-  props: ['estimationValues'],
+  // props: ['estimationValues'],
   components: {
     ToiletBack,
     ToiletNext,
@@ -43,6 +43,19 @@ export default {
   },
   data() {
     return ({
+      // MOCK
+      estimationValues: [
+        { text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Non-Perishable Food', helptext: 'pasta, pasta, oat, rice', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Cannes Food', helptext: 'corn, tuna, tomatoes, erbsen', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Frozen Food', helptext: 'vegetable, spinat, frozen bread, frozen meat', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Meat Fish', helptext: 'Minced meat, Dauerwürste, Trockenfleisch', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Pet Food', helptext: 'trockenfutter, dog, cats', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Drinks', helptext: 'Coffeee, cacao, Wasser, tee', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Cooking Support', helptext: 'olive Oil, pepper, salt, spices', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { text: 'Baby Food', helptext: 'baby milk, baby brei, soup', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+      ],
       outputData: [
         {
           value: undefined,
