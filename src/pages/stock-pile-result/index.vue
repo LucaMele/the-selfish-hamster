@@ -64,11 +64,11 @@ export default {
               { text: category.text,
                 helptext: category.helpText,
                 unit: category.unit,
-                '1': estimatesPerQuarantineInDays.1,
-                '2': estimatesPerQuarantineInDays.2,
-                '3': estimatesPerQuarantineInDays.3
+                1: estimatesPerQuarantineInDays['1'],
+                2: estimatesPerQuarantineInDays['2'],
+                3: estimatesPerQuarantineInDays['3'],
               });
-            estimationValues.push(value);
+            this.estimationValues.push(value);
           }
 
           // eslint-disable-next-line prefer-template
