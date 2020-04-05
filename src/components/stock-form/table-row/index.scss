@@ -18,21 +18,30 @@
   left: 4%;
   margin-top: 19px;
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 14px;
   color: #000000;
 }
 
 .stock-amount .amount {
-position: absolute;
-font-size: 12px;
-line-height: 14px;
-color: #140F26;
+  position: absolute;
+  font-size: 12px;
+  right: 30%;
+  line-height: 14px;
+  color: #140F26;
 }
 
 .stock-amount .unit {
   position: absolute;
+  right: 26%;
   font-size: 12px;
   line-height: 14px;
   color: #140F26;
   }
+
+.slider-column {
+  position: absolute;
+  right: 0px;
+  padding-right: 5px;
+  align-content: flex-end;
+}

@@ -9,12 +9,11 @@
         </div>
         <div class="lower-container">
           <div class="result-box">
-            <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
-            </div>
-
+            <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType"></div>
           </div>
           <div class="lower-bg">
 
+          </div>
         </div>
       </div>
     </div>
@@ -26,8 +25,7 @@ import HamsterService from './../../services/HamsterService';
 
 export default {
   name: 'toilet-papers-result',
-  components: {
-  },
+  components: {},
   data() {
     return ({
 
@@ -46,8 +44,7 @@ export default {
       category9: 2,
 
       // returned by backend on component mount
-      estimationValues: [
-      ],
+      estimationValues: [],
       hamsterType: '',
     });
   },
@@ -62,7 +59,8 @@ export default {
             const value = [];
             const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;
             value.push(
-              { text: category.text,
+              {
+                text: category.text,
                 helptext: category.helpText,
                 unit: category.unit,
                 1: estimatesPerQuarantineInDays['1'],
@@ -71,6 +69,8 @@ export default {
               });
             this.estimationValues.push(value);
           }
+          // eslint-disable-next-line no-console
+          console.log('estimationValues ', JSON.stringify(this.estimationValues));
 
           // eslint-disable-next-line prefer-template
           this.$set(this, 'hamsterType', answers.hamsterType);

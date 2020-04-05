@@ -9,9 +9,13 @@
         <p class="amount">{{ this.amountValue }}</p>
         <p class="unit">{{ unit }}</p>
       </td>
-      <!--td class="stock-column">
-        <toilet-slider @callback="sliderValueCallback"></toilet-slider>
-      </td> -->
+      <td class="slider-column">
+        <stock-pile-slider
+          @callback="sliderValueCallback"
+          v-bind:minValue="1"
+          v-bind:maxValue="3">
+        </stock-pile-slider>
+      </td>
     </tr>
   </article>
 </template>
