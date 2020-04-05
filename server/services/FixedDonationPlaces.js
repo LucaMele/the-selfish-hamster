@@ -10,8 +10,7 @@ export class FixedDonationPlaces {
 
   List() {
     return [
-      this.NewHamster('GasseChuchi', 'Geissensteinring 24, 6005 Luzern'),
-      this.NewHamster('Food Car Schweiz', 'Andwilerstrasse 14, 9200 Gossau'),
+      this.NewHamster('Food Care Schweiz', 'Andwilerstrasse 14, 9200 Gossau'),
     ];
   }
 }
