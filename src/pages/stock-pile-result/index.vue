@@ -15,6 +15,7 @@
           </div>
           <div class="lower-bg">
 
+          </div>
         </div>
       </div>
     </div>
