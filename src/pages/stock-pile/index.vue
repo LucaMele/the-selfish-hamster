@@ -18,12 +18,12 @@
         @callbackBack="navigateBack">
       </stock-quarantine-container>
     </div>
-    <!-- <div v-if="this.currentStep === 3">
+    <div v-if="this.currentStep === 3">
       <stock-list-container
         @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
       </stock-list-container>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -31,7 +31,7 @@
 import StockHouseholdAdultsContainer from './../../components/stock-form/household-adults-container';
 import StockHouseholdKidsContainer from './../../components/stock-form/household-kids-container';
 import StockQuarantineContainer from './../../components/stock-form/quarantine-container';
-// import StockListContainer from './../../components/stock-form/list-container';
+import StockListContainer from './../../components/stock-form/list';
 // import HamsterService from './../../services/HamsterService';
 
 export default {
@@ -40,7 +40,7 @@ export default {
     StockHouseholdAdultsContainer,
     StockHouseholdKidsContainer,
     StockQuarantineContainer,
-    // StockListContainer,
+    StockListContainer,
   },
   data() {
     return ({
