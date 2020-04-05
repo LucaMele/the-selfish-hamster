@@ -12,7 +12,7 @@
       <div class="hamster__container-no-bg">
         <table class="table-container">
           <tbody class="table-body" v-for="item in displayOrganisations" v-bind:key="item.index">
-            <organisation-row @onClickPhone="callPhoneModal"
+            <organisation-row
               v-bind:index="item.index" v-bind:organisation="item.organisation"
               v-bind:adress="item.adress" v-bind:telefon="item.telefon">
             </organisation-row>
