@@ -85,17 +85,8 @@ export default {
 
       // Mock
       estimationValues: [
-        { text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Non-Perishable Food', helptext: 'pasta, pasta, oat, rice', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Cannes Food', helptext: 'corn, tuna, tomatoes, erbsen', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Frozen Food', helptext: 'vegetable, spinat, frozen bread, frozen meat', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Meat Fish', helptext: 'Minced meat, Dauerwürste, Trockenfleisch', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Pet Food', helptext: 'trockenfutter, dog, cats', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Drinks', helptext: 'Coffeee, cacao, Wasser, tee', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Cooking Support', helptext: 'olive Oil, pepper, salt, spices', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Baby Food', helptext: 'baby milk, baby brei, soup', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
       ],
+      hamsterType: 0,
     });
   },
   methods: {
@@ -134,11 +125,39 @@ export default {
             // eslint-disable-next-line no-console
             console.log('# set questionId', data.id);
             this.$set(this, 'questionId', data.id);
+
+            HamsterService.getEmergencyStockAnswer(this.questionId)
+              .then(
+                ((answers) => {
+                  const categories = answers.categories;
+                  // eslint-disable-next-line no-restricted-syntax
+                  const estimationValues = [];
+                  // eslint-disable-next-line no-restricted-syntax
+                  for (const category of categories) {
+                    // eslint-disable-next-line no-shadow
+                    const value = [];
+                    const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;
+                    value.push(
+                      {
+                        text: category.text,
+                        helptext: category.helpText,
+                        unit: category.unit,
+                        1: estimatesPerQuarantineInDays['1'],
+                        2: estimatesPerQuarantineInDays['2'],
+                        3: estimatesPerQuarantineInDays['3'],
+                      });
+                    estimationValues.push(value);
+                  }
+                  // eslint-disable-next-line no-console
+                  console.log('estimationValues ', JSON.stringify(estimationValues));
+                  this.$set(this, 'estimationValues', estimationValues);
+
+                  // eslint-disable-next-line prefer-template
+                  this.$set(this, 'hamsterType', answers.hamsterType);
+                }),
+              );
           }),
           );
-      }
-      if (this.currentStep === 4) {
-        this.$router.push({ name: 'stock-pile-result', params: { questionId: this.questionId } });
       }
     },
     navigateBack() {

@@ -47,18 +47,7 @@ export default {
   data() {
     return ({
       // MOCK
-      estimationValues: [
-        { index: 0, text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 1, text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 2, text: 'Non-Perishable Food', helptext: 'pasta, pasta, oat, rice', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 3, text: 'Cannes Food', helptext: 'corn, tuna, tomatoes, erbsen', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 4, text: 'Frozen Food', helptext: 'vegetable, spinat, frozen bread, frozen meat', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 5, text: 'Meat Fish', helptext: 'Minced meat, Dauerwürste, Trockenfleisch', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 6, text: 'Pet Food', helptext: 'trockenfutter, dog, cats', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 7, text: 'Drinks', helptext: 'Coffeee, cacao, Wasser, tee', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 8, text: 'Cooking Support', helptext: 'olive Oil, pepper, salt, spices', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-        { index: 9, text: 'Baby Food', helptext: 'baby milk, baby brei, soup', unit: 'kg', one: '3.0', two: '12.1  ', three: '24.2' },
-      ],
+      estimationValues: [],
       outputData: [
         {
           value: '',
