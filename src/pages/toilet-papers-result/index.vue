@@ -3,7 +3,7 @@
     <div class="home-wrapper">
       <div>
         <div class="lower-container">
-          <img :src="getImgUrl(hamsterType)"/>
+          <img :onload="(event) => { console.log(event) }" :src="getImgUrl(hamsterType)"/>
           <div class="result-box">
             <p v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
               {{ this.usagePerDay }}...
@@ -70,6 +70,9 @@ export default {
       );
   },
   methods: {
+    getWidth(event) {
+      console.log('this', event);
+    },
     getImgUrl(pet) {
       // eslint-disable-next-line no-var
       var images = require.context('./../../assets/hamster/', false, /\.svg$/);
