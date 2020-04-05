@@ -46,7 +46,7 @@ export default {
           this.amountValue = this.amount2;
           break;
       }
-      
+
       this.sliderValue = value;
 
       this.$emit('callback', { value, index: this.index });
