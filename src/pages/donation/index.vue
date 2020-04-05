@@ -11,12 +11,10 @@
 <script>
 import OrganisationListContainer from './../../components/donation/organisation-container';
 
-// import HamsterService from './../../services/HamsterService';
-// console.log(HamsterService);
 export default {
   name: 'donation',
   components: {
-    OrganisationListContainer,
+    'organisations-list-container': OrganisationListContainer,
   },
   data() {
     return ({
