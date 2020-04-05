@@ -42,6 +42,13 @@ body {
   background: #FFFFFF;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  svg {
+    position: absolute;
+    margin-top: -214px;
+    display: block;
+    margin-left: calc(50% - 97.5px);
+  }
 }
 
 .greetings-box:after {
@@ -57,12 +64,12 @@ body {
   margin-left: -20px;
 }
 
-#greeting-text {
-  position: absolute;
-  height: 100%;
-  left: 6%;
-  right: 6%;
+.greeting-text {
+  background-color: white;
+  position: relative;
   color: #140F26;
+  margin: 0;
+  padding: 24px 0;
 }
 
 .lower-bg {
@@ -135,5 +142,3 @@ align-self: center;
   background: #14D2B8;
   border-radius: 50px;
 }
-
-
