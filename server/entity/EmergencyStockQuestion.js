@@ -19,12 +19,14 @@ export class EmergencyStockQuestion {
 
   @Column('object')
   categories = [
+    /* example
     {
       index: 0,
       tag: 'Fruit_And_vegetables',
-      value: 1,
+      value: 1,             // 1, 2, 3
       included: true,
     },
+     */
   ];
 
   @Column('timestamp')
