@@ -7,6 +7,7 @@
     <div class="search-wrapper">
       <search-organisation></search-organisation>
     </div>
+    <!-- <v-modal name="dialog"></v-modal> -->
     <div class="table-wrapper">
       <div class="hamster__container-no-bg">
         <table class="table-container">
@@ -64,6 +65,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log(phone);
       console.log(organisation);
+
       this.$modal.show('dialog', {
         title: 'Call'.concat(organisation),
         text: 'Nr:'.concat(phone),
