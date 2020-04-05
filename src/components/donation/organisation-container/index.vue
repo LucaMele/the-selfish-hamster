@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return ({
-      organisations: [ ],
+      organisations: [],
     });
   },
   created() {
@@ -54,6 +54,7 @@ export default {
           // eslint-disable-next-line no-restricted-syntax
           let i = 0;
           const organisations = [];
+          // eslint-disable-next-line no-restricted-syntax
           for (const place of places) {
             organisations.push(
               {

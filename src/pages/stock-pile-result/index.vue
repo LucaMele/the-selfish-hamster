@@ -73,6 +73,7 @@ export default {
           const categories = answers.categories;
           // eslint-disable-next-line no-restricted-syntax
           const estimationValues = [];
+          // eslint-disable-next-line no-restricted-syntax
           for (const category of categories) {
             const value = [];
             const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;
