@@ -69,7 +69,7 @@ export class EmergencyStockAnswerServices {
     }
     question.categories = newQuestionCategories;
     currentAnswer.categories = resultCategories;
-    currentAnswer.hamsterType = '2';
+    currentAnswer.hamsterType = 'average';
 
     return currentAnswer;
   }
