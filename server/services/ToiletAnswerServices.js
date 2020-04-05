@@ -40,6 +40,7 @@ export class ToiletAnswerServices {
     if (!answer) {
       currentAnswer = new ToiletAnswer();
     }
+    currentAnswer.timestamp = new Date();
     currentAnswer.questionId = question.id.toString();
     currentAnswer.profileId = profile.id.toString();
     currentAnswer.durationQuarantineInDays = question.durationQuarantineInDays;

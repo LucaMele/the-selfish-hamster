@@ -1,24 +1,115 @@
 @import './../../../material/buttonpositioning.scss';
 
-.hamster__container {
+.hamster__container-no-background {
     position: absolute;
     left: 3%;
     width: 94%;
     height: 200px;
-    background-color: white;
-    background: #FFFFFF;
-    background: #FFFFFF;
-    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-    border-radius: 4px;
+    background: transparent;
+    border: none;
 }
 
-.household-wrapper {
+.quarantine-question {
+    color: #fff;
+}
+
+.quarantine-wrapper {
     position: absolute;
     top: 20%;
     margin: 0 10px;
 }
 
-.household-wrapper p {
-    color: #fff;
-}
+.btn-group-upper {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0;
+  }
+  
+  .btn-group-lower {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .option1 {
+    height: 85%;
+    width: 47.5%;
+    float: left;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  .option1selected {
+    height: 85%;
+    width: 47.5%;
+    float: left;
+    background-color: #FF3A79;
+    border-radius: 15px;
+  }
+  .option1selected .option-title-single {
+      color: #fff;
+  }
+  
+  .option2 {
+    height: 85%;
+    width: 47.5%;
+    float: right;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  .option2selected {
+    height: 85%;
+    width: 47.5%;
+    float: right;
+    background-color: #FF3A79;
+    border-radius: 15px;
+  }
+  .option2selected .option-title-single {
+      color: #fff;
+  }
+  
+  .option3 {
+    height: 85%;
+    width: 47.5%;
+    float: left;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  .option3selected {
+    height: 85%;
+    width: 47.5%;
+    float: left;
+    background-color: #FF3A79;
+    border-radius: 15px;
+  }
+  .option3selected .option-title-single {
+      color: #fff;
+  }
+  
+  .option4 {
+    height: 85%;
+    width: 47.5%;
+    float: right;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  .option4selected {
+    height: 85%;
+    width: 47.5%;
+    float: right;
+    background-color: #FF3A79;
+    border-radius: 15px;
+  }
+  .option4selected .option-title-single {
+      color: #fff;
+  }
+  
+  .option-title-single {
+    top: 10px;
+    position: relative;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #695CFF;
+  }

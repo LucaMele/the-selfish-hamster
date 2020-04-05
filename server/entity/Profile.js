@@ -21,4 +21,8 @@ export class Profile {
 
   @Column('varchar')
   emailAddress = '';
+
+  @Column('timestamp')
+  timestamp = undefined;
+
 }

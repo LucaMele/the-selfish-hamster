@@ -29,6 +29,9 @@ export class ToiletAnswer {
   @Column('int')
   woodConsumption = 0;
 
+  @Column('timestamp')
+  timestamp = undefined;
+
   @Column('varchar')
   questionId = null;
 

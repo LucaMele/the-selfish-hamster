@@ -742,7 +742,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"nutritionType\": \"none\",\n    \"dateOfPurchase\" : \"2020-02-01\",\n    \"categories\" : [\n\t\t{\n\t      \"sort\": 1,\n\t      \"name\": \"Category.FruitAndVegetables\",\n\t      \"value\": 1,\n\t      \"included\": true\n\t    }\n\t],\n    \"profileId\": \"{{profileid}}\"\n}",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"categories\" : [\n\t],\n    \"profileId\": \"{{profileid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -770,7 +770,58 @@
 				},
 				{
 					"name": "answer",
-					"item": [],
+					"item": [
+						{
+							"name": "post answer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/emergency-stock/questions/{{emergency-stock-question-id}}/answer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"emergency-stock",
+										"questions",
+										"{{emergency-stock-question-id}}",
+										"answer"
+									]
+								}
+							},
+							"response": []
+						}
+					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}

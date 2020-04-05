@@ -12,4 +12,7 @@ export class User {
 
   @Column('varchar')
   lastName = '';
+  @Column('timestamp')
+  timestamp = undefined;
+
 }

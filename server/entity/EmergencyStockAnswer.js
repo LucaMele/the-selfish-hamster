@@ -10,6 +10,14 @@ export class EmergencyStockAnswer {
   durationQuarantineInDays = 0;
   @Column('varchar')
   hamsterType = '';
+
+  @Column('object')
+  categories = [
+  ];
+
+  @Column('timestamp')
+  timestamp = undefined;
+
   @Column('varchar')
   profileId = null;
   @Column('varchar')
