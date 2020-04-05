@@ -33,7 +33,7 @@ import Navigation from './../../navigation';
 import TableRow from './../table-row';
 
 export default {
-  name: 'stock-household-kids-container',
+  name: 'stock-list-container',
   props: ['estimationValues'],
   components: {
     ToiletBack,

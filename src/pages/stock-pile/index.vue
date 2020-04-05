@@ -72,6 +72,7 @@ export default {
           category9: undefined,
         },
       ],
+      // Mock
       estimationValues: [
         { text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
         { text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
@@ -110,6 +111,7 @@ export default {
         // this.$set(this, 'durationQuarantineInDays', value);
       }
       if (this.currentStep === 3) {
+        // TODO: make api call to get List informations, fill 'estimatedValues'
         // // eslint-disable-next-line no-console
         // console.log('# set nofToiletRolls', value);
         // this.$set(this, 'nofToiletRolls', value);
