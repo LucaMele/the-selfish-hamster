@@ -1,6 +1,6 @@
 .hamster-title {
   position: relative;
-  margin: 35% 0 0 0;
+  margin: 38% 0 0 0;
 }
 
 .lower-container {
@@ -14,7 +14,7 @@
 .result-box {
   position: absolute;
   z-index: 2;
-  Top: -15%;
+  top: -15%;
   left: 3%;
   right: 3%;
   height: 30%;
@@ -22,6 +22,19 @@
   background: #FFFFFF;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+.result-box:after {
+  content: '';
+  border: 20px solid transparent;
+  border-bottom-color: #FFFFFF;
+  border-top: 0;
+
+  /* [THESE WILL POSITION THE TRIANGLE] */
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  margin-left: -20px;
 }
 
 .result-usage-per-day {

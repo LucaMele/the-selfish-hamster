@@ -23,12 +23,7 @@
                  <router-link to="/stock-pile">
                     {{$t("pages.navigation.emergencyStock")}}
                  </router-link>
-                 </li>
-               <li @click='toggle = !toggle'>
-                 <router-link to="/">
-                    {{$t("pages.navigation.history")}}
-                 </router-link>
-               </li>
+                </li>
                <li @click='toggle = !toggle'>
                  <router-link to="/about">
                     {{$t("pages.navigation.about")}}

@@ -7,6 +7,9 @@ export default {
         stockpileButton: 'Emergency Stock 🍫',
         toiletButton: 'Toilet Paper 🚽',
       },
+      about: {
+        text: 'The Selfish Hamsters',
+      },
       navigation: {
         home: 'Home',
         toiletPaper: 'Toilet Paper',
@@ -75,9 +78,18 @@ export default {
         },
         stockpile: {
           text: {
-            above_average: 'You Hamster',
-            average: 'Nice',
-            below_average: 'Tight one 😬',
+            above_average: {
+              title: 'You Hamster',
+              subtitle: 'You hamstered yourself quite an inventory.',
+            },
+            average: {
+              title: 'Nice 👍',
+              subtitle: 'You bought the right amount of supplies.',
+            },
+            below_average: {
+              title: 'Tight one 😬',
+              subtitle: 'You probably will not have enough in your stock.',
+            },
           },
         },
       },
@@ -96,6 +108,9 @@ export default {
         test: 'Mutig genug den Test zu wagen?',
         stockpileButton: 'Notvorrat 🍫',
         toiletButton: 'Toilettenpapier 🚽',
+      },
+      about: {
+        text: 'The Selfish Hamsters',
       },
       navigation: {
         home: 'Home',
@@ -165,9 +180,18 @@ export default {
         },
         stockpile: {
           text: {
-            above_average: 'Du Hamster',
-            average: 'Tiptop',
-            below_average: 'Wird knapp 😬',
+            above_average: {
+              title: 'Du Hamster',
+              subtitle: 'Du hast dir einen rechten Vorrat gehamstert.',
+            },
+            average: {
+              title: 'Tiptop 👍',
+              subtitle: 'Du hast genau richtig geplant.',
+            },
+            below_average: {
+              title: 'Wird knapp 😬',
+              subtitle: 'Das wird dir nicht reichen.',
+            },
           },
         },
       },

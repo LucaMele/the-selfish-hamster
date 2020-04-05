@@ -11,17 +11,26 @@
           <div class="result-box">
             <div v-bind:class="'result-stockpile result-stockpile--' + hamsterType">
               <div v-if="hamsterType === 'above-average'">
-                {{$t("pages.result.stockpile.text.above_average")}}
+                {{$t("pages.result.stockpile.text.above_average.title")}}
               </div>
               <div v-if="hamsterType === 'average'">
-                {{$t("pages.result.stockpile.text.average")}}
+                {{$t("pages.result.stockpile.text.average.title")}}
               </div>
               <div v-if="hamsterType === 'below-average'">
-                {{$t("pages.result.stockpile.text.below_average")}}
+                {{$t("pages.result.stockpile.text.below_average.title")}}
               </div>
             </div>
           </div>
           <div class="lower-bg">
+            <p class="result-text" v-if="hamsterType === 'above-average'">
+              {{$t("pages.result.stockpile.text.above_average.subtitle")}}
+            </p>
+            <p class="result-text" v-if="hamsterType === 'average'">
+              {{$t("pages.result.stockpile.text.average.subtitle")}}
+            </p>
+            <p class="result-text" v-if="hamsterType === 'below-average'">
+              {{$t("pages.result.stockpile.text.below_average.subtitle")}}
+            </p>
             <button class="result-donate-button">
               <router-link to="/donation">{{$t("pages.result.button.donate")}}
               </router-link>
@@ -73,6 +82,7 @@ export default {
           const categories = answers.categories;
           // eslint-disable-next-line no-restricted-syntax
           const estimationValues = [];
+          // eslint-disable-next-line no-restricted-syntax
           for (const category of categories) {
             const value = [];
             const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;

@@ -1,0 +1,22 @@
+
+
+.about-hamster-text {
+  font-size: 35px;
+  color: #14D2B8;
+  margin: 20% 0 0 0;
+}
+
+.about-hamster-wrapper-average {
+  position: absolute;
+  margin: 100% 0 0 30px;
+}
+.about-hamster-wrapper-below-average {
+  position: absolute;
+  margin: 0 0 0 240px;
+  transform: rotate(-60deg);
+}
+.about-hamster-wrapper-above-average {
+  position: absolute;
+  margin: 40% 0 0 -130px;
+  transform: rotate(40deg);
+}
