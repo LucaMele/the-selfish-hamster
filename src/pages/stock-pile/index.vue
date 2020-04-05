@@ -105,13 +105,13 @@ export default {
       this.currentStep++;
 
       if (this.currentStep === 1) {
-        // // eslint-disable-next-line no-console
+        // eslint-disable-next-line no-console
         console.log('# set nofAdults', value);
         this.$set(this, 'nofAdults', value);
       }
 
       if (this.currentStep === 2) {
-        // // eslint-disable-next-line no-console
+        // eslint-disable-next-line no-console
         console.log('# set nofKidsUnder12', value);
         this.$set(this, 'nofKidsUnder12', value);
 
