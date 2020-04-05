@@ -24,7 +24,7 @@
 import HamsterService from './../../services/HamsterService';
 
 export default {
-  name: 'toilet-papers-result',
+  name: 'stock-pile-result',
   components: {},
   data() {
     return ({
