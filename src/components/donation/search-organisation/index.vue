@@ -4,7 +4,8 @@
       <input
         v-model="searchValue"
         @change="onChangeSliderValue"
-        v-on:keyup.enter="onChangeSliderValue">
+        v-on:keyup.enter="onChangeSliderValue"
+        placeholder='Search ...'>
     </div>
   </article>
 </template>
