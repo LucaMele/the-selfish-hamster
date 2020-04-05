@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      value: 5,
+      value: 2,
       valueScaled: 60,
       options: {
         min: 1,

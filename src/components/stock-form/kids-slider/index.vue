@@ -27,9 +27,9 @@ export default {
   },
   data() {
     return {
-      value: 2,
+      value: 1,
       options: {
-        min: 1,
+        min: 0,
         max: 5,
       },
     };
