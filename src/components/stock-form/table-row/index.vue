@@ -9,7 +9,7 @@
         <p class="amount">{{ this.amountValue }}</p>
         <p class="unit">{{ unit }}</p>
       </td>
-      <td class="stock-column">
+      <td class="slider-column">
         <stock-pile-slider
           @callback="sliderValueCallback"
           v-bind:minValue="1"
