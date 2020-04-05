@@ -63,6 +63,7 @@ export class EmergencyStockAnswerServices {
 
       resultCategory.value = foundCatValue.value;
       resultCategory.included = foundCatValue.included;
+
       resultCategory.estimatesPerQuarantineInDays = estimates[resultCategory.index].estimatesPerQuarantineInDays;
       resultCategory.estimatedValuePerQuarantineInDays = resultCategory.estimatesPerQuarantineInDays[resultCategory.value];
     }
