@@ -1,28 +1,24 @@
 <template>
-  <article>
-    <p>Test</p>
-    <div class="home-wrapper">
-      <div>
-        <div class="lower-container">
-          <div class="result-box">
-          </div>
-          <div class="lower-bg">
-            <p>Test</p>
-          </div>
-        </div>
-      </div>
+  <div class="donations-wrapper">
+    <div>
+      <organisations-list-container
+        @callbackNext="inputDataCallback"
+        @callbackBack="navigateBack">
+      </organisations-list-container>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
-import HamsterService from './../../services/HamsterService';
+import OrganisationListContainer from './../../components/donation/organisationContainer';
 
-console.log(HamsterService);
-
+// import HamsterService from './../../services/HamsterService';
+// console.log(HamsterService);
 export default {
   name: 'donation',
-  components: {},
+  components: {
+    OrganisationListContainer,
+  },
   data() {
     return ({
     });
