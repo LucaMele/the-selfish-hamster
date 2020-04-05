@@ -12,5 +12,4 @@ export class HamsterPlace {
 
   @Column('varchar')
   formattedAddress = '';
-
 }

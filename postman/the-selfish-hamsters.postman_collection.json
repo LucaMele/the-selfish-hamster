@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9d26897e-949e-4c47-a11c-e76bc0c169b2",
+		"_postman_id": "fbd150b9-a958-4a4a-944b-f9cf4587d469",
 		"name": "the-selfish-hamsters",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -20,7 +20,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"users"
 							]
 						}
@@ -68,7 +69,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"users"
 							]
 						}
@@ -87,7 +89,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"users",
 								"{{userid}}"
 							]
@@ -123,7 +126,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"users",
 								"{{userid}}"
 							]
@@ -159,7 +163,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"users",
 								"{{userid}}"
 							]
@@ -185,7 +190,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"profiles"
 							]
 						}
@@ -204,7 +210,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"profiles",
 								"{{profileid}}"
 							]
@@ -253,7 +260,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"profiles"
 							]
 						}
@@ -301,7 +309,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"profiles"
 							]
 						}
@@ -336,7 +345,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"profiles",
 								"{{profileid}}"
 							]
@@ -372,7 +382,8 @@
 								"localhost"
 							],
 							"port": "3000",
-							"path": [ "api",
+							"path": [
+								"api",
 								"profiles",
 								"{{profileid}}"
 							]
@@ -401,7 +412,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"questions"
 									]
@@ -450,7 +462,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"questions"
 									]
@@ -470,7 +483,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}"
@@ -507,7 +521,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}"
@@ -544,7 +559,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"}}}"
 									]
 								}
@@ -598,7 +614,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}",
@@ -652,7 +669,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}",
@@ -674,7 +692,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"toilet",
 										"answers"
 									]
@@ -707,7 +726,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"emergency-stock",
 										"questions"
 									]
@@ -756,7 +776,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"emergency-stock",
 										"questions"
 									]
@@ -805,7 +826,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"emergency-stock",
 										"questions",
 										"{{emergency-stock-question-id}}"
@@ -861,7 +883,8 @@
 										"localhost"
 									],
 									"port": "3000",
-									"path": [ "api",
+									"path": [
+										"api",
 										"emergency-stock",
 										"questions",
 										"{{emergency-stock-question-id}}",
@@ -879,6 +902,73 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "places",
+			"item": [
+				{
+					"name": "search places",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"search\" : \"migros\",\n\t\"zip\" : \"8000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/places/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"places",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search charity place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"zip\" : \"8000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/places/charity/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"places",
+								"charity",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "get hamster",
 			"request": {
 				"method": "GET",
@@ -890,7 +980,8 @@
 						"localhost"
 					],
 					"port": "3000",
-					"path": [ "api",
+					"path": [
+						"api",
 						"hamster",
 						"{{profileid}}"
 					]
