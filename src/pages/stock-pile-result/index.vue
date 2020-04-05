@@ -69,6 +69,8 @@ export default {
               });
             this.estimationValues.push(value);
           }
+          // eslint-disable-next-line no-console
+          console.log('estimationValues ', JSON.stringify(this.estimationValues));
 
           // eslint-disable-next-line prefer-template
           this.$set(this, 'hamsterType', answers.hamsterType);

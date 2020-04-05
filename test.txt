@@ -1,0 +1,28 @@
+
+server {
+ server_name selfishhamster.disruptr.ch;
+ root /home/disruptr/selfishhamster;
+ index  index.html;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/blockchainatlas.io-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/blockchainatlas.io-0001/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+    rewrite ^/profiles(.*)$ /api/profiles$1 last;
+    rewrite ^/toilet(.*)$ /api/toilet$1 last;
+    rewrite ^/hamster(.*)$ /api/hamster$1 last;
+    rewrite ^/emergency-stock(.*)$ /api/emergency-stock$1 last;
+    rewrite ^/profiles(.*)$ /api/profiles$1 last;
+
+
+    location / {
+            proxy_set_header   X-Forwarded-For $remote_addr;
+            proxy_set_header   Host $http_host;
+            proxy_pass         http://localhost:8080;
+        }
+}
+
+
