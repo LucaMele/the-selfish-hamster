@@ -33,7 +33,7 @@ export default {
   async createEstimate(durationQuarantineInDays, profileId) {
     // eslint-disable-next-line no-console
     console.log(`call createEstimate with durationQuarantineInDays ${durationQuarantineInDays}`);
-    const res = await axios.post(`${this.apiEndpoint()}/emergency-stock/questions`, {
+    const res = await axios.post(`${this.apiEndpoint()}/api/emergency-stock/questions`, {
       durationQuarantineInDays,
       categories: [
       ],
