@@ -4,6 +4,9 @@
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
+    <div class="search-wrapper">
+      <search-organisation></search-organisation>
+    </div>
     <div class="table-wrapper">
       <div class="hamster__container-no-bg">
         <table class="table-container">
@@ -19,14 +22,16 @@
 import ToiletBack from './../../toilet-form/back';
 import Navigation from './../../navigation';
 import OrganisationRow from './../../donation/organisation-row';
+import SearchOrganisation from './../../donation/search-organisation';
 
 export default {
-  name: 'stock-list-container',
+  name: 'organisations-list-container',
   // props: ['estimationValues'],
   components: {
     ToiletBack,
     Navigation,
     OrganisationRow,
+    SearchOrganisation,
   },
   data() {
     return ({
@@ -42,6 +47,9 @@ export default {
     });
   },
   methods: {
+    onBackCallback() {
+      this.$emit('callbackBack');
+    },
   },
 };
 
