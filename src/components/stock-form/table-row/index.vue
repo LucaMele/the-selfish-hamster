@@ -5,12 +5,11 @@
         <p class="category">{{ category }}</p>
         <p class="sub-category">{{ subCategory }}</p>
       </td>
-      <!-- <td class="stock-amount">
-        <p>
-          {{ this.amountValue }}
-        </p>
+      <td class="stock-amount">
+        <p class="amount">{{ this.amountValue }}</p>
+        <p class="unit">{{ unit }}</p>
       </td>
-      <td class="stock-column">
+      <!--td class="stock-column">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
       </td> -->
     </tr>
