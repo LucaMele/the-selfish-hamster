@@ -1,7 +1,6 @@
 <template>
   <article class="hamster__stock-pile-slider">
     <div class="stock-pile-slider__slider">
-      <p class="slider-value">{{ value }}</p>
       <vue-slider
         v-model="value"
         v-bind="options"
