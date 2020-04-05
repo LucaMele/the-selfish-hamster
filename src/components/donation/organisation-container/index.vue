@@ -10,7 +10,12 @@
     <div class="table-wrapper">
       <div class="hamster__container-no-bg">
         <table class="table-container">
-
+          <tbody class="table-body" v-for="item in organisations" v-bind:key="item.index">
+            <table-row
+              v-bind:index="item.index" v-bind:organisation="item.organisation"
+              v-bind:adress="item.adress" v-bind:telefon="item.telefon">
+            </table-row>
+          </tbody>
         </table>
       </div>
     </div>
@@ -26,7 +31,6 @@ import SearchOrganisation from './../../donation/search-organisation';
 
 export default {
   name: 'organisations-list-container',
-  // props: ['estimationValues'],
   components: {
     ToiletBack,
     Navigation,
@@ -36,13 +40,13 @@ export default {
   data() {
     return ({
       // MOCK
-      organisationValues: [
-        { index: 0, organisation: 'Super Organisation 1', adresse: 'Bahnhofstrasse 1, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 1, organisation: 'Super Organisation 2', adresse: 'Bahnhofstrasse 2, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 2, organisation: 'Super Organisation 3', adresse: 'Bahnhofstrasse 3, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 3, organisation: 'Super Organisation 4', adresse: 'Bahnhofstrasse 4, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 4, organisation: 'Super Organisation 5', adresse: 'Bahnhofstrasse 5, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 5, organisation: 'Super Organisation 6', adresse: 'Bahnhofstrasse 6, 8590 Romanshorn', telefon: '+41763241744' },
+      organisations: [
+        { index: 0, organisation: 'Super Organisation 1', adress: 'Bahnhofstrasse 1, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 1, organisation: 'Super Organisation 2', adress: 'Bahnhofstrasse 2, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 2, organisation: 'Super Organisation 3', adress: 'Bahnhofstrasse 3, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 3, organisation: 'Super Organisation 4', adress: 'Bahnhofstrasse 4, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 4, organisation: 'Super Organisation 5', adress: 'Bahnhofstrasse 5, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 5, organisation: 'Super Organisation 6', adress: 'Bahnhofstrasse 6, 8590 Romanshorn', telefon: '+41763241744' },
       ],
     });
   },
