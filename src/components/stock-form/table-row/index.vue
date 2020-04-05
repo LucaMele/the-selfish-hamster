@@ -18,13 +18,15 @@
 </template>
 
 <script>
-import ToiletSlider from './../../toilet-form/slider';
+import StockPileSlider from './../../stock-form/slider';
+
+console.log(StockPileSlider);
 
 export default {
   name: 'stock-household-kids-container',
   props: ['category', 'subCategory', 'index', 'unit', 'amount1', 'amount2', 'amount3'],
   components: {
-    ToiletSlider,
+    StockPileSlider,
   },
   data() {
     return ({
