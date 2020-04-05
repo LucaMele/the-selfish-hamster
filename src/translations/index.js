@@ -42,7 +42,7 @@ export default {
             subtitle: 'I shower after pooping',
           },
           option2: {
-            title: '20 paper',
+            title: '5 paper',
             subtitle: 'I care for the environment',
           },
           option3: {
@@ -128,7 +128,7 @@ export default {
             subtitle: 'Ich dusche danach',
           },
           option2: {
-            title: '20 Papiere',
+            title: '5 Papiere',
             subtitle: 'Die Umwelt ist mir wichtig',
           },
           option3: {
