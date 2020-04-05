@@ -28,6 +28,7 @@ import ToiletBack from './../../toilet-form/back';
 import Navigation from './../../navigation';
 import OrganisationRow from './../../donation/organisation-row';
 import SearchOrganisation from './../../donation/search-organisation';
+import HamsterService from '../../../services/HamsterService';
 
 export default {
   name: 'organisation-list-container',
@@ -39,16 +40,34 @@ export default {
   },
   data() {
     return ({
-      // MOCK
       organisations: [
-        { index: 0, organisation: 'Super Organisation 1', adress: 'Bahnhofstrasse 1, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 1, organisation: 'Super Organisation 2', adress: 'Bahnhofstrasse 2, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 2, organisation: 'Super Organisation 3', adress: 'Bahnhofstrasse 3, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 3, organisation: 'Super Organisation 4', adress: 'Bahnhofstrasse 4, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 4, organisation: 'Super Organisation 5', adress: 'Bahnhofstrasse 5, 8590 Romanshorn', telefon: '+41763241744' },
-        { index: 5, organisation: 'Super Organisation 6', adress: 'Bahnhofstrasse 6, 8590 Romanshorn', telefon: '+41763241744' },
       ],
     });
+  },
+  created() {
+    // call once at creation of component
+    HamsterService.searchCharityPlaces()
+      .then(
+        ((places) => {
+          // eslint-disable-next-line no-restricted-syntax
+          let i = 0;
+          const organisations = [];
+          for (const place of places) {
+            organisations.push(
+              {
+                // eslint-disable-next-line no-plusplus
+                index: i++,
+                organisation: place.name,
+                adress: place.formattedAddress,
+                telefon: place.phone,
+                email: place.email,
+              });
+            this.$set(this, 'organisations', organisations);
+            // eslint-disable-next-line no-console
+            console.log('organisations ', JSON.stringify(organisations));
+          }
+        }),
+      );
   },
   methods: {
     onBackCallback() {

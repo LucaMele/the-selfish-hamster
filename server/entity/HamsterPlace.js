@@ -12,4 +12,10 @@ export class HamsterPlace {
 
   @Column('varchar')
   formattedAddress = '';
+
+  @Column('varchar')
+  email = '';
+
+  @Column('varchar')
+  phone = '';
 }
