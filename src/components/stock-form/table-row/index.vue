@@ -9,21 +9,25 @@
         <p class="amount">{{ this.amountValue }}</p>
         <p class="unit">{{ unit }}</p>
       </td>
-      <!--td class="stock-column">
-        <toilet-slider @callback="sliderValueCallback"></toilet-slider>
-      </td> -->
+      <td class="stock-column">
+        <stock-pile-slider
+          @callback="sliderValueCallback"
+          v-bind:minValue="1"
+          v-bind:maxValue="3">
+        </stock-pile-slider>
+      </td>
     </tr>
   </article>
 </template>
 
 <script>
-import ToiletSlider from './../../toilet-form/slider';
+import StockPileSlider from './../../stock-form/slider';
 
 export default {
   name: 'stock-household-kids-container',
-  props: ['category', 'subCategory', 'index', 'unit', 'amount1', 'amount2', 'amount3'],
+  props: ['category', 'subCategory', 'index', 'unit', 'amountOne', 'amountTwo', 'amountThree'],
   components: {
-    ToiletSlider,
+    StockPileSlider,
   },
   data() {
     return ({
@@ -36,13 +40,13 @@ export default {
     sliderValueCallback(value) {
       switch (value) {
         case 1:
-          this.amountValue = this.amount1;
+          this.amountValue = this.amountOne;
           break;
         case 3:
-          this.amountValue = this.amount3;
+          this.amountValue = this.amountThree;
           break;
         default:
-          this.amountValue = this.amount2;
+          this.amountValue = this.amountTwo;
           break;
       }
 
@@ -52,7 +56,7 @@ export default {
     },
   },
   created() {
-    this.amountValue = this.amount2;
+    this.amountValue = this.amountTwo;
   },
 };
 </script>

@@ -9,6 +9,7 @@ import { ToiletAnswerServices } from './services/ToiletAnswerServices';
 import { HamsterServices } from './services/HamsterServices';
 import { EmergencyStockQuestionServices } from './services/EmergencyStockQuestionServices';
 import { EmergencyStockAnswerServices } from './services/EmergencyStockAnswerServices';
+import { PlacesServices } from './services/PlacesServices';
 
 const express = require('express');
 const cors = require('cors');
@@ -49,6 +50,7 @@ createConnection().then((connection) => {
   new HamsterServices().Register('/api',app, connection);
   new EmergencyStockQuestionServices().Register('/api',app, connection);
   new EmergencyStockAnswerServices().Register('/api',app, connection);
+  new PlacesServices().Register('/api',app, connection);
 
   // start express server
   app.listen(3000);
