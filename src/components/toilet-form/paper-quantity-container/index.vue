@@ -14,7 +14,7 @@
               <p class="option-title">{{$t("pages.paper.options.option1.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option1.subtitle")}}</p>
             </div>
-            <div v-bind:class="option2Class" v-on:click="onOptionSelected(20, 2)">
+            <div v-bind:class="option2Class" v-on:click="onOptionSelected(5, 2)">
               <p class="option-title">{{$t("pages.paper.options.option2.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option2.subtitle")}}</p>
             </div>
