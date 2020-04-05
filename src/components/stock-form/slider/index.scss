@@ -8,15 +8,15 @@
 }
 
 .stock-pile-slider__slider .vue-slider-process {
-  background-color: #695CFF;
+  // background-color: #695CFF;
   border-radius: 20px;
 }
 
 .stock-pile-slider__slider .vue-slider-rail {
   position: relative;
-  width: 100px;
+  width: 70px;
   border-radius: 5px;
-  padding: 3px 0px 3px 0px;
+  padding: 0;
 }
 
 .stock-pile-slider__slider .vue-slider-dot-handle {
@@ -26,7 +26,7 @@
   padding: 8px 8px 8px 8px;
   margin: -1px;
   border-radius: 50%;
-  background-color: #695CFF;
+  background-color: #14D2B8;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-shadow: 0.5px 0.5px 2px 1px rgba(0,0,0,0.32);
