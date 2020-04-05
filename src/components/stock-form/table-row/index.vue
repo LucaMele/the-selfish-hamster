@@ -5,12 +5,11 @@
         <p class="category">{{ category }}</p>
         <p class="sub-category">{{ subCategory }}</p>
       </td>
-      <!-- <td class="stock-amount">
-        <p>
-          {{ this.sliderValue }}
-        </p>
+      <td class="stock-amount">
+        <p class="amount">{{ this.amountValue }}</p>
+        <p class="unit">{{ unit }}</p>
       </td>
-      <td class="stock-column">
+      <!--td class="stock-column">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
       </td> -->
     </tr>
@@ -22,7 +21,7 @@ import ToiletSlider from './../../toilet-form/slider';
 
 export default {
   name: 'stock-household-kids-container',
-  props: ['category', 'subCategory', 'index'],
+  props: ['category', 'subCategory', 'index', 'unit', 'amount1', 'amount2', 'amount3'],
   components: {
     ToiletSlider,
   },
@@ -30,15 +29,30 @@ export default {
     return ({
       // currentAmountValue: undefined,
       sliderValue: undefined,
+      amountValue: undefined,
     });
   },
   methods: {
     sliderValueCallback(value) {
-      // this.currentAmountValue = this.inputValues[value - 1];
+      switch (value) {
+        case 1:
+          this.amountValue = this.amount1;
+          break;
+        case 3:
+          this.amountValue = this.amount3;
+          break;
+        default:
+          this.amountValue = this.amount2;
+          break;
+      }
+
       this.sliderValue = value;
 
       this.$emit('callback', { value, index: this.index });
     },
+  },
+  created() {
+    this.amountValue = this.amount2;
   },
 };
 </script>
