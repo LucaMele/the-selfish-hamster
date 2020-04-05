@@ -9,12 +9,13 @@
       <div class="hamster__container-no-bg">
         <table class="table-container">
           <thead class="table-head">
-            <th>Category</th>
-            <th>My Emergency Stock</th>
+            <th class="title-left">Category</th>
+            <th class="title-right">My Emergency Stock</th>
           </thead>
           <tbody class="table-body" v-for="item in estimationValues" v-bind:key="item.index">
             <table-row
-              v-bind:category="item.text" v-bind:index="item.index">
+              v-bind:category="item.text" v-bind:subCategory="item.helptext"
+              v-bind:index="item.index">
             </table-row>
           </tbody>
         </table>
@@ -45,16 +46,16 @@ export default {
     return ({
       // MOCK
       estimationValues: [
-        { text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Non-Perishable Food', helptext: 'pasta, pasta, oat, rice', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Cannes Food', helptext: 'corn, tuna, tomatoes, erbsen', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Frozen Food', helptext: 'vegetable, spinat, frozen bread, frozen meat', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Meat Fish', helptext: 'Minced meat, Dauerwürste, Trockenfleisch', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Pet Food', helptext: 'trockenfutter, dog, cats', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Drinks', helptext: 'Coffeee, cacao, Wasser, tee', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Cooking Support', helptext: 'olive Oil, pepper, salt, spices', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
-        { text: 'Baby Food', helptext: 'baby milk, baby brei, soup', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 0, text: 'Fruit and vegetables', helptext: 'apple, onions, carrots, potatoes', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 1, text: 'Perishable Foods', helptext: 'eggs, butter, cheese, milk', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 2, text: 'Non-Perishable Food', helptext: 'pasta, pasta, oat, rice', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 3, text: 'Cannes Food', helptext: 'corn, tuna, tomatoes, erbsen', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 4, text: 'Frozen Food', helptext: 'vegetable, spinat, frozen bread, frozen meat', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 5, text: 'Meat Fish', helptext: 'Minced meat, Dauerwürste, Trockenfleisch', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 6, text: 'Pet Food', helptext: 'trockenfutter, dog, cats', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 7, text: 'Drinks', helptext: 'Coffeee, cacao, Wasser, tee', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 8, text: 'Cooking Support', helptext: 'olive Oil, pepper, salt, spices', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
+        { index: 9, text: 'Baby Food', helptext: 'baby milk, baby brei, soup', unit: 'kg', 1: '3.0', 2: '12.1  ', 3: '24.2' },
       ],
       outputData: [
         {

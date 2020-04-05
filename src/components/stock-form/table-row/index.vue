@@ -2,16 +2,17 @@
   <article>
     <tr class="category-table-row">
       <td class="category-column">
-        <p>{{ category }}</p>
+        <p class="category">{{ category }}</p>
+        <p class="sub-category">{{ subCategory }}</p>
       </td>
-      <td class="stock-amount">
+      <!-- <td class="stock-amount">
         <p>
           {{ this.sliderValue }}
         </p>
       </td>
       <td class="stock-column">
         <toilet-slider @callback="sliderValueCallback"></toilet-slider>
-      </td>
+      </td> -->
     </tr>
   </article>
 </template>
@@ -21,7 +22,7 @@ import ToiletSlider from './../../toilet-form/slider';
 
 export default {
   name: 'stock-household-kids-container',
-  props: ['category', 'index'],
+  props: ['category', 'subCategory', 'index'],
   components: {
     ToiletSlider,
   },
