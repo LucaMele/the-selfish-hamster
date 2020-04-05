@@ -52,9 +52,9 @@ export default {
   },
   data() {
     return ({
-      selectedOption: undefined,
+      selectedOption: 'average',
       option1Class: 'option1',
-      option2Class: 'option2',
+      option2Class: 'option2selected',
       option3Class: 'option3',
       option4Class: 'option4',
     });
