@@ -10,21 +10,21 @@
         <p class="paper-question">{{$t("pages.paper.question")}}</p>
         <div class="hamster__container-no-background">
           <div class="btn-group-upper">
-            <div v-bind:class="option1Class" v-on:click="onOptionSelected(0, 1)">
+            <div v-bind:class="option1Class" v-on:click="onOptionSelected('none', 1)">
               <p class="option-title">{{$t("pages.paper.options.option1.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option1.subtitle")}}</p>
             </div>
-            <div v-bind:class="option2Class" v-on:click="onOptionSelected(5, 2)">
+            <div v-bind:class="option2Class" v-on:click="onOptionSelected('not-much', 2)">
               <p class="option-title">{{$t("pages.paper.options.option2.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option2.subtitle")}}</p>
             </div>
           </div>
           <div class="btn-group-lower">
-            <div v-bind:class="option3Class" v-on:click="onOptionSelected(100, 3)">
+            <div v-bind:class="option3Class" v-on:click="onOptionSelected('average', 3)">
               <p class="option-title">{{$t("pages.paper.options.option3.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option3.subtitle")}}</p>
             </div>
-            <div v-bind:class="option4Class" v-on:click="onOptionSelected(200, 4)">
+            <div v-bind:class="option4Class" v-on:click="onOptionSelected('a-lot', 4)">
               <p class="option-title">{{$t("pages.paper.options.option4.title")}}</p>
               <p class="option-subtitle">{{$t("pages.paper.options.option4.subtitle")}}</p>
             </div>

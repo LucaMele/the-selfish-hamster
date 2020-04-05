@@ -3,9 +3,9 @@
     <div class="home-wrapper">
       <div>
         <div class="hamster">
-          <!-- <div class="hamster-title">
-            <img :src="getImgUrl(hamsterType)"/>
-          </div> -->
+        <div class="hamster-title">
+          <img :src="getImgUrl(hamsterType)"/>
+        </div>
         </div>
         <div class="lower-container">
           <div class="result-box">
