@@ -5,10 +5,14 @@ import VueI18n from 'vue-i18n';
 import App from './App';
 import router from './router';
 import translations from './translations';
+import VueGtag from 'vue-gtag';
 
 Vue.config.productionTip = false;
 
 Vue.use(VueI18n);
+Vue.use(VueGtag, {
+  config: { id: 'UA-88600-31' },
+});
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
