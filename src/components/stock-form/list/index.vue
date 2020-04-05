@@ -22,7 +22,7 @@
         </table>
       </div>
     </div>
-    <div class="next-wrapper">
+    <div class="next-wrapper-list">
       <toilet-next @onClickCallback="onNextCallback"></toilet-next>
     </div>
   </article>
