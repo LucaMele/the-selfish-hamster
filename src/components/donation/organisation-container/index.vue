@@ -5,13 +5,13 @@
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="search-wrapper">
-      <search-organisation></search-organisation>
+      <search-organisation @callback="onSearchCallback"></search-organisation>
     </div>
     <!-- <v-modal name="dialog"></v-modal> -->
     <div class="table-wrapper">
       <div class="hamster__container-no-bg">
         <table class="table-container">
-          <tbody class="table-body" v-for="item in organisations" v-bind:key="item.index">
+          <tbody class="table-body" v-for="item in displayOrganisations" v-bind:key="item.index">
             <organisation-row @onClickPhone="callPhoneModal"
               v-bind:index="item.index" v-bind:organisation="item.organisation"
               v-bind:adress="item.adress" v-bind:telefon="item.telefon">
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-
 import ToiletBack from './../../toilet-form/back';
 import Navigation from './../../navigation';
 import OrganisationRow from './../../donation/organisation-row';
@@ -42,6 +41,7 @@ export default {
   data() {
     return ({
       organisations: [],
+      displayOrganisations: [],
     });
   },
   created() {
@@ -64,6 +64,7 @@ export default {
                 email: place.email,
               });
             this.$set(this, 'organisations', organisations);
+            this.$set(this, 'displayOrganisations', organisations);
             // eslint-disable-next-line no-console
             console.log('organisations ', JSON.stringify(organisations));
           }
@@ -73,6 +74,19 @@ export default {
   methods: {
     onBackCallback() {
       this.$emit('callbackBack');
+    },
+    onSearchCallback(value) {
+      if (value) {
+        this.displayOrganisations = [];
+        // eslint-disable-next-line no-restricted-syntax
+        for (const org of this.organisations) {
+          if (org.organisation.includes(value) || org.adress.includes(value)) {
+            this.displayOrganisations.push(org);
+          }
+        }
+      } else {
+        this.$set(this, 'displayOrganisations', this.organisations);
+      }
     },
   },
 };
