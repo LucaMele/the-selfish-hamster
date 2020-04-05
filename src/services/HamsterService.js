@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
   apiEndpoint() {
     return 'http://localhost:3000';
-    //return 'https://selfishhamster.disruptr.ch';
+    // return 'https://selfishhamster.disruptr.ch';
   },
   async createProfile(nofPersons) {
     // eslint-disable-next-line no-console

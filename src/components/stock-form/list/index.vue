@@ -5,16 +5,14 @@
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="table-wrapper">
-      <p class="table-question">
-        TEXT
-      </p>
-      <div class="hamster__container">
-        <table>
-          <thead>
+      <p class="table-question">{{$t("pages.stockPile.list.info")}}</p>
+      <div class="hamster__container-no-bg">
+        <table class="table-container">
+          <thead class="table-head">
             <th>Category</th>
             <th>My Emergency Stock</th>
           </thead>
-          <tbody v-for="item in estimationValues" v-bind:key="item.index">
+          <tbody class="table-body" v-for="item in estimationValues" v-bind:key="item.index">
             <table-row
               v-bind:category="item.text" v-bind:index="item.index">
             </table-row>
