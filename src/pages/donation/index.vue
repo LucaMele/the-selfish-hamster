@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import OrganisationListContainer from './../../components/donation/organisationContainer';
+import OrganisationListContainer from './../../components/donation/organisation-container';
 
 // import HamsterService from './../../services/HamsterService';
 // console.log(HamsterService);
