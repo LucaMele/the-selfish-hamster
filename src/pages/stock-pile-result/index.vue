@@ -12,7 +12,14 @@
             <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType"></div>
           </div>
           <div class="lower-bg">
-
+            <button class="result-donate-button">
+              <router-link to="/donate">{{$t("pages.result.button.stockpile")}}
+              </router-link>
+            </button>
+            <button class="home-button">
+              <router-link to="/">{{$t("pages.result.button.home")}}
+              </router-link>
+            </button>
           </div>
         </div>
       </div>

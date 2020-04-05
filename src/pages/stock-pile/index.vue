@@ -134,9 +134,11 @@ export default {
             // eslint-disable-next-line no-console
             console.log('# set questionId', data.id);
             this.$set(this, 'questionId', data.id);
-            this.$router.push({ name: 'stock-pile-result', params: { questionId: this.questionId } });
           }),
           );
+      }
+      if (this.currentStep === 4) {
+        this.$router.push({ name: 'stock-pile-result', params: { questionId: this.questionId } });
       }
     },
     navigateBack() {

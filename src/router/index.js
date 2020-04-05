@@ -5,6 +5,7 @@ import StockPile from '@/pages/stock-pile';
 import About from '@/pages/about';
 import ToiletPapersResult from '@/pages/toilet-papers-result';
 import StockPileResult from '@/pages/stock-pile-result';
+import Donation from '@/pages/donation';
 
 Vue.use(Router);
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/stock-pile-result/:questionId',
       name: 'stock-pile-result',
       component: StockPileResult,
+    },
+    {
+      path: '/donation',
+      name: 'donation',
+      component: Donation,
     },
   ],
 });
