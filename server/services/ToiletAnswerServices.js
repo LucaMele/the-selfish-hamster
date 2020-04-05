@@ -7,15 +7,15 @@ import { Profile } from '../entity/Profile';
 // eslint-disable-next-line import/prefer-default-export
 export class ToiletAnswerServices {
   // eslint-disable-next-line class-methods-use-this
-  Register(app, connection) {
+  Register(prefix, app, connection) {
     const profileRepository = connection.getRepository(Profile);
     const toiletQuestionRepository = connection.getRepository(ToiletQuestion);
     const toiletAnswerRepository = connection.getRepository(ToiletAnswer);
     const modelName = '/toilet/answers';
 
-    new CRUDServices().Register(app, connection, modelName, ToiletAnswer);
+    new CRUDServices().Register(prefix, app, connection, modelName, ToiletAnswer);
 
-    app.post('/toilet/questions/:id/answer', async (req, res) => {
+    app.post(`${prefix}/toilet/questions/:id/answer`, async (req, res) => {
       const question = await toiletQuestionRepository.findOne(new ObjectID(req.params.id));
       const profile = await profileRepository.findOne(new ObjectID(question.profileId));
       // eslint-disable-next-line max-len
@@ -26,7 +26,7 @@ export class ToiletAnswerServices {
         .send(resultAnswer);
     });
 
-    app.get('/toilet/questions/:id/answer', async (req, res) => {
+    app.get(`${prefix}/toilet/questions/:id/answer`, async (req, res) => {
       // eslint-disable-next-line max-len
       const resultAnswer = await toiletAnswerRepository.findOne({ where: { questionId: new ObjectID(req.params.id) } });
       return res.status(201)

@@ -7,7 +7,7 @@ import { EmergencyStockAnswer } from '../entity/EmergencyStockAnswer';
 
 // eslint-disable-next-line import/prefer-default-export
 export class HamsterServices {
-  Register(app, connection) {
+  Register(prefix, app, connection) {
     const profileRepository = connection.getRepository(Profile);
     const toiletQuestionRepository = connection.getRepository(ToiletQuestion);
     const toiletAnswerRepository = connection.getRepository(ToiletAnswer);
@@ -15,7 +15,7 @@ export class HamsterServices {
     const emergencyStockAnswerRepository = connection.getRepository(EmergencyStockAnswer);
 
     // profileId
-    app.get('/hamster/:id', async (req, res) => {
+    app.get(`${prefix}/hamster/:id`, async (req, res) => {
       const profile = await profileRepository.findOne(new ObjectID(req.params.id));
       if (profile) {
         const toiletQuestions = await toiletQuestionRepository.find({ where: { profileId: req.params.id } });

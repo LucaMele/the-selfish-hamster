@@ -39,10 +39,10 @@ class InjectCRUDActionProfile {
 // eslint-disable-next-line import/prefer-default-export
 export class EmergencyStockQuestionServices {
   // eslint-disable-next-line class-methods-use-this
-  Register(app, connection) {
+  Register(prefix, app, connection) {
     const profileRepository = connection.getRepository(Profile);
     const emergencyStockQuestionRepository = connection.getRepository(EmergencyStockQuestion);
     const modelName = '/emergency-stock/questions';
-    new CRUDServices().Register(app, connection, modelName, EmergencyStockQuestion, new InjectCRUDActionProfile(app, connection));
+    new CRUDServices().Register(prefix, app, connection, modelName, EmergencyStockQuestion, new InjectCRUDActionProfile(app, connection));
   }
 }

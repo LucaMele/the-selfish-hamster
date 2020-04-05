@@ -10,15 +10,15 @@ import { Content } from '../services/AnswerContent';
 // eslint-disable-next-line import/prefer-default-export
 export class EmergencyStockAnswerServices {
   // eslint-disable-next-line class-methods-use-this
-  Register(app, connection) {
+  Register(prefix, app, connection) {
     const profileRepository = connection.getRepository(Profile);
     const emergencyStockQuestionRepository = connection.getRepository(EmergencyStockQuestion);
     const emergencyStockAnswerRepository = connection.getRepository(EmergencyStockAnswer);
     const modelName = '/emergency-stock/answers';
 
-    new CRUDServices().Register(app, connection, modelName, EmergencyStockAnswer);
+    new CRUDServices().Register(prefix, app, connection, modelName, EmergencyStockAnswer);
 
-    app.post('/emergency-stock/questions/:id/answer', async (req, res) => {
+    app.post(`${prefix}/emergency-stock/questions/:id/answer`, async (req, res) => {
       const question = await emergencyStockQuestionRepository.findOne(new ObjectID(req.params.id));
       const profile = await profileRepository.findOne(new ObjectID(question.profileId));
       // eslint-disable-next-line max-len
@@ -30,7 +30,7 @@ export class EmergencyStockAnswerServices {
         .send(resultAnswer);
     });
 
-    app.get('/emergency-stock/questions/:id/answer', async (req, res) => {
+    app.get(`${prefix}/emergency-stock/questions/:id/answer`, async (req, res) => {
       // eslint-disable-next-line max-len
       const resultAnswer = await emergencyStockAnswerRepository.findOne({ where: { questionId: new ObjectID(req.params.id) } });
       return res.status(201)
@@ -58,7 +58,7 @@ export class EmergencyStockAnswerServices {
     for (const resultCategory of resultCategories) {
       const foundCatValue = this.GetCategoryByIndex(questionCategories, resultCategory.index);
       newQuestionCategories.push(
-        { index: resultCategory.index, tag: resultCategory.tag, value: foundCatValue.value, included: foundCatValue.included}
+        { index: resultCategory.index, tag: resultCategory.tag, value: foundCatValue.value, included: foundCatValue.included },
       );
 
       resultCategory.value = foundCatValue.value;

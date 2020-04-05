@@ -14,13 +14,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users",
+							"raw": "http://localhost:3000/api/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"users"
 							]
 						}
@@ -62,13 +62,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users",
+							"raw": "http://localhost:3000/api/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"users"
 							]
 						}
@@ -81,13 +81,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/{{userid}}",
+							"raw": "http://localhost:3000/api/users/{{userid}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"users",
 								"{{userid}}"
 							]
@@ -117,13 +117,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/{{userid}}",
+							"raw": "http://localhost:3000/api/users/{{userid}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"users",
 								"{{userid}}"
 							]
@@ -153,13 +153,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/{{userid}}",
+							"raw": "http://localhost:3000/api/users/{{userid}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"users",
 								"{{userid}}"
 							]
@@ -179,13 +179,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/profiles",
+							"raw": "http://localhost:3000/api/profiles",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"profiles"
 							]
 						}
@@ -198,13 +198,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"raw": "http://localhost:3000/api/profiles/{{profileid}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"profiles",
 								"{{profileid}}"
 							]
@@ -247,13 +247,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/profiles",
+							"raw": "http://localhost:3000/api/profiles",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"profiles"
 							]
 						}
@@ -287,7 +287,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nofAdults\": 2,\n    \"nofKidsUnder12\": 1,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
+							"raw": "{\n    \"nofAdults\": 4,\n    \"nofKidsUnder12\": 0,\n    \"zip\": \"8615\",\n    \"emailAddress\": \"toto@toto.ch\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -295,13 +295,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/profiles",
+							"raw": "http://localhost:3000/api/profiles",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"profiles"
 							]
 						}
@@ -330,13 +330,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"raw": "http://localhost:3000/api/profiles/{{profileid}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"profiles",
 								"{{profileid}}"
 							]
@@ -366,13 +366,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/profiles/{{profileid}}",
+							"raw": "http://localhost:3000/api/profiles/{{profileid}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
-							"path": [
+							"path": [ "api",
 								"profiles",
 								"{{profileid}}"
 							]
@@ -395,13 +395,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/toilet/questions",
+									"raw": "http://localhost:3000/api/toilet/questions",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"questions"
 									]
@@ -444,13 +444,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/toilet/questions",
+									"raw": "http://localhost:3000/api/toilet/questions",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"questions"
 									]
@@ -464,13 +464,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}",
+									"raw": "http://localhost:3000/api/toilet/questions/{{toilet-question-id}}",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}"
@@ -501,13 +501,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}",
+									"raw": "http://localhost:3000/api/toilet/questions/{{toilet-question-id}}",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}"
@@ -538,13 +538,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/}}}",
+									"raw": "http://localhost:3000/api/}}}",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"}}}"
 									]
 								}
@@ -592,13 +592,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
+									"raw": "http://localhost:3000/api/toilet/questions/{{toilet-question-id}}/answer",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}",
@@ -646,13 +646,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/toilet/questions/{{toilet-question-id}}/answer",
+									"raw": "http://localhost:3000/api/toilet/questions/{{toilet-question-id}}/answer",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"questions",
 										"{{toilet-question-id}}",
@@ -668,13 +668,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/toilet/answers",
+									"raw": "http://localhost:3000/api/toilet/answers",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"toilet",
 										"answers"
 									]
@@ -701,13 +701,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/emergency-stock/questions",
+									"raw": "http://localhost:3000/api/emergency-stock/questions",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"emergency-stock",
 										"questions"
 									]
@@ -742,7 +742,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"categories\" : [\n\t],\n    \"profileId\": \"{{profileid}}\"\n}",
+									"raw": "{\n    \"durationQuarantineInDays\": 21,\n    \"categories\" : [\n\t\t{\n\t      \"index\": 0,\n\t      \"value\": 1,\n\t      \"included\": true\n\t    }\n\t],\n    \"profileId\": \"{{profileid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -750,15 +750,65 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/emergency-stock/questions",
+									"raw": "http://localhost:3000/api/emergency-stock/questions",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"emergency-stock",
 										"questions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "put emergency stock questio",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d1baa10-bf22-415d-9b8b-934aaadc65d5",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"emergency-stock-question-id\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"durationQuarantineInDays\": 14,\n    \"categories\" : [\n\t\t{\n\t      \"index\": 0,\n\t      \"value\": 1,\n\t      \"included\": true\n\t    },\n\t\t{\n\t      \"index\": 1,\n\t      \"value\": 3,\n\t      \"included\": true\n\t    }\n\t],\n    \"profileId\": \"{{profileid}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/emergency-stock/questions/{{emergency-stock-question-id}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [ "api",
+										"emergency-stock",
+										"questions",
+										"{{emergency-stock-question-id}}"
 									]
 								}
 							},
@@ -805,13 +855,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/emergency-stock/questions/{{emergency-stock-question-id}}/answer",
+									"raw": "http://localhost:3000/api/emergency-stock/questions/{{emergency-stock-question-id}}/answer",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
-									"path": [
+									"path": [ "api",
 										"emergency-stock",
 										"questions",
 										"{{emergency-stock-question-id}}",
@@ -834,13 +884,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/hamster/{{profileid}}",
+					"raw": "http://localhost:3000/api/hamster/{{profileid}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
-					"path": [
+					"path": [ "api",
 						"hamster",
 						"{{profileid}}"
 					]

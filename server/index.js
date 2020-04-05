@@ -42,13 +42,13 @@ createConnection().then((connection) => {
     app.use(express.static('dist'));
   }
 
-  new UserServices().Register(app, connection);
-  new ProfileServices().Register(app, connection);
-  new ToiletQuestionServices().Register(app, connection);
-  new ToiletAnswerServices().Register(app, connection);
-  new HamsterServices().Register(app, connection);
-  new EmergencyStockQuestionServices().Register(app, connection);
-  new EmergencyStockAnswerServices().Register(app, connection);
+  new UserServices().Register('/api', app, connection);
+  new ProfileServices().Register('/api',app, connection);
+  new ToiletQuestionServices().Register('/api',app, connection);
+  new ToiletAnswerServices().Register('/api',app, connection);
+  new HamsterServices().Register('/api',app, connection);
+  new EmergencyStockQuestionServices().Register('/api',app, connection);
+  new EmergencyStockAnswerServices().Register('/api',app, connection);
 
   // start express server
   app.listen(3000);

@@ -1,10 +1,14 @@
 import axios from 'axios';
 
 export default {
+  apiEndpoint() {
+    return 'http://localhost:3000';
+    //return 'https://selfishhamster.disruptr.ch';
+  },
   async createProfile(nofPersons) {
     // eslint-disable-next-line no-console
     console.log('call createProfile with number of persons', nofPersons);
-    const res = await axios.post('http://localhost:3000/profiles', {
+    const res = await axios.post(`${this.apiEndpoint()}/api/profiles`, {
       nofPersons,
       zip: '8615', // TODO later
       emailAddress: 'toto@toto.ch', // TODO later
@@ -16,7 +20,7 @@ export default {
   async createQuestions(profileId, durationQuarantineInDays, nofToiletRolls, nofSheetsPerUse) {
     // eslint-disable-next-line no-console
     console.log('call createQuestions with profileId', profileId);
-    const res = await axios.post('http://localhost:3000/toilet/questions', {
+    const res = await axios.post(`${this.apiEndpoint()}/api/toilet/questions`, {
       durationQuarantineInDays,
       nofToiletRolls,
       nofSheetsPerUse,
@@ -29,7 +33,7 @@ export default {
   async getAnswer(questionId) {
     // eslint-disable-next-line no-console
     console.log('call getAnswer with questionId', questionId);
-    const res = await axios.post(`http://localhost:3000/toilet/questions/${questionId}/answer`,
+    const res = await axios.post(`${this.apiEndpoint()}/api/toilet/questions/${questionId}/answer`,
       {
       });
     // eslint-disable-next-line no-console

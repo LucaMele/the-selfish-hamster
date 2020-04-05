@@ -22,10 +22,10 @@ class InjectCRUDActionProfile {
 
 // eslint-disable-next-line import/prefer-default-export
 export class ProfileServices {
-  Register(app, connection) {
+  Register(prefix, app, connection) {
     const profileRepository = connection.getRepository(Profile);
     const injector = new InjectCRUDActionProfile(app, connection);
 
-    new CRUDServices().Register(app, connection, '/profiles', Profile, injector);
+    new CRUDServices().Register(prefix, app, connection, '/profiles', Profile, injector);
   }
 }
