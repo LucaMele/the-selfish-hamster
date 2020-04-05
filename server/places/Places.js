@@ -19,6 +19,6 @@ export class GooglePlaces {
         place.formattedAddress = p.formatted_address;
         return place;
       }))
-      .catch(e => e);
+      .catch(e => []);
   }
 }
