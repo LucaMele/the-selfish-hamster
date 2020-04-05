@@ -9,16 +9,30 @@
         </div>
         <div class="lower-container">
           <div class="result-box">
-            <p class="result-usage-per-day">
+            <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
               {{ this.usagePerDay }}...
-            </p>
+            </div>
           </div>
           <div class="lower-bg">
-            <p>{{ this.hamsterType }}</p>
-            <p>{{ this.nofUsagesPerPerson }}</p>
-            <p>{{ this.usagePerQuarantine }}</p>
-            <p>{{ this.waterConsumption }}</p>
-            <p>{{ this.woodConsumption }}</p>
+            <p class="result-text">{{$t("pages.result.toiletpaper.text")}}</p>
+            <div class="ressource-usage">
+                <div class="ressource-usage-content">
+                  <p>{{ this.waterConsumption }}</p>
+                  <p>{{$t("pages.result.usage.water")}}</p>
+                </div>
+                <div class="ressource-usage-content">
+                  <p>{{ this.woodConsumption }}</p>
+                  <p>{{$t("pages.result.usage.wood")}}</p>
+                </div>
+            </div>
+            <button class="result-stockpile-button">
+              <router-link to="/stock-pile">{{$t("pages.result.button.stockpile")}}
+              </router-link>
+            </button>
+            <button class="home-button">
+              <router-link to="/">{{$t("pages.result.button.home")}}
+              </router-link>
+            </button>
           </div>
         </div>
       </div>
@@ -52,8 +66,8 @@ export default {
           this.$set(this, 'usagePerDay', answers.usagePerDay);
           this.$set(this, 'usagePerQuarantine', answers.usagePerQuarantine);
 
-          this.$set(this, 'waterConsumption', answers.waterConsumption);
-          this.$set(this, 'woodConsumption', answers.woodConsumption);
+          this.$set(this, 'waterConsumption', answers.waterConsumption.toFixed(0));
+          this.$set(this, 'woodConsumption', answers.woodConsumption.toFixed(0));
           // eslint-disable-next-line prefer-template
           this.$set(this, 'hamsterType', answers.hamsterType);
         }),

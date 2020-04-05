@@ -29,9 +29,37 @@
   font-style: normal;
   font-weight: bold;
   font-size: 100px;
+  line-height: 120px;
+  
   text-align: center;
-
   color: #140F26;
+}
+
+.result-usage-per-day--above-average {
+  color: #FF3A79;
+}
+.result-usage-per-day--average {
+  color: #14D2B8;
+}
+.result-usage-per-day--below-average {
+  color: #F2EA23;
+}
+
+.result-text {
+  padding-left: 10px;
+}
+
+.ressource-usage {
+  position: absolute;
+  width: 100%;
+  top: 145px;
+  
+  text-align: right;
+}
+
+.ressource-usage-content {
+  display: flex;
+  flex-direction: row;
 }
 
 .lower-bg {
@@ -41,4 +69,27 @@
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.lower-bg {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(308.18deg, #645AFF -3.69%, #A573FF 109.82%);
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.15);
+}
 
+.result-stockpile-button {
+  position: relative;
+  bottom: -170px;
+  margin: 0 auto;
+
+  background: #14D2B8;
+  border-radius: 50px;
+}
+
+.home-button {
+  position: relative;
+  bottom: -190px;
+  margin: 0 auto;
+
+  background: #14D2B8;
+  border-radius: 50px;
+}
