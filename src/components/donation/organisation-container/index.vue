@@ -47,6 +47,11 @@ export default {
         { index: 3, organisation: 'Super Organisation 4', adress: 'Bahnhofstrasse 4, 8590 Romanshorn', telefon: '+41763241744' },
         { index: 4, organisation: 'Super Organisation 5', adress: 'Bahnhofstrasse 5, 8590 Romanshorn', telefon: '+41763241744' },
         { index: 5, organisation: 'Super Organisation 6', adress: 'Bahnhofstrasse 6, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 6, organisation: 'Super Organisation 7', adress: 'Bahnhofstrasse 7, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 7, organisation: 'Super Organisation 8', adress: 'Bahnhofstrasse 8, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 8, organisation: 'Super Organisation 9', adress: 'Bahnhofstrasse 9, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 9, organisation: 'Super Organisation 10', adress: 'Bahnhofstrasse 10, 8590 Romanshorn', telefon: '+41763241744' },
+        { index: 10, organisation: 'Super Organisation 11', adress: 'Bahnhofstrasse 11, 8590 Romanshorn', telefon: '+41763241744' },
       ],
     });
   },

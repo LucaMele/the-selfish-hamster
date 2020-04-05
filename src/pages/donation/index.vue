@@ -14,7 +14,7 @@ import OrganisationListContainer from './../../components/donation/organisation-
 export default {
   name: 'donation',
   components: {
-    'organisations-list-container': OrganisationListContainer,
+    OrganisationListContainer,
   },
   data() {
     return ({

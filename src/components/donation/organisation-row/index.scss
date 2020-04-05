@@ -1,10 +1,10 @@
-.category-table-row {
+.organisation-table-row {
   position: relative;
   width: 100%;
   height: 40px;
 }
 
-.category-column .category {
+.organisation-column .organisation {
   position: absolute;
   left: 4%;
   margin-top: 0;
@@ -13,7 +13,7 @@
   color: #FFFFFF;
 }
 
-.category-column .sub-category {
+.organisation-column .adress {
   position: absolute;
   left: 4%;
   margin-top: 19px;
@@ -23,25 +23,7 @@
   color: #000000;
 }
 
-.stock-amount .amount {
+.organisiation-phone-icon {
   position: absolute;
-  font-size: 12px;
-  right: 30%;
-  line-height: 14px;
-  color: #140F26;
-}
-
-.stock-amount .unit {
-  position: absolute;
-  right: 26%;
-  font-size: 12px;
-  line-height: 14px;
-  color: #140F26;
-  }
-
-.slider-column {
-  position: absolute;
-  right: 0px;
-  padding-right: 5px;
-  margin-right: 4%;
+  right: 5%;
 }
