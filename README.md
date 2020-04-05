@@ -84,19 +84,6 @@ https://www.figma.com/proto/X26tYhLriAn2aNOK837Py5/The-Selfish-Hamster?node-id=7
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # Heroku
-## Access APP
-http://the-selfish-hamster.herokuapp.com/
-
-## access frontend / deploy
-we need to add your account as collaborator in https://dashboard.heroku.com/apps/the-selfish-hamster/access
-
-## see application logs
-
-install heroku cli  https://devcenter.heroku.com/articles/heroku-cli#download-and-install
-
-run
-`heroku logs --app the-selfish-hamster`
-
-
-
+## Access App
+https://selfishhamster.disruptr.ch
 
