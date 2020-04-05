@@ -23,7 +23,7 @@ console.log(StockPileSlider);
 
 export default {
   name: 'stock-household-kids-container',
-  props: ['category', 'subCategory', 'index', 'unit', 'amount1', 'amount2', 'amount3'],
+  props: ['category', 'subCategory', 'index', 'unit', 'amountOne', 'amountTwo', 'amountThree'],
   components: {
     StockPileSlider,
   },
@@ -38,13 +38,13 @@ export default {
     sliderValueCallback(value) {
       switch (value) {
         case 1:
-          this.amountValue = this.amount1;
+          this.amountValue = this.amountOne;
           break;
         case 3:
-          this.amountValue = this.amount3;
+          this.amountValue = this.amountThree;
           break;
         default:
-          this.amountValue = this.amount2;
+          this.amountValue = this.amountTwo;
           break;
       }
 
@@ -54,7 +54,7 @@ export default {
     },
   },
   created() {
-    this.amountValue = this.amount2;
+    this.amountValue = this.amountTwo;
   },
 };
 </script>
