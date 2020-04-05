@@ -1,8 +1,7 @@
 <template>
   <div class="donations-wrapper">
-    <div>
+    <div v-if="this.currentStep === 0">
       <organisations-list-container
-        @callbackNext="inputDataCallback"
         @callbackBack="navigateBack">
       </organisations-list-container>
     </div>
@@ -10,7 +9,7 @@
 </template>
 
 <script>
-import OrganisationListContainer from './../../components/donation/organisationContainer';
+import OrganisationListContainer from './../../components/donation/organisation-container';
 
 // import HamsterService from './../../services/HamsterService';
 // console.log(HamsterService);
@@ -21,9 +20,17 @@ export default {
   },
   data() {
     return ({
+      currentStep: 0,
     });
   },
   methods: {
+    navigateBack() {
+      if (this.currentStep === 0) {
+        this.$router.push('/stock-pile-result/5e89b65fa22d0465d992f796'); // TODO: change to correct id
+      }
+      // eslint-disable-next-line no-plusplus
+      this.currentStep--;
+    },
   },
 };
 </script>
