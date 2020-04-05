@@ -1,7 +1,7 @@
 # the-selfish-hamster
 
 Our app is deployed at
-http://the-selfish-hamster.herokuapp.com/
+https://selfishhamster.disruptr.ch/
 
 ## Prereq
 
