@@ -1,52 +1,8 @@
-.hamster-title {
-  position: relative;
-  margin: 35% 0 0 0;
-}
-
-.lower-container {
+.donations-wrapper {
   position: absolute;
-  top: 50%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
-}
-
-.result-box {
-  position: absolute;
-  z-index: 2;
-  Top: -15%;
-  left: 3%;
-  right: 3%;
-  height: 30%;
-
-  background: #FFFFFF;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.result-text {
-  padding-left: 10px;
-}
-
-.lower-bg {
-  position: relative;
   height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
   background: linear-gradient(308.18deg, #645AFF -3.69%, #A573FF 109.82%);
-  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.15);
-}
-
-.lower-bg {
-  position: relative;
-  height: 100%;
-  background: linear-gradient(308.18deg, #645AFF -3.69%, #A573FF 109.82%);
-  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.15);
-}
-
-.home-button {
-  position: relative;
-  bottom: -190px;
-  margin: 0 auto;
-
-  background: #14D2B8;
-  border-radius: 50px;
 }

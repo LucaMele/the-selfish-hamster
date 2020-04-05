@@ -3,17 +3,21 @@
     <div class="home-wrapper">
       <div>
         <div class="hamster">
-        <div class="hamster-title">
-          <img :src="getImgUrl(hamsterType)"/>
-        </div>
+          <div class="hamster-title-stock-pile">
+            <img :src="getImgUrl(hamsterType)"/>
+          </div>
         </div>
         <div class="lower-container">
           <div class="result-box">
-            <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType"></div>
+            <div v-bind:class="'result-stockpile result-stockpile--' + hamsterType">
+              <div class="stockpile-result-text">
+                {{$t("pages.result.stockpile.text")}}
+              </div>
+            </div>
           </div>
           <div class="lower-bg">
             <button class="result-donate-button">
-              <router-link to="/donate">{{$t("pages.result.button.donate")}}
+              <router-link to="/donation">{{$t("pages.result.button.donate")}}
               </router-link>
             </button>
             <button class="home-button">

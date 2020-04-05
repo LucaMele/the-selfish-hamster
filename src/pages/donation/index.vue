@@ -1,33 +1,36 @@
 <template>
-  <article>
-    <p>Test</p>
-    <div class="home-wrapper">
-      <div>
-        <div class="lower-container">
-          <div class="result-box">
-          </div>
-          <div class="lower-bg">
-            <p>Test</p>
-          </div>
-        </div>
-      </div>
+  <div class="donations-wrapper">
+    <div v-if="this.currentStep === 0">
+      <organisations-list-container
+        @callbackBack="navigateBack">
+      </organisations-list-container>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
-import HamsterService from './../../services/HamsterService';
+import OrganisationListContainer from './../../components/donation/organisation-container';
 
-console.log(HamsterService);
-
+// import HamsterService from './../../services/HamsterService';
+// console.log(HamsterService);
 export default {
   name: 'donation',
-  components: {},
+  components: {
+    OrganisationListContainer,
+  },
   data() {
     return ({
+      currentStep: 0,
     });
   },
   methods: {
+    navigateBack() {
+      if (this.currentStep === 0) {
+        this.$router.push('/stock-pile-result/5e89b65fa22d0465d992f796'); // TODO: change to correct id
+      }
+      // eslint-disable-next-line no-plusplus
+      this.currentStep--;
+    },
   },
 };
 </script>
