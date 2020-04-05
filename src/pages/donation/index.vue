@@ -1,17 +1,13 @@
 <template>
   <article>
+    <p>Test</p>
     <div class="home-wrapper">
       <div>
-        <div class="hamster">
-          <div class="hamster-title">
-            <img :src="getImgUrl(hamsterType)"/>
-          </div>
-        </div>
         <div class="lower-container">
           <div class="result-box">
-            <div v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType"></div>
           </div>
           <div class="lower-bg">
+            <p>Test</p>
           </div>
         </div>
       </div>
@@ -30,8 +26,6 @@ export default {
   data() {
     return ({
     });
-  },
-  created() {
   },
   methods: {
   },

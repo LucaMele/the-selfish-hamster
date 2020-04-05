@@ -64,6 +64,7 @@ export default {
         button: {
           stockpile: 'Emergency Stock 🍫',
           home: 'Back Home',
+          donate: 'Donate',
         },
         toiletpaper: {
           text: '... daily poops per person in your household until you run out of paper.',
@@ -71,6 +72,9 @@ export default {
         usage: {
           water: 'liters of water 💧',
           wood: 'kg of wood 🌳',
+        },
+        stockpile: {
+          text: '[Placeholder]',
         },
       },
       stockPile: {
@@ -146,6 +150,7 @@ export default {
         button: {
           stockpile: 'Notvorrat 🍫',
           home: 'Startseite',
+          donate: 'Spenden',
         },
         toiletpaper: {
           text: '... tägliche Geschäfte bis du kein WC-Papier mehr hast.',
@@ -153,6 +158,9 @@ export default {
         usage: {
           water: 'Liter Wasser 💧',
           wood: 'Kg Holz 🌳',
+        },
+        stockpile: {
+          text: '[Placeholder]',
         },
       },
       stockPile: {

@@ -3,9 +3,9 @@
     <div class="home-wrapper">
       <div>
         <div class="hamster">
-          <div class="hamster-title">
+          <!-- <div class="hamster-title">
             <img :src="getImgUrl(hamsterType)"/>
-          </div>
+          </div> -->
         </div>
         <div class="lower-container">
           <div class="result-box">
@@ -13,7 +13,7 @@
           </div>
           <div class="lower-bg">
             <button class="result-donate-button">
-              <router-link to="/donate">{{$t("pages.result.button.stockpile")}}
+              <router-link to="/donate">{{$t("pages.result.button.donate")}}
               </router-link>
             </button>
             <button class="home-button">
