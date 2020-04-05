@@ -121,18 +121,6 @@ export default {
               console.log('# set questionId', data.id);
               this.$set(this, 'questionId', data.id);
               this.$router.push({ name: 'toilet-papers-result', params: { questionId: this.questionId } });
-              HamsterService.getAnswer(this.questionId)
-                .then(
-                  ((answers) => {
-                    this.$set(this, 'nofUsagesPerPerson', answers.nofUsagesPerPerson);
-                    this.$set(this, 'usagePerDay', answers.usagePerDay);
-                    this.$set(this, 'usagePerQuarantine', answers.usagePerQuarantine);
-
-                    this.$set(this, 'waterConsumption', answers.waterConsumption);
-                    this.$set(this, 'woodConsumption', answers.woodConsumption);
-                    this.$set(this, 'hamsterType', answers.hamsterType);
-                  }),
-                );
             }),
           );
       }
