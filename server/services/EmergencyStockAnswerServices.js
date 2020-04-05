@@ -24,6 +24,7 @@ export class EmergencyStockAnswerServices {
       // eslint-disable-next-line max-len
       let answer = await emergencyStockAnswerRepository.findOne({ where: { questionId: question.id } });
       answer = this.CalculateEmergencyStockUsage(profile, question, answer);
+      await emergencyStockQuestionRepository.save(question);
       const resultAnswer = await emergencyStockAnswerRepository.save(answer);
       return res.status(201)
         .send(resultAnswer);
@@ -50,15 +51,22 @@ export class EmergencyStockAnswerServices {
 
     const resultCategories = new FoodCategories().List();
     const questionCategories = question.categories;
+    const newQuestionCategories = [];
 
     const estimates = new FoodCategories().CategegoryEstimates(
       profile.nofAdults, profile.nofKidsUnder12, question.durationQuarantineInDays);
     for (const resultCategory of resultCategories) {
       const foundCatValue = this.GetCategoryByIndex(questionCategories, resultCategory.index);
+      newQuestionCategories.push(
+        { index: resultCategory.index, tag: resultCategory.tag, value: foundCatValue.value, included: foundCatValue.included}
+      );
+
       resultCategory.value = foundCatValue.value;
       resultCategory.included = foundCatValue.included;
       resultCategory.estimatesPerQuarantineInDays = estimates[resultCategory.index].estimatesPerQuarantineInDays;
+      resultCategory.estimatedValuePerQuarantineInDays = resultCategory.estimatesPerQuarantineInDays[resultCategory.value];
     }
+    question.categories = newQuestionCategories;
     currentAnswer.categories = resultCategories;
     return currentAnswer;
   }
