@@ -1,9 +1,9 @@
 <template>
   <div class="donations-wrapper">
     <div v-if="this.currentStep === 0">
-      <organisations-list-container
+      <organisation-list-container
         @callbackBack="navigateBack">
-      </organisations-list-container>
+      </organisation-list-container>
     </div>
   </div>
 </template>

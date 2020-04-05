@@ -24,7 +24,7 @@
 import StockPileSlider from './../../stock-form/slider';
 
 export default {
-  name: 'stock-household-kids-container',
+  name: 'organisation-row',
   props: ['category', 'subCategory', 'index', 'unit', 'amountOne', 'amountTwo', 'amountThree'],
   components: {
     StockPileSlider,

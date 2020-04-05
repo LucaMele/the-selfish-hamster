@@ -11,10 +11,10 @@
       <div class="hamster__container-no-bg">
         <table class="table-container">
           <tbody class="table-body" v-for="item in organisations" v-bind:key="item.index">
-            <table-row
+            <organisation-row
               v-bind:index="item.index" v-bind:organisation="item.organisation"
               v-bind:adress="item.adress" v-bind:telefon="item.telefon">
-            </table-row>
+            </organisation-row>
           </tbody>
         </table>
       </div>
@@ -30,7 +30,7 @@ import OrganisationRow from './../../donation/organisation-row';
 import SearchOrganisation from './../../donation/search-organisation';
 
 export default {
-  name: 'organisations-list-container',
+  name: 'organisation-list-container',
   components: {
     ToiletBack,
     Navigation,
