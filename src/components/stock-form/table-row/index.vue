@@ -35,11 +35,25 @@ export default {
   },
   methods: {
     sliderValueCallback(value) {
-      // this.currentAmountValue = this.inputValues[value - 1];
+      switch (value) {
+        case 1:
+          this.amountValue = this.amount1;
+          break;
+        case 3:
+          this.amountValue = this.amount3;
+          break;
+        default:
+          this.amountValue = this.amount2;
+          break;
+      }
+      
       this.sliderValue = value;
 
       this.$emit('callback', { value, index: this.index });
     },
+  },
+  created() {
+    this.amountValue = this.amount2;
   },
 };
 </script>
