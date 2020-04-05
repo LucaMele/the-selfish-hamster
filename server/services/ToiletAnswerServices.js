@@ -48,32 +48,43 @@ export class ToiletAnswerServices {
     // 1 package = 12 roll
     // 1 roll = 200 pieces
     //
-    const ONE_ROLL_IN_DAYS = 3;
+    const ONE_ROLL_EVERY_DAYS = 3;
+    const ONE_PERSON_PER_DAY_TO_TOILET = 1;
 
-    let numberOfROlls = question.durationQuarantineInDays / ONE_ROLL_IN_DAYS;
+    let rollUsageOnePerson = question.durationQuarantineInDays / ONE_ROLL_EVERY_DAYS;
     if (question.nofSheetsPerUse === 'none') {
-      numberOfROlls *= 0.5;
+      rollUsageOnePerson *= 0.5;
     } else if (question.nofSheetsPerUse === 'not-much') {
-      numberOfROlls *= 1;
+      rollUsageOnePerson *= 1;
     } else if (question.nofSheetsPerUse === 'average') {
-      numberOfROlls *= 1.5;
+      rollUsageOnePerson *= 1.5;
     } else if (question.nofSheetsPerUse === 'a-lot') {
-      numberOfROlls *= 2;
+      rollUsageOnePerson *= 2;
     }
 
-    currentAnswer.nofUsagesPerPerson = Math.ceil(numberOfROlls);
+    const NUMBER_OF_ROLL_PER_PACKAGE = 12;
+    const totalNumberOFRoll = question.nofToiletRolls * NUMBER_OF_ROLL_PER_PACKAGE;
+    const rollUsageFamily = rollUsageOnePerson * profile.nofPersons;
+    const rollNotUsed = totalNumberOFRoll - rollUsageFamily;
 
     // from https://www.omnicalculator.com/everyday-life/toilet-paper#how-much-toilet-paper-do-i-need
-    currentAnswer.waterConsumption = 140 * numberOfROlls;
-    currentAnswer.woodConsumption = Math.ceil(0.7 * numberOfROlls);
+    const LITER_OF_WATER_PER_PAPER_ROLL = 140;
+    currentAnswer.waterConsumption = LITER_OF_WATER_PER_PAPER_ROLL * rollNotUsed;
+    const KG_OF_WOOD_PER_PAPER_ROLL = 0.7;
+    currentAnswer.woodConsumption = Math.ceil(KG_OF_WOOD_PER_PAPER_ROLL * rollNotUsed);
 
+    currentAnswer.nofUsagesPerPerson = Math.ceil(rollUsageOnePerson);
+    currentAnswer.usagePerQuarantine = rollUsageFamily;
 
-    currentAnswer.usagePerQuarantine = Math.ceil(currentAnswer.nofUsagesPerPerson * profile.nofPersons);
-    currentAnswer.usagePerDay = Math.ceil(currentAnswer.usagePerQuarantine / question.durationQuarantineInDays);
+    const numberOFRollPerDayToUseThemAll = rollNotUsed / question.durationQuarantineInDays;
 
-    if (question.nofToiletRolls > currentAnswer.usagePerQuarantine) {
+    const ONE_DAY = 1;
+    const rollPerDayPersonPerVisit = (ONE_DAY / ONE_ROLL_EVERY_DAYS) * ONE_PERSON_PER_DAY_TO_TOILET;
+    currentAnswer.usagePerDay = Math.ceil(numberOFRollPerDayToUseThemAll / rollPerDayPersonPerVisit);
+
+    if (currentAnswer.usagePerDay > 5) {
       currentAnswer.hamsterType = 'above-average';
-    } else if (question.nofToiletRolls < currentAnswer.usagePerQuarantine) {
+    } else if (currentAnswer.usagePerDay > 3) {
       currentAnswer.hamsterType = 'below-average';
     } else {
       currentAnswer.hamsterType = 'average';
