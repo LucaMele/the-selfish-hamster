@@ -1,6 +1,8 @@
 @import './../../../material/buttonpositioning.scss';
 
 .hamster__container {
+    position: absolute;
+    left: 3%;
     width: 94%;
     height: 200px;
     background-color: white;
@@ -9,15 +11,14 @@
     -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
     box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
     border-radius: 4px;
-    margin: auto;
 }
 
 .household-wrapper {
+    position: absolute;
+    top: 20%;
     margin: 0 10px;
-    margin-top: 15vh;
 }
 
 .household-wrapper p {
     color: #fff;
-    margin: 24px 0;
 }
