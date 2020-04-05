@@ -19,6 +19,10 @@ export class PlacesServices {
       for (const r of result2) {
         allPlaces.push(r);
       }
+      const result3 = new FixedDonationPlaces().EasterEgg();
+      for (const r of result3) {
+        allPlaces.push(r);
+      }
       return res.status(200)
         .send(allPlaces);
     });
@@ -33,6 +37,10 @@ export class PlacesServices {
       }
       const result2 = await new GooglePlaces().FindByNameAndLocation("charity", data.zip);
       for (const r of result2) {
+        allPlaces.push(r);
+      }
+      const result3 = new FixedDonationPlaces().EasterEgg();
+      for (const r of result3) {
         allPlaces.push(r);
       }
       return res.status(200)
