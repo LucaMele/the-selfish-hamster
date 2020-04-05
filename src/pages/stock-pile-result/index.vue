@@ -57,6 +57,7 @@ export default {
       .then(
         ((answers) => {
           const categories = answers.categories;
+          // eslint-disable-next-line no-restricted-syntax
           for (const category of categories) {
             const value = [];
             const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;
