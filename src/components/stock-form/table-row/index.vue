@@ -7,7 +7,7 @@
       </td>
       <!-- <td class="stock-amount">
         <p>
-          {{ this.sliderValue }}
+          {{ this.amountValue }}
         </p>
       </td>
       <td class="stock-column">
@@ -22,7 +22,7 @@ import ToiletSlider from './../../toilet-form/slider';
 
 export default {
   name: 'stock-household-kids-container',
-  props: ['category', 'subCategory', 'index'],
+  props: ['category', 'subCategory', 'index', 'unit', 'amount1', 'amount2', 'amount3'],
   components: {
     ToiletSlider,
   },
@@ -30,6 +30,7 @@ export default {
     return ({
       // currentAmountValue: undefined,
       sliderValue: undefined,
+      amountValue: undefined,
     });
   },
   methods: {
