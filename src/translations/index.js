@@ -74,7 +74,11 @@ export default {
           wood: 'kg of wood 🌳',
         },
         stockpile: {
-          text: '[Placeholder]',
+          text: {
+            above_average: 'You Hamster',
+            average: 'Nice',
+            below_average: 'Tight one 😬',
+          },
         },
       },
       stockPile: {
@@ -160,7 +164,11 @@ export default {
           wood: 'Kg Holz 🌳',
         },
         stockpile: {
-          text: '[Placeholder]',
+          text: {
+            above_average: 'Du Hamster',
+            average: 'Tiptop',
+            below_average: 'Wird knapp 😬',
+          },
         },
       },
       stockPile: {
