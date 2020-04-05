@@ -37,7 +37,7 @@ import TableRow from './../table-row';
 
 export default {
   name: 'stock-list-container',
-  // props: ['estimationValues'],
+  props: ['estimationValues'],
   components: {
     ToiletBack,
     ToiletNext,
@@ -46,8 +46,6 @@ export default {
   },
   data() {
     return ({
-      // MOCK
-      estimationValues: [],
       outputData: [
         {
           value: '',

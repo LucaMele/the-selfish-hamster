@@ -21,7 +21,8 @@
     <div v-if="this.currentStep === 3">
       <stock-list-container
         @callbackNext="inputDataCallback"
-        @callbackBack="navigateBack">
+        @callbackBack="navigateBack"
+        v-bind:estimationValues="estimationValues">
       </stock-list-container>
     </div>
   </div>
@@ -132,21 +133,26 @@ export default {
                   const categories = answers.categories;
                   // eslint-disable-next-line no-restricted-syntax
                   const estimationValues = [];
+                  let valueIndex = 0;
                   // eslint-disable-next-line no-restricted-syntax
                   for (const category of categories) {
                     // eslint-disable-next-line no-shadow
-                    const value = [];
+                    let value = {};
                     const estimatesPerQuarantineInDays = category.estimatesPerQuarantineInDays;
-                    value.push(
+                    value =
                       {
+                        index: valueIndex,
                         text: category.text,
                         helptext: category.helpText,
                         unit: category.unit,
-                        1: estimatesPerQuarantineInDays['1'],
-                        2: estimatesPerQuarantineInDays['2'],
-                        3: estimatesPerQuarantineInDays['3'],
-                      });
+                        one: estimatesPerQuarantineInDays['1'].toFixed(0),
+                        two: estimatesPerQuarantineInDays['2'].toFixed(0),
+                        three: estimatesPerQuarantineInDays['3'].toFixed(0),
+                      };
                     estimationValues.push(value);
+
+                    // eslint-disable-next-line no-plusplus
+                    valueIndex++;
                   }
                   // eslint-disable-next-line no-console
                   console.log('estimationValues ', JSON.stringify(estimationValues));
@@ -158,6 +164,9 @@ export default {
               );
           }),
           );
+      }
+      if (this.currentStep === 4) {
+        this.$router.push({ name: 'stock-pile-result', params: { questionId: this.questionId } });
       }
     },
     navigateBack() {
