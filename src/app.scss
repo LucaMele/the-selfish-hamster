@@ -15,7 +15,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  position: absolute;
+  top: 0%;
+  bottom: 50%;
+  left: 0%;
+  right: 0%;
 }
 
 .hamster-title {
@@ -203,4 +208,23 @@ align-self: center;
   .greeting-text {
     padding: 40px 2% 20px 2%;
   }
+}
+
+
+
+// template for other pages //
+// media query for very small screens
+@media only screen and (max-width: 374px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }
