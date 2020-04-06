@@ -4,7 +4,7 @@ body {
   font-family: Lato, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 24px;
   line-height: 29px;
   text-align: center;
 }
@@ -34,7 +34,7 @@ body {
 .greetings-box {
   position: absolute;
   z-index: 2;
-  Top: -20%;
+  Top: -15%;
   left: 3%;
   right: 3%;
   height: 30%;
@@ -50,11 +50,11 @@ body {
     margin-left: calc(50% - 97.5px);
   }
   .greeting-text {
-    //position: absolute;
-    //top: 0;
-    //bottom: 0;
-    //left: 0;
-    //right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 60%;
     margin: 0 auto;
   }
@@ -79,7 +79,7 @@ body {
   color: #140F26;
   margin: 0;
   align-content: center;
-  padding: 3% 3%;
+  padding: 4% 2% 4% 2%;
 }
 
 .lower-bg {
@@ -155,8 +155,51 @@ align-self: center;
 
 // media query for very small screens
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 374px) {
   body {
-    font-size: 1.2em;
+    font-size: 1.3em;
+  }
+  .greetings-box {
+    position: absolute;
+    z-index: 2;
+    Top: -15%;
+    max-height: 30%;
+  }
+}
+
+
+/* tiny small devices (phones, 600px and down) */
+@media only screen and (max-width: 374px) {
+  body {
+    font-size: 1.3em;
+  }
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 1.8em;
+  }
+  .greetings-box {
+    position: absolute;
+    z-index: 2;
+    top: -15%;
+    height: 30%;
+  }
+  .greeting-text {
+    padding: 3% 2% 1% 2%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .greeting-text {
+    padding: 60px 2% 20px 2%;
   }
 }
