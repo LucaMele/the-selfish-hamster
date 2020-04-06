@@ -70,8 +70,7 @@ export default {
     // eslint-disable-next-line no-console
     console.log('call searchCharityPlaces');
     const res = await axios.post(`${this.apiEndpoint()}/api/places/charity/search`,
-      {
-      });
+      { zip: '8000' });
     // eslint-disable-next-line no-console
     console.log('success ', res.data);
     return res.data;
