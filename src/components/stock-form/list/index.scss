@@ -1,21 +1,24 @@
 .hamster__container-no-bg {
   position: absolute;
   width: 100%;
-  margin-top: 55%;
+  bottom: 100%;
+  top: 22%;
   background: transparent;
   border: none;
 }
 
 .table-question {
   position: absolute;
-  width: 344px;
-  height: 72px;
-  left: 14px;
-  top: 70px;
-
+  width: 100%;
+  height: 10%;
+  bottom: 80%;
+  left: 2%;
+  right: 2%;
   font-size: 20px;
   text-align: center;
   color: #FFFFFF;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .table-head .title-left {
@@ -46,4 +49,27 @@
   position: absolute;
   bottom: 4%;
   left: 120px;
+}
+
+
+
+
+
+// template for other pages //
+
+// media query for very small screens
+@media only screen and (max-width: 374px) {
+
+}
+
+// media query for larger phones
+@media only screen and (min-width: 375px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }

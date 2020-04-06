@@ -96,7 +96,8 @@ export default {
       stockPile: {
         example: 'An example',
         list: {
-          info: 'These are the amounts of stocks we suggest based on your data during a quarantine of 14 days.',
+          info1: 'Adjust our stock proposal ',
+          info2: 'for 14 days quarantine',
         },
       },
     },

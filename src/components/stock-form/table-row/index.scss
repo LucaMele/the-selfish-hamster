@@ -1,7 +1,7 @@
 .category-table-row {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 42px;
 }
 
 .category-column .category {
@@ -26,20 +26,22 @@
 
 .stock-amount .amount {
   position: absolute;
-  font-size: 12px;
-  right: 30%;
-  line-height: 14px;
+  font-size: 15px;
+  right: 32%;
+  line-height: 17px;
   color: #FFFFFF;
   font-weight: lighter;
+  margin-top: 4px;
 }
 
 .stock-amount .unit {
   position: absolute;
-  right: 26%;
-  font-size: 12px;
-  line-height: 14px;
+  left: 70%;
+  font-size: 15px;
+  line-height: 17px;
   color: #FFFFFF;
   font-weight: lighter;
+  margin-top: 4px;
   }
 
 .slider-column {
@@ -47,4 +49,32 @@
   right: 0px;
   padding-right: 5px;
   margin-right: 4%;
+}
+
+
+
+// template for other pages //
+
+// media query for very small screens
+@media only screen and (max-width: 374px) {
+  .category-table-row {
+    height: 33px;
+  }
+
+  .category-column .sub-category {
+    display: none;
+  }
+}
+
+// media query for larger phones
+@media only screen and (min-width: 375px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }
