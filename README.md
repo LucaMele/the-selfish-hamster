@@ -70,7 +70,7 @@ npm test
 ### API docu
 
 deployed on postman documenter
-https://documenter.getpostman.com/view/747654/SzYbxwbF?version=latest
+https://documenter.getpostman.com/view/747654/SzYbzdTT?version=latest
 
 ### App design
 
