@@ -34,7 +34,7 @@ body {
 .greetings-box {
   position: absolute;
   z-index: 2;
-  Top: -15%;
+  Top: -20%;
   left: 3%;
   right: 3%;
   height: 30%;
@@ -48,6 +48,15 @@ body {
     margin-top: -214px;
     display: block;
     margin-left: calc(50% - 97.5px);
+  }
+  .greeting-text {
+    //position: absolute;
+    //top: 0;
+    //bottom: 0;
+    //left: 0;
+    //right: 0;
+    height: 60%;
+    margin: 0 auto;
   }
 }
 
@@ -70,7 +79,7 @@ body {
   color: #140F26;
   margin: 0;
   align-content: center;
-  padding: 12px 12px;
+  padding: 3% 3%;
 }
 
 .lower-bg {
