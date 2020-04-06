@@ -173,7 +173,7 @@ align-self: center;
 }
 
 
-/* tiny small devices (phones, 600px and down) */
+/* tiny small devices (phones, 374px and down) */
 @media only screen and (max-width: 374px) {
   body {
     font-size: 1.3em;
@@ -181,8 +181,8 @@ align-self: center;
 
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 374px and down) */
+@media only screen and (min-width: 375px) {
 
 }
 
@@ -213,12 +213,13 @@ align-self: center;
 
 
 // template for other pages //
+
 // media query for very small screens
 @media only screen and (max-width: 374px) {
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+// media query for larger phones
+@media only screen and (min-width: 375px) {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
