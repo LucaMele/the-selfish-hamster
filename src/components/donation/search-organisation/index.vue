@@ -3,9 +3,16 @@
     <div class="hamster-donate-input-container">
       <input
         v-model="searchValue"
-        @change="onChangeSliderValue"
         v-on:keyup.enter="onChangeSliderValue"
-        placeholder='Search ...'>
+        :placeholder="$t('pages.stockPile.donate.zip')">
+      <div class='search-button-wrapper'>
+        <button @click="onClick">
+          <p class="donation-search">{{$t("pages.general.button.search")}}</p>
+          <div class="arrow-right">
+            <img src="./../../../assets/next-arrow.svg"/>
+          </div>
+        </button>
+      </div>
     </div>
   </article>
 </template>
@@ -20,10 +27,13 @@ export default {
     onChangeSliderValue() {
       this.$emit('callback', this.searchValue);
     },
+    onClick() {
+      this.$emit('callback', this.searchValue);
+    },
   },
   data() {
     return {
-      searchValue: '',
+      searchValue: '8000',
     };
   },
 };

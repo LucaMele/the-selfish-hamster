@@ -21,6 +21,7 @@ export default {
         button: {
           next: 'Next',
           back: 'Back',
+          search: 'Search',
         },
       },
       household: {
@@ -98,6 +99,9 @@ export default {
         list: {
           info1: 'Adjust our stock proposal ',
           info2: 'for 14 days quarantine',
+        },
+        donate: {
+          zip: 'Enter your zip',
         },
       },
     },

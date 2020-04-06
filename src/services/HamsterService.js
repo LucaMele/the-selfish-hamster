@@ -66,11 +66,11 @@ export default {
     console.log('success ', res.data);
     return res.data;
   },
-  async searchCharityPlaces() {
+  async searchCharityPlaces(zip) {
     // eslint-disable-next-line no-console
     console.log('call searchCharityPlaces');
     const res = await axios.post(`${this.apiEndpoint()}/api/places/charity/search`,
-      { zip: '8000' });
+      { zip: zip });
     // eslint-disable-next-line no-console
     console.log('success ', res.data);
     return res.data;

@@ -3,13 +3,49 @@
   width: 100%;
 }
 
+
 .hamster-donate-input-container input {
   position: absolute;
-  margin: 25% 0 0 -150px;
+  margin: 10% 0 0 -150px;
   background: #FFFFFF;
   border-radius: 50px;
   height: 25px;
   width: 300px;
   font-size: 20px;
   text-align: center;
+}
+
+
+.hamster-donate-input-container button {
+  display: flex;
+  flex-direction: row;
+  padding: 18px 30px;
+  height: 60px;
+  background: #14D2B8;
+  border-radius: 50px;
+  border: 0px;
+}
+
+.hamster-donate-input-container button:hover {
+  background: #695CFF;
+  cursor: pointer;
+}
+
+.hamster-donate-input-container .donation-search {
+  position: relative;
+  top: 20%;
+  margin: 0 auto;
+
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.hamster-donate-input-container .arrow-right {
+  padding-left: 10px;
+  align-self: center;
+}
+
+.search-button-wrapper {
+  position: relative;
+  margin: 20% 30%;
 }
