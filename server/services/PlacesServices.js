@@ -11,16 +11,15 @@ export class PlacesServices {
     app.post(`${prefix}/places/search`, async (req, res) => {
       const data = req.body;
       const allPlaces = new FixedDonationPlaces().List();
+      for (const r of (new FixedDonationPlaces().EasterEgg())) {
+        allPlaces.push(r);
+      }
       const result1 = await new GooglePlaces().FindByNameAndLocation('Gassenküche', data.zip);
       for (const r of result1) {
         allPlaces.push(r);
       }
       const result2 = await new GooglePlaces().FindByNameAndLocation(data.search, data.zip);
       for (const r of result2) {
-        allPlaces.push(r);
-      }
-      const result3 = new FixedDonationPlaces().EasterEgg();
-      for (const r of result3) {
         allPlaces.push(r);
       }
       return res.status(200)
