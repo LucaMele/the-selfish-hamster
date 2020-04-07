@@ -2,8 +2,13 @@
   <article>
     <div class="home-wrapper">
       <div>
+
+        <div class="hamster">
+          <div class="hamster-toilet-papers">
+            <img :onload="(event) => { console.log(event) }" :src="getImgUrl(hamsterType)"/>
+          </div>
+        </div>
         <div class="lower-container">
-          <img :onload="(event) => { console.log(event) }" :src="getImgUrl(hamsterType)"/>
           <div class="result-box">
             <p v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
               {{ this.usagePerDay }}...

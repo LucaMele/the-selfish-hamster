@@ -15,7 +15,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  position: absolute;
+  top: 0%;
+  bottom: 50%;
+  left: 0%;
+  right: 0%;
 }
 
 .hamster-title {
@@ -49,6 +54,15 @@ body {
     display: block;
     margin-left: calc(50% - 97.5px);
   }
+  .greeting-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    margin: 0 auto;
+  }
 }
 
 .greetings-box:after {
@@ -69,7 +83,8 @@ body {
   position: relative;
   color: #140F26;
   margin: 0;
-  padding: 74px 0;
+  align-content: center;
+  padding: 4% 2% 4% 2%;
 }
 
 .lower-bg {
@@ -141,4 +156,76 @@ align-self: center;
 
   background: #14D2B8;
   border-radius: 50px;
+}
+
+// media query for very small screens
+
+@media only screen and (max-width: 374px) {
+  body {
+    font-size: 1.3em;
+  }
+  .greetings-box {
+    position: absolute;
+    z-index: 2;
+    Top: -15%;
+    max-height: 30%;
+  }
+}
+
+
+/* tiny small devices (phones, 374px and down) */
+@media only screen and (max-width: 374px) {
+  body {
+    font-size: 1.3em;
+  }
+
+}
+
+/* Extra small devices (phones, 374px and down) */
+@media only screen and (min-width: 375px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 1.8em;
+  }
+  .greetings-box {
+    position: absolute;
+    z-index: 2;
+    top: -15%;
+    height: 30%;
+  }
+  .greeting-text {
+    padding: 3% 2% 1% 2%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  .greeting-text {
+    padding: 40px 2% 20px 2%;
+  }
+}
+
+
+
+// template for other pages //
+
+// media query for very small screens
+@media only screen and (max-width: 374px) {
+}
+
+// media query for larger phones
+@media only screen and (min-width: 375px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }

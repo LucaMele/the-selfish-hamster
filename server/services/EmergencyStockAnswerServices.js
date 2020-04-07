@@ -69,9 +69,13 @@ export class EmergencyStockAnswerServices {
     }
     question.categories = newQuestionCategories;
     currentAnswer.categories = resultCategories;
-    currentAnswer.hamsterType = 'average';
+    currentAnswer.hamsterType = this.CalculateHamsterType(currentAnswer);
 
     return currentAnswer;
+  }
+
+  CalculateHamsterType(currentAnswer) {
+    return 'average';
   }
 
   GetCategoryByIndex(categories, index) {

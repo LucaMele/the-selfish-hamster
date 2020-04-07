@@ -4,6 +4,7 @@
    top: 0px;
    padding: 10px;
    cursor: pointer;
+   z-index: 10;
 }
 
 .overlay {
@@ -48,4 +49,38 @@ a:hover {
 .language-switcher {
    align-self: flex-end;
    margin-bottom: 30px;
+   display: inline-flex;
+  div {
+    margin-left: 3px;
+    margin-right: 3px;
+    color: #FFF;
+  }
+}
+
+.language-switcher select {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFF;
+  width: 100px;
+  text-align: center;
+
+  background-color: #14D2B8;
+  border: 0;
+
+  -webkit-appearance: none !important;
+  /*webkit browsers */
+  -moz-appearance: none !important;
+  /*Firefox */
+  appearance: none !important;
+  /* modern browsers */
+  border-radius: 0 !important;
+}
+
+.language-switcher select option:checked {
+  background-color: #fff !important;
+  color: #fff !important;
 }

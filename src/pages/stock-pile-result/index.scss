@@ -1,7 +1,14 @@
 .hamster-title-stock-pile {
-  position: relative;
-  margin: 38% 0 0 0;
+  //position: relative;
+  //margin: 38% 0 0 0;
+  position: sticky;
+  top: 60%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+
 }
+
 
 .lower-container {
   position: absolute;
@@ -43,7 +50,7 @@
   font-weight: bold;
   font-size: 50px;
   line-height: 120px;
-  
+
   text-align: center;
   color: #140F26;
 }
