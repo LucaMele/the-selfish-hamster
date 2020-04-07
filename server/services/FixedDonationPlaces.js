@@ -16,7 +16,7 @@ export class FixedDonationPlaces {
   }
   EasterEgg() {
     return [
-      this.NewHamster('The-Selfish-Hamster Foundation', 'Thomas, Sven, Pixxel, Luca, Lolo, Cedric', '+41 79 000 00 00'),
+      this.NewHamster('The-Selfish-Hamster Foundation', 'Thomas, Sven, Pixxel, Luca, Lolo, Cédric', ''),
     ];
   }
 }
