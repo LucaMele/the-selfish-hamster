@@ -1,11 +1,11 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import VueGtag from 'vue-gtag';
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import App from './App';
 import router from './router';
 import translations from './translations';
-import VueGtag from 'vue-gtag';
 
 Vue.config.productionTip = false;
 
