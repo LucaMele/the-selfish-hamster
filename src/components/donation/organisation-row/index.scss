@@ -12,19 +12,37 @@
 
 .organisation-column .organisation {
   position: absolute;
-  left: 4%;
+  left: 2%;
+  right: 10%;
+  text-align: left;
   margin-top: 1%;
   font-size: 15px;
+
+  //cut string
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+
   line-height: 17px;
   color: #FFFFFF;
 }
 
 .organisation-column .adress {
   position: absolute;
-  left: 4%;
+  left: 2%;
+  right: 10%;
+  text-align: left;
   margin-top: 6%;
   margin-bottom: 0;
   font-size: 11px;
+
+  //cut string
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+
   line-height: 14px;
   color: #000000;
 }

@@ -5,13 +5,13 @@
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
     <div class="table-wrapper">
-      <p class="table-question">{{$t("pages.stockPile.list.info")}}</p>
+      <p class="table-question">{{$t("pages.stockPile.list.info1")}}<br>{{$t("pages.stockPile.list.info2")}}</p>
       <div class="hamster__container-no-bg">
         <table class="table-container">
-          <thead class="table-head">
+          <!--thead class="table-head">
             <th class="title-left">Category</th>
             <th class="title-right">My Emergency Stock</th>
-          </thead>
+          </thead-->
           <tbody class="table-body" v-for="item in estimationValues" v-bind:key="item.index">
             <table-row
               @callback="tableRowValueCallback"

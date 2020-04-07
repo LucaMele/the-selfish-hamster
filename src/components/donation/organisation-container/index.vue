@@ -46,7 +46,7 @@ export default {
   },
   created() {
     // call once at creation of component
-    HamsterService.searchCharityPlaces()
+    HamsterService.searchCharityPlaces('8000')
       .then(
         ((places) => {
           // eslint-disable-next-line no-restricted-syntax
@@ -76,6 +76,32 @@ export default {
       this.$emit('callbackBack');
     },
     onSearchCallback(value) {
+      HamsterService.searchCharityPlaces(value)
+        .then(
+          ((places) => {
+            // eslint-disable-next-line no-restricted-syntax
+            let i = 0;
+            const organisations = [];
+            // eslint-disable-next-line no-restricted-syntax
+            for (const place of places) {
+              organisations.push(
+                {
+                  // eslint-disable-next-line no-plusplus
+                  index: i++,
+                  organisation: place.name,
+                  adress: place.formattedAddress,
+                  telefon: place.phone,
+                  email: place.email,
+                });
+              this.$set(this, 'organisations', organisations);
+              this.$set(this, 'displayOrganisations', organisations);
+              // eslint-disable-next-line no-console
+              console.log('organisations ', JSON.stringify(organisations));
+            }
+          }),
+        );
+    },
+    onSearchCallbackOld(value) {
       if (value) {
         this.displayOrganisations = [];
         // eslint-disable-next-line no-restricted-syntax

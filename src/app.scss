@@ -113,30 +113,31 @@ body {
 .lower-bg button a {
   text-decoration: none;
   margin: 0 auto;
-
   // position: static;
-// left: 19.05%;
-// right: 19.05%;
-// top: 30%;
-// bottom: 30%;
+  // left: 19.05%;
+  // right: 19.05%;
+  // top: 30%;
+  // bottom: 30%;
 
-font-family: Lato;
-font-weight: 600;
-font-size: 18px;
-// /* identical to box height */
+  font-family: Lato;
+  font-weight: 600;
+  font-size: 18px;
+  // /* identical to box height */
 
-text-align: center;
+  text-align: center;
 
-/* White */
+  /* White */
 
-color: #FFFFFF;
+  color: #FFFFFF;
 
-// /* Inside Auto Layout */
+  // /* Inside Auto Layout */
 
-// flex: none;
-// order: 0;
-align-self: center;
-// margin: 10px 0px;
+  // flex: none;
+  // order: 0;
+  align-self: center;
+  // margin: 10px 0px;
+
+  line-height: 20px;
 }
 
 .toilet-button {
