@@ -9,6 +9,7 @@ export class GooglePlaces {
         params: {
           // eslint-disable-next-line radix
           query: `${name} near ${Math.floor(Number.parseInt(zip) / 10) * 10}`,
+          region: 'CH',
           key: process.env.GOOGLE_MAPS_API_KEY,
         },
         timeout: 1000, // milliseconds
