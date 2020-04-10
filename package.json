@@ -1,11 +1,11 @@
-{ 
+{
   "name": "the-selfish-hamster",
   "version": "1.0.0",
   "description": "TODO",
   "author": "TODO",
   "private": true,
   "scripts": {
-    "start": "npm run start-frontend-prod",
+    "start": "npm run lint -- --fix && npm run start-frontend-prod",
     "start-win": "concurrently \"npm run start-frontend-prod\" \"npm run start-backend-prod\"",
     "webpack-prod": "webpack --config build/webpack.prod.conf.js",
     "start-frontend-prod": "npm run build && npm run webpack-prod",
@@ -104,5 +104,9 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-merge": "^4.1.0"
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 3.0.0"
   }
 }
