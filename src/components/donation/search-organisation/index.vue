@@ -24,9 +24,6 @@ export default {
   components: {
   },
   methods: {
-    onChangeSliderValue() {
-      this.$emit('callback', this.searchValue);
-    },
     onClick() {
       this.$emit('callback', this.searchValue);
     },

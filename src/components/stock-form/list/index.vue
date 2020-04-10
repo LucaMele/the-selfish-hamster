@@ -6,7 +6,7 @@
     </div>
     <div class="table-wrapper">
       <p class="table-question">{{$t("pages.stockPile.list.info1")}}<br>{{$t("pages.stockPile.list.info2")}}</p>
-      <div class="hamster__container-no-bg">
+      <div class="hamster__container-no-bg__stock">
         <table class="table-container">
           <!--thead class="table-head">
             <th class="title-left">Category</th>

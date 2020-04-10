@@ -6,6 +6,7 @@ export default {
         test: 'Dare to take the test?',
         stockpileButton: 'Emergency Stock 🍫',
         toiletButton: 'Toilet Paper 🚽',
+        donateButton: 'Donate 🎁',
       },
       about: {
         text: 'The Selfish Hamsters',
@@ -71,15 +72,16 @@ export default {
           donate: 'Donate',
         },
         toiletpaper: {
-          text: '... daily poops per person in your household until you run out of paper.',
+          text: '... daily poops per person until you run out of paper.',
         },
         usage: {
           water: 'liters of water 💧',
           wood: 'kg of wood 🌳',
+          usedToProduce: 'used to produce',
         },
         stockpile: {
           text: {
-            above_average: {
+            'above-average': {
               title: 'You Hamster',
               subtitle: 'You hamstered yourself quite an inventory.',
             },
@@ -87,7 +89,7 @@ export default {
               title: 'Nice 👍',
               subtitle: 'You bought the right amount of supplies.',
             },
-            below_average: {
+            'below-average': {
               title: 'Tight one 😬',
               subtitle: 'You probably will not have enough in your stock.',
             },
@@ -109,10 +111,11 @@ export default {
   de: {
     pages: {
       home: {
-        greeting: 'Hola! Bist du einer dieser hinterhältigen Hamster-Käufer?',
+        greeting: 'Hola! Bist du einer dieser raffinierten Hamster-Käufer?',
         test: 'Mutig genug den Test zu wagen?',
         stockpileButton: 'Notvorrat 🍫',
         toiletButton: 'Toilettenpapier 🚽',
+        donateButton: 'Spenden 🎁',
       },
       about: {
         text: 'The Selfish Hamsters',
@@ -128,6 +131,7 @@ export default {
         button: {
           next: 'Next',
           back: 'Back',
+          search: 'Suche',
         },
       },
       household: {
@@ -182,10 +186,11 @@ export default {
         usage: {
           water: 'Liter Wasser 💧',
           wood: 'Kg Holz 🌳',
+          usedToProduce: 'verbraucht zum produzieren',
         },
         stockpile: {
           text: {
-            above_average: {
+            'above-average': {
               title: 'Du Hamster',
               subtitle: 'Du hast dir einen rechten Vorrat gehamstert.',
             },
@@ -193,7 +198,7 @@ export default {
               title: 'Tiptop 👍',
               subtitle: 'Du hast genau richtig geplant.',
             },
-            below_average: {
+            'below-average': {
               title: 'Wird knapp 😬',
               subtitle: 'Das wird dir nicht reichen.',
             },
