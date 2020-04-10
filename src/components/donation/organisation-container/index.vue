@@ -106,7 +106,8 @@ export default {
         this.displayOrganisations = [];
         // eslint-disable-next-line no-restricted-syntax
         for (const org of this.organisations) {
-          if (org.organisation.toLowerCase().includes(value.toLowerCase()) || org.adress.toLowerCase().includes(value.toLowerCase())) {
+          if (org.organisation.toLowerCase().includes(value.toLowerCase())
+            || org.adress.toLowerCase().includes(value.toLowerCase())) {
             this.displayOrganisations.push(org);
           }
         }

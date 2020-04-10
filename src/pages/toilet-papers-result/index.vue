@@ -79,9 +79,6 @@ export default {
       );
   },
   methods: {
-    getWidth(event) {
-      console.log('this', event);
-    },
     getImgUrl(pet) {
       // eslint-disable-next-line no-var
       var images = require.context('./../../assets/hamster/', false, /\.svg$/);

@@ -5,7 +5,7 @@
     <div class="home-wrapper" v-if="this.$route.path === '/'">
       <div>
         <div class="upper-container">
-          <img :onload="(event) => { console.log(event) }" :src="getImgUrl('home')"/>
+          <img :src="getImgUrl('home')"/>
         </div>
 
         <div class="center-container">
