@@ -25,11 +25,11 @@
           <p>
             {{$t("pages.result.stockpile.text."+hamsterType+".subtitle")}}
           </p>
-          <button class="result-donate-button">
+          <button class="button-2-1">
             <router-link to="/donation">{{$t("pages.home.donateButton")}}
             </router-link>
           </button>
-          <button class="result-home-button">
+          <button class="button-2-2">
             <router-link to="/">{{$t("pages.result.button.home")}}
             </router-link>
           </button>

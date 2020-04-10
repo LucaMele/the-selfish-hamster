@@ -162,7 +162,7 @@ body {
   line-height: 20px;
 }
 
-.toilet-button {
+.toilet-button, .button-3-1 {
   position: relative;
   top: 25%;
   margin: 0 auto;
@@ -172,7 +172,7 @@ body {
   border-radius: 50px;
 }
 
-.stockpile-button {
+.stockpile-button, .button-3-2 {
   position: relative;
   top: 28%;
   margin: 0 auto;
@@ -181,7 +181,16 @@ body {
   border-radius: 50px;
 }
 
-.result-home-button {
+.donate-button, .button-3-3 {
+  position: relative;
+  top: 31%;
+  margin: 0 auto;
+
+  background: #14D2B8;
+  border-radius: 50px;
+}
+
+.result-home-button, .button-2-2  {
   position: relative;
   top: calc(27vh);
   margin: 0 auto;
@@ -190,14 +199,17 @@ body {
   border-radius: 50px;
 }
 
-.donate-button {
+.result-stockpile-button, .button-2-1  {
   position: relative;
-  top: 31%;
+  top: calc(25vh);
   margin: 0 auto;
 
   background: #14D2B8;
   border-radius: 50px;
 }
+
+
+
 // media query for very small screens
 
 @media only screen and (max-width: 374px) {
