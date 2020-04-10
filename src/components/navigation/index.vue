@@ -16,14 +16,19 @@
                </li>
                <li @click='toggle = !toggle'>
                  <router-link to="/toilet-papers">
-                    {{$t("pages.navigation.toiletPaper")}}
+                    {{$t("pages.home.toiletButton")}}
                  </router-link>
                 </li>
-               <li @click='toggle = !toggle'>
-                 <router-link to="/stock-pile">
-                    {{$t("pages.navigation.emergencyStock")}}
-                 </router-link>
-                </li>
+              <li @click='toggle = !toggle'>
+                <router-link to="/stock-pile">
+                  {{$t("pages.home.stockpileButton")}}
+                </router-link>
+              </li>
+              <li @click='toggle = !toggle'>
+                <router-link to="/donation">
+                  {{$t("pages.home.donateButton")}}
+                </router-link>
+              </li>
                <li @click='toggle = !toggle'>
                  <router-link to="/about">
                     {{$t("pages.navigation.about")}}

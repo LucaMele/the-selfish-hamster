@@ -2,44 +2,37 @@
   <article>
     <div class="home-wrapper">
       <div>
-        <div class="hamster">
-          <div class="hamster-title-stock-pile">
-            <img :src="getImgUrl(hamsterType)"/>
+
+        <div class="upper-container">
+          <img :onload="(event) => { console.log(event) }" :src="getImgUrl(hamsterType)"/>
+        </div>
+
+        <div class="center-container">
+          <div class="greetings-box center-bg">
+            <span class="greeting-text">
+              <div v-bind:class="'result-stockpile result-stockpile--' + hamsterType">
+                <div>
+                  {{$t("pages.result.stockpile.text."+hamsterType+".title")}}
+                </div>
+              </div>
+            </span>
           </div>
         </div>
-        <div class="lower-container">
-          <div class="result-box">
-            <div v-bind:class="'result-stockpile result-stockpile--' + hamsterType">
-              <div v-if="hamsterType === 'above-average'">
-                {{$t("pages.result.stockpile.text.above_average.title")}}
-              </div>
-              <div v-if="hamsterType === 'average'">
-                {{$t("pages.result.stockpile.text.average.title")}}
-              </div>
-              <div v-if="hamsterType === 'below-average'">
-                {{$t("pages.result.stockpile.text.below_average.title")}}
-              </div>
-            </div>
-          </div>
-          <div class="lower-bg">
-            <p class="result-text" v-if="hamsterType === 'above-average'">
-              {{$t("pages.result.stockpile.text.above_average.subtitle")}}
-            </p>
-            <p class="result-text" v-if="hamsterType === 'average'">
-              {{$t("pages.result.stockpile.text.average.subtitle")}}
-            </p>
-            <p class="result-text" v-if="hamsterType === 'below-average'">
-              {{$t("pages.result.stockpile.text.below_average.subtitle")}}
-            </p>
-            <button class="result-donate-button">
-              <router-link to="/donation">{{$t("pages.result.button.donate")}}
-              </router-link>
-            </button>
-            <button class="home-button">
-              <router-link to="/">{{$t("pages.result.button.home")}}
-              </router-link>
-            </button>
-          </div>
+      </div>
+
+      <div class="lower-container">
+        <div class="lower-bg">
+          <p>
+            {{$t("pages.result.stockpile.text."+hamsterType+".subtitle")}}
+          </p>
+          <button class="result-donate-button">
+            <router-link to="/donation">{{$t("pages.home.donateButton")}}
+            </router-link>
+          </button>
+          <button class="result-home-button">
+            <router-link to="/">{{$t("pages.result.button.home")}}
+            </router-link>
+          </button>
         </div>
       </div>
     </div>

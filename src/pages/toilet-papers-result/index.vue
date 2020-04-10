@@ -2,35 +2,39 @@
   <article>
     <div class="home-wrapper">
       <div>
+        <div class="upper-container">
+          <img :onload="(event) => { console.log(event) }" :src="getImgUrl(hamsterType)"/>
+        </div>
 
-        <div class="hamster">
-          <div class="hamster-toilet-papers">
-            <img :onload="(event) => { console.log(event) }" :src="getImgUrl(hamsterType)"/>
+        <div class="center-container">
+          <div class="greetings-box center-bg">
+            <span class="greeting-text">
+              <p v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
+                {{ this.usagePerDay }}...
+              </p>
+            </span>
           </div>
         </div>
+
         <div class="lower-container">
-          <div class="result-box">
-            <p v-bind:class="'result-usage-per-day result-usage-per-day--' + hamsterType">
-              {{ this.usagePerDay }}...
-            </p>
-          </div>
           <div class="lower-bg">
             <p class="result-text">{{$t("pages.result.toiletpaper.text")}}</p>
             <div class="ressource-usage">
                 <div class="ressource-usage-content">
-                  <p>{{ this.waterConsumption }}</p>
-                  <p>{{$t("pages.result.usage.water")}}</p>
+                  <p> {{ this.waterConsumption }} {{$t("pages.result.usage.water")}}</p>
                 </div>
-                <div class="ressource-usage-content">
-                  <p>{{ this.woodConsumption }}</p>
-                  <p>{{$t("pages.result.usage.wood")}}</p>
-                </div>
+              <div class="ressource-usage-content">
+                <p>{{ this.woodConsumption }} {{$t("pages.result.usage.wood")}}</p>
+              </div>
+              <div class="ressource-usage-content">
+                <p>{{$t("pages.result.usage.usedToProduce")}}</p>
+              </div>
             </div>
             <button class="result-stockpile-button">
               <router-link to="/stock-pile">{{$t("pages.result.button.stockpile")}}
               </router-link>
             </button>
-            <button class="home-button">
+            <button class="result-home-button">
               <router-link to="/">{{$t("pages.result.button.home")}}
               </router-link>
             </button>

@@ -11,12 +11,12 @@ export class FixedDonationPlaces {
 
   List() {
     return [
-      this.NewHamster('Food Care Schweiz', 'Andwilerstrasse 14, 9200 Gossau', '+41 79 734 89 77'),
+      this.NewHamster('The-Selfish-Hamster Foundation', 'Thomas, Sven, Cris, Luca, Lolo, Cédric', ''),
     ];
   }
   EasterEgg() {
     return [
-      this.NewHamster('The-Selfish-Hamster Foundation', 'Thomas, Sven, Pixxel, Luca, Lolo, Cédric', ''),
+      this.NewHamster('Food Care Schweiz', 'Andwilerstrasse 14, 9200 Gossau', '+41 79 734 89 77'),
     ];
   }
 }
