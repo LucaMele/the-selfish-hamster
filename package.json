@@ -5,7 +5,7 @@
   "author": "TODO",
   "private": true,
   "scripts": {
-    "start": "npm run lint -- --fix && npm run start-frontend-prod",
+    "start": "npm run start-frontend-prod",
     "start-win": "concurrently \"npm run start-frontend-prod\" \"npm run start-backend-prod\"",
     "webpack-prod": "webpack --config build/webpack.prod.conf.js",
     "start-frontend-prod": "npm run build && npm run webpack-prod",
