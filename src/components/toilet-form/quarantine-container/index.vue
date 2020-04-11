@@ -6,7 +6,7 @@
     </div>
     <div class="step-wrapper">
       <img src="./../../../assets/quarantine.svg">
-      <p class="quarantine-question">{{$t("pages.quarantine.question")}}</p>
+      <p class="toilet_question">{{$t("pages.quarantine.question")}}</p>
       <div class="hamster__container-no-background">
         <div class="btn-group-upper">
           <div v-bind:class="option1Class" v-on:click="onOptionSelected(10, 1)">

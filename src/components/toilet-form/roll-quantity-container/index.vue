@@ -6,7 +6,7 @@
     </div>
     <div class="step-wrapper">
       <img src="./../../../assets/rolls.svg">
-      <p class="roll-question">{{$t("pages.roll.question")}}</p>
+      <p class="toilet_question">{{$t("pages.roll.question")}}</p>
       <div class="hamster__container">
         <roll-slider @callback="sliderValueCallback"></roll-slider>
       </div>

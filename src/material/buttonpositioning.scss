@@ -1,7 +1,7 @@
 .next-wrapper {
   position: absolute;
-  top: 75%;
-  left: 120px;
+  top: 80%;
+  left: calc(50% - 146px/2);
 }
 
 .back-wrapper {
@@ -24,6 +24,32 @@
   color: #fff;
 }
 
+.household-question, .quarantine-question, .toilet_question {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slider-value {
+  position: relative;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 120px;
+  color: #695CFF;
+}
+
+.hamster__container {
+  position: absolute;
+  left: 3%;
+  width: 94%;
+  height: 90%;
+  background-color: white;
+  background: #FFFFFF;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
 
 
 // template for other pages //
@@ -36,7 +62,7 @@
     line-height: 80px !important;
   }
   .hamster__container {
-    height: 60% !important;
+    height: 80% !important;
   }
 }
 

@@ -7,7 +7,7 @@
       </div>
       <div class="step-wrapper">
         <img src="./../../../assets/paper.svg">
-        <p class="paper-question">{{$t("pages.paper.question")}}</p>
+        <p class="toilet_question">{{$t("pages.paper.question")}}</p>
         <div class="hamster__container-no-background">
           <div class="btn-group-upper">
             <div v-bind:class="option1Class" v-on:click="onOptionSelected('none', 1)">

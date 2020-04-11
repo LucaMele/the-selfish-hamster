@@ -1,8 +1,8 @@
 <template>
   <article class="hamster__roll-slider">
     <div class="roll-slider__slider">
-      <p id="roll-value">{{ value }}</p>
-      <p id="roll-value-scaled">
+      <p class="slider-value">{{ value }}</p>
+      <p class="roll-value-scaled">
         {{ value }} {{$t("pages.roll.packs")}} {{ valueScaled }} {{$t("pages.roll.rolls")}}
       </p>
       <vue-slider
