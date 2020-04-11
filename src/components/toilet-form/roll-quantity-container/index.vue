@@ -4,10 +4,10 @@
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
-    <div class="household-wrapper">
+    <div class="step-wrapper">
       <img src="./../../../assets/rolls.svg">
       <p class="roll-question">{{$t("pages.roll.question")}}</p>
-      <div class="hamster__roll-container">
+      <div class="hamster__container">
         <roll-slider @callback="sliderValueCallback"></roll-slider>
       </div>
     </div>

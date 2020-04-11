@@ -13,3 +13,41 @@
   left: 20px;
   top: 20px;
 }
+
+.step-wrapper {
+  position: absolute;
+  top: 12%;
+  bottom: 51%;
+  left: 5%;
+  right: 5%;
+  margin: 0 10px;
+  color: #fff;
+}
+
+
+
+// template for other pages //
+
+// media query for very small screens
+@media only screen and (max-width: 374px) {
+
+  .slider-value {
+    font-size: 60px !important;
+    line-height: 80px !important;
+  }
+  .hamster__container {
+    height: 60% !important;
+  }
+}
+
+// media query for larger phones
+@media only screen and (min-width: 375px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}

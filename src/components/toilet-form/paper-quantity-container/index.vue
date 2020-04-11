@@ -5,7 +5,7 @@
       <div class="back-wrapper">
         <toilet-back @onClickCallback="onBackCallback"></toilet-back>
       </div>
-      <div class="paper-wrapper">
+      <div class="step-wrapper">
         <img src="./../../../assets/paper.svg">
         <p class="paper-question">{{$t("pages.paper.question")}}</p>
         <div class="hamster__container-no-background">

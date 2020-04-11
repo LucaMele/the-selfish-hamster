@@ -4,7 +4,7 @@
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
-    <div class="quarantine-wrapper">
+    <div class="step-wrapper">
       <img src="./../../../assets/quarantine.svg">
       <p class="quarantine-question">{{$t("pages.quarantine.question")}}</p>
       <div class="hamster__container-no-background">

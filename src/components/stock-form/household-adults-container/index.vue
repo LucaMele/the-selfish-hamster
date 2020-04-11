@@ -4,7 +4,7 @@
     <div class="back-wrapper">
       <toilet-back @onClickCallback="onBackCallback"></toilet-back>
     </div>
-    <div class="household-wrapper">
+    <div class="step-wrapper">
       <img src="./../../../assets/household.svg">
       <p class="household-question">{{$t("pages.household.adultsQuestion")}}</p>
       <div class="hamster__container">
