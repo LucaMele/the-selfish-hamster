@@ -5,7 +5,9 @@
   "author": "TODO",
   "private": true,
   "scripts": {
-    "start": "concurrently \"npm run start-frontend-prod\" \"npm run start-backend-prod\"",
+    "start": "webpack --config build/webpack.prod.conf.js",
+    "heroku-postbuild": "node build/build.js",
+    "start-win",: "concurrently \"npm run start-frontend-prod\" \"npm run start-backend-prod\"",
     "webpack-prod": "webpack --config build/webpack.prod.conf.js",
     "start-frontend-prod": "npm run build && npm run webpack-prod",
     "start-backend-prod": "babel-node server/index.js",
@@ -21,9 +23,7 @@
     "build": "node build/build.js"
   },
   "devDependencies": {
-    "chromedriver": "^2.27.2",
-    "eslint-plugin-vue": "^4.7.1",
-    "webpack-dev-server": "^2.9.1"
+    "chromedriver": "^2.27.2"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^2.4.2",
@@ -102,15 +102,14 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+
+    "eslint-plugin-vue": "^4.7.1",
+    "webpack-dev-server": "^2.9.1"
+
   },
   "engines": {
     "node": ">= 8.0.0",
     "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }
