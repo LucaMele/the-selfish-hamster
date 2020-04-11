@@ -12,7 +12,7 @@
     "start-frontend-prod": "npm run build && npm run webpack-prod",
     "start-backend-prod": "babel-node server/index.js",
     "start-dev-win": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
-    "start-dev": "npm run start-frontend && npm run start-backend",
+    "start-dev": "npm run start-frontend & npm run start-backend",
     "webpack-dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start-frontend": "npm run build && npm run webpack-dev",
     "start-backend": "babel-node server/index.js ENV=dev",
