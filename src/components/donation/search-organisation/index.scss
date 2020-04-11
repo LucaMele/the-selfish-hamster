@@ -1,16 +1,15 @@
 .hamster-donate-input-container {
   position: absolute;
   width: 100%;
+  bottom: 67%;
 }
 
 
 .hamster-donate-input-container input {
-  position: absolute;
-  margin: 10% 0 0 -150px;
+  position: relative;
   background: #FFFFFF;
   border-radius: 50px;
   height: 25px;
-  width: 300px;
   font-size: 20px;
   text-align: center;
 }
@@ -47,5 +46,7 @@
 
 .search-button-wrapper {
   position: relative;
-  margin: 20% 30%;
+  margin-top: 1%;
+  width: 100%;
+  left: calc(50% - 148px / 2);
 }

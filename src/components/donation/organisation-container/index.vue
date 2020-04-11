@@ -9,7 +9,7 @@
     </div>
     <!-- <v-modal name="dialog"></v-modal> -->
     <div class="table-wrapper">
-      <div class="hamster__container-no-bg">
+      <div class="hamster__container-list-no-bg">
         <table class="table-container">
           <tbody class="table-body" v-for="item in displayOrganisations" v-bind:key="item.index">
             <organisation-row

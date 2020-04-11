@@ -46,11 +46,6 @@
   top: 100%;
 }
 
-.next-wrapper-list {
-  position: absolute;
-  bottom: 4%;
-  left: 120px;
-}
 
 
 
@@ -69,6 +64,19 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .category-table-row {
+    height: 50px !important;
+  }
+  .category-column .category {
+    font-size: 20px !important;
+  }
+  .category-column .sub-category {
+    font-size: 12px !important;
+    margin-top: 22px !important;
+  }
+  .stock-pile-slider__slider .vue-slider-rail {
+    width: 100px !important;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

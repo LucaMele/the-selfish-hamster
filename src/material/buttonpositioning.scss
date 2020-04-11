@@ -4,6 +4,13 @@
   left: calc(50% - 146px/2);
 }
 
+.next-wrapper-list {
+  @extend .next-wrapper;
+  bottom: 4%;
+  top: unset;
+}
+
+
 .back-wrapper {
   display: flex;
   flex-direction: row;
@@ -24,7 +31,7 @@
   color: #fff;
 }
 
-.household-question, .quarantine-question, .toilet_question {
+.household-question, .quarantine-question, .toilet_question, .question {
   margin-top: 10px;
   margin-bottom: 10px;
 }

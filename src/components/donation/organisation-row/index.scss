@@ -1,19 +1,24 @@
 .row-wrapper {
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
-  margin-top: -0.75%;
+  margin-top: -3px;
 }
 
 .organisation-table-row {
   position: relative;
   width: 100%;
-  height: 45px;
+  height: 60px;
+}
+
+.organisation-column {
+  position: absolute;
+  width: 80%;
 }
 
 .organisation-column .organisation {
-  position: absolute;
-  left: 2%;
-  right: 10%;
+  position: relative;
+  left: 1%;
+  right: 11%;
   text-align: left;
   margin-top: 1%;
   font-size: 15px;
@@ -29,11 +34,10 @@
 }
 
 .organisation-column .adress {
-  position: absolute;
-  left: 2%;
-  right: 10%;
+  position: relative;
+  left: 1%;
+  right: 11%;
   text-align: left;
-  margin-top: 6%;
   margin-bottom: 0;
   font-size: 11px;
 
@@ -51,4 +55,37 @@
   position: absolute;
   margin-top: 10px;
   right: 5%;
+}
+
+
+
+// template for other pages //
+
+// media query for very small screens
+@media only screen and (max-width: 374px) {
+
+  .organisation-table-row {
+    height: 35px;
+  }
+  .organisation-column .organisation {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+  }
+  .organisation-column .adress {
+    position: relative;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+  }
+}
+
+// media query for larger phones
+@media only screen and (min-width: 375px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }
