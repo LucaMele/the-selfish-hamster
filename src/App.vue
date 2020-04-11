@@ -5,7 +5,7 @@
     <div class="home-wrapper" v-if="this.$route.path === '/'">
       <div>
         <div class="upper-container">
-          <img :onload="(event) => { console.log(event) }" :src="getImgUrl('home')"/>
+          <img :src="getImgUrl('home')"/>
         </div>
 
         <div class="center-container">
@@ -19,15 +19,15 @@
         <div class="lower-container">
           <div class="lower-bg">
             <p>{{$t("pages.home.test")}}</p>
-            <button class="toilet-button">
+            <button class="button-3-1">
               <router-link to="/toilet-papers">{{$t("pages.home.toiletButton")}}
               </router-link>
             </button>
-            <button class="stockpile-button">
+            <button class="button-3-2">
               <router-link to="/stock-pile">{{$t("pages.home.stockpileButton")}}
               </router-link>
             </button>
-            <button class="donate-button">
+            <button class="button-3-3">
               <router-link to="/donation">{{$t("pages.home.donateButton")}}
               </router-link>
             </button>

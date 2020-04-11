@@ -30,11 +30,11 @@
                 <p>{{$t("pages.result.usage.usedToProduce")}}</p>
               </div>
             </div>
-            <button class="result-stockpile-button">
+            <button class="button-2-1">
               <router-link to="/stock-pile">{{$t("pages.result.button.stockpile")}}
               </router-link>
             </button>
-            <button class="result-home-button">
+            <button class="button-2-2">
               <router-link to="/">{{$t("pages.result.button.home")}}
               </router-link>
             </button>
@@ -60,7 +60,7 @@ export default {
       usagePerQuarantine: '',
       waterConsumption: '',
       woodConsumption: '',
-      hamsterType: '',
+      hamsterType: 'average',
     });
   },
   created() {
@@ -79,9 +79,6 @@ export default {
       );
   },
   methods: {
-    getWidth(event) {
-      console.log('this', event);
-    },
     getImgUrl(pet) {
       // eslint-disable-next-line no-var
       var images = require.context('./../../assets/hamster/', false, /\.svg$/);
