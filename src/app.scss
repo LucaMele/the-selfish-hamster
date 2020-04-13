@@ -61,7 +61,7 @@ body {
 
 .lower-container {
   position: absolute;
-  top: 43%;
+  top: 48%;
   bottom: 0%;
   left: 0%;
   right: 0%;
@@ -118,7 +118,7 @@ body {
 
 .lower-bg p {
   position: relative;
-  top: 15%;
+  top: 20%;
   margin: 0 auto;
 
   font-size: 20px;
@@ -129,6 +129,8 @@ body {
   display: flex;
   flex-direction: row;
   padding: 18px 40px;
+  left: calc(50% - 255px / 2);
+  width: 255px;
   height: 60px;
 }
 
@@ -162,51 +164,63 @@ body {
   line-height: 20px;
 }
 
-.toilet-button, .button-3-1 {
+
+.button-x {
+  left: calc(50% - 255px / 2);
+  width: 255px;
+  background: #14D2B8;
+  border-radius: 50px;
+}
+
+.button-x-half {
+  @extend .button-x;
+  left: calc(50% - 187.5px / 2);
+  width: 187.5px;
+}
+
+.button-3-1 {
+  @extend .button-x;
   position: relative;
   top: 25%;
-  margin: 0 auto;
-
-
-  background: #14D2B8;
-  border-radius: 50px;
 }
 
-.stockpile-button, .button-3-2 {
+.button-3-2 {
+  @extend .button-x;
   position: relative;
   top: 28%;
-  margin: 0 auto;
-
-  background: #14D2B8;
-  border-radius: 50px;
 }
 
-.donate-button, .button-3-3 {
+.button-3-3 {
+  @extend .button-x;
   position: relative;
   top: 31%;
-  margin: 0 auto;
-
-  background: #14D2B8;
-  border-radius: 50px;
 }
 
-.result-home-button, .button-2-2  {
-  position: relative;
-  top: calc(27vh);
-  margin: 0 auto;
 
-  background: #14D2B8;
-  border-radius: 50px;
+.button-2-1  {
+  @extend .button-x;
+  position: absolute;
+  bottom: 25%;
 }
 
-.result-stockpile-button, .button-2-1  {
-  position: relative;
-  top: calc(25vh);
-  margin: 0 auto;
-
-  background: #14D2B8;
-  border-radius: 50px;
+.button-2-1-half  {
+  @extend .button-x-half;
+  position: absolute;
+  bottom: 25%;
 }
+
+.button-2-2  {
+  @extend .button-x;
+  position: absolute;
+  bottom: 5%;
+}
+
+.button-2-2-half  {
+  @extend .button-x-half;
+  position: absolute;
+  bottom: 5%;
+}
+
 
 
 

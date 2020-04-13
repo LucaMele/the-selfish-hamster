@@ -20,8 +20,8 @@ export default {
       },
       general: {
         button: {
-          next: 'Next',
-          back: 'Back',
+          next: 'Next →',
+          back: '← Back',
           search: 'Search',
         },
       },
@@ -68,7 +68,7 @@ export default {
       result: {
         button: {
           stockpile: 'Emergency Stock 🍫',
-          home: 'Back Home',
+          home: '← Back Home',
           donate: 'Donate',
         },
         toiletpaper: {
@@ -129,8 +129,8 @@ export default {
       },
       general: {
         button: {
-          next: 'Next',
-          back: 'Back',
+          next: 'Next →',
+          back: '← Back',
           search: 'Suche',
         },
       },
